@@ -541,11 +541,6 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"ExtractFormFactors::$$k$ir\"\>", 
    "\[InvisibleSpace]", "\<\" : \"\>", "\[InvisibleSpace]", 
    RowBox[{
-    RowBox[{"-", 
-     FractionBox[
-      RowBox[{"4", " ", "\[ImaginaryI]"}], 
-      RowBox[{
-       RowBox[{"-", "1"}], "+", "x"}]]}], "+", 
     FractionBox[
      RowBox[{"4", " ", "\[ImaginaryI]"}], 
      SuperscriptBox[
