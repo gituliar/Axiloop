@@ -1,6 +1,6 @@
 (*============================================================================*)
 (*                                                                            *)
-(*  Copyright (C) 2012-2013 Oleksandr Gituliar.                               *)
+(*  Copyright (C) 2012-2014 Oleksandr Gituliar.                               *)
 (*                                                                            *)
 (*  This file is part of Axiloop.                                             *)
 (*                                                                            *)
@@ -416,7 +416,7 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 		$$[{x_},{0,k},{}] :> - Q (k.k)^(-eir) k.x T1,
 		$$[{x_},{0,p},{}] :> - Q (p.p)^(-eir) p.x T1,
 		$$[{x_},{0,q},{}] -> - Q (q.q)^(-eir) q.x T1,
-		$$[{x_},{k,p},{}] :> - Q (q.q)^(-eir) (q.x T1 - k.x T0),
+		$$[{x_},{k,p},{}] :> - Q (q.q)^(-eir) (p.x + k.x) T1,
 
 		$$[{x_,y_},{0,z_},{}] :> Q (z.z)^(-eir) (x.z y.z T2 + x.y z.z T3),
 
