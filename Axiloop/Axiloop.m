@@ -142,7 +142,7 @@ CollectExclusiveShort[expr_] := Module[{},
 			/. {eps->0, (k.k)^(n_Integer-eir):>(k.k)^n, p.p->0, q.q->0}
 			/. {0^(-eir)->1, 0^(1-eir)->0, 0^(2-eir)->0}
 		,
-		{B0,B1,B3,K0,P0,P1,P3,R0,R1,R2,R3,R4,R5,R6,S0,S1,S2,T0,T1,V1,V2}
+		{B0,B1,B3,C0,C1,D0,K0,P0,P1,P3,R0,R1,R2,R3,R4,R5,R6,S0,S1,S2,T0,T1,V1,V2,U0}
 		,
 		Simplify
 	]
