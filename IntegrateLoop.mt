@@ -1078,4 +1078,67 @@ UT$BeginTestCase["PaVeExpand"];
     0
   ];
 
+
+
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U1] - ( - (2 I0 - x Log[x] + (1+x) Log[1-x]) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x] - (1-x) Log[1-x]^2/2 - 2 x Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U2] - ( - (I0 + Log[1-x]) / eir + I1 - I0 Log[x] + Li2[1-x] - Log[x]^2/2 + Log[1-x]^2/2 - 3 Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U3] - ( (I0 + (1-x) Log[x] + x Log[1-x]) / euv - I1 + I0 Log[x] - x Li2[1-x] + Log[x]^2/2 - x Log[1-x]^2/2 + (1+2x) Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U4] - ( (2 I0 - x^2 Log[x] + (1+x^2) Log[1-x] + x - 2) / eir - 4 I1 + 2 I0 Log[1-x] - x^2 Li2[1-x] + (1-x^2) Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + 2 x^2 Li2[1] + 2 x - 4 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U5] - ( 1 / eir + x Log[x] - x Log[1-x] + 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U6] - ( (I0 + Log[1-x] - 1) / eir - I1 + I0 Log[x] - Li2[1-x] + Log[x]^2/2 - Log[1-x]^2/2 - Log[x] + Log[1-x] + 3 Li2[1] - 2 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U7] - ( (- (1-x) Log[x] + (1-x) Log[1-x] - 1) / euv - (1-x) Li2[1-x] - (1-x) Log[1-x]^2/2 - (2-x) Log[x] + (2-x) Log[1-x] + 2 (1-x) Li2[1] - 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U8] - ( - (I0 + (1-x) Log[x] + x Log[1-x] - 1) / euv + I1 - I0 Log[x] + x Li2[1-x] - Log[x]^2/2 + x Log[1-x]^2/2 + x Log[x] - x Log[1-x] - (1+2x) Li2[1] + 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U9] - ( (I0 + (1-x^2) Log[x] + x^2 Log[1-x] + x - 2) / euv - I1 + I0 Log[x] - x^2 Li2[1-x] + Log[x]^2/2 - x^2 Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + (1+2x^2) Li2[1] + 2 x - 4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U10] - (1-x)/2 ( (Log[x] - Log[1-x]) / euv + Li2[1-x] + Log[1-x]^2/2 + 2 Log[x] - 2 Log[1-x] - 2 Li2[1]) ]
+    ,
+    0
+  ];
+
 UT$EndTestCase[];
