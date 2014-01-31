@@ -43,7 +43,7 @@ UT$BeginTestCase["IntegrateLoop"];
   UT$AssertEquivalent[
     $Get[IntegrateLoop[l.k/((l+k).(l+k) (l+p).(l+p)), l], {"integrated", "short"}]
     ,
-    Qv[q] T1 (-3 k.k - p.p + q.q) / 2
+    Qv[q] T1[euv] (-3 k.k - p.p + q.q) / 2
   ];
 
 UT$EndTestCase[];
@@ -1018,224 +1018,225 @@ UT$BeginTestCase["PaVeExpand"];
 
   PaVeExpand = $$ExpandMPV;
 
+  $Series[ff_, eps_] := Normal[Series[ff[eps], {eps, 0, 0}]];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H1] - ( (2 I0 + Log[1-x] - 11/3) / eir - 85/9) ]
+    Simplify[ PaVeExpand[$Series[H1, eps]] - ( - (2 I0 + Log[1-x] - 11/3) / eps - 4 I1 + 2 I0 Log[1-x] + Log[1-x]^2/2 - 85/9) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H2] - ( 1/(3 eir) + 11/9 ) ]
+    Simplify[ PaVeExpand[$Series[H2, eps]] - ( - 1/(3 eps) + 11/9 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H3] - ( 1/(6 eir) + 4/9 ) ]
+    Simplify[ PaVeExpand[$Series[H3, eps]] - ( - 1/(6 eps) + 4/9 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H4] - ( 1/(3 eir) + 13/18 ) ]
+    Simplify[ PaVeExpand[$Series[H4, eps]] - ( -1/(3 eps) + 13/18 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H5] - ( 1/(12 euv) - 11/36 ) ]
+    Simplify[ PaVeExpand[$Series[H5, eps]] - ( 1/(12 eps) - 11/36 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[H6] - ( 1/(12 euv) - 2/9 ) ]
-    ,
-    0
-  ];
-
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S1] - (- (2 I0 + Log[1-x] + x Log[x]/(1-x)) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x]/(1-x) - Log[1-x]^2/2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S2] - ( Log[x]/((1-x) eir) - Li2[1-x]/(1-x) ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S3] - ( (I0 + Log[x]/(1-x)) / euv + I1 - I0 Log[x] + x Li2[1-x]/(1-x) - Log[x]^2/2 - Li2[1] ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S4] - 1/(1-x) ( (2 (1-x) I0 - x^2 Log[x]/(1-x) + (1-x) Log[1-x] + x - 2) / eir - 4 (1-x) I1 + 2 (1-x) I0 Log[1-x] + x^2 Li2[1-x]/(1-x) + (1-x) Log[1-x]^2/2 - x^2 Log[x]/(1-x) + 2 x - 4 ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S5] - 1/(1-x)^2 ( (x Log[x] - x + 1) / eir - x Li2[1-x] + x Log[x] - 2 x + 2 ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S6] - 1/(1-x)^2 ( - (Log[x] - x + 1) / eir + Li2[1-x] - Log[x] + 2 x - 2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S7] - 1/(1-x)^2 ( (Log[x] - x + 1) / euv + Li2[1-x] - (2-x) Log[x] + 2 x - 2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S8] - 1/(1-x)^2 ( - (x Log[x] - x + 1) / euv - x Li2[1-x] + x Log[x] - 2 x + 2 ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S9] - 1/(1-x) ( - ((1-x) I0 + (1-2x) Log[x]/(1-x) + x - 2) / euv - (1-x) I1 + (1-x) I0 Log[x] + x^2 Li2[1-x]/(1-x) + (1-x) Log[x]^2/2 - x^2 Log[x]/(1-x) + (1-x) Li2[1] + 2 x - 4) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[S10] - 1/(2 (1-x)) ( - Log[x] / euv - Li2[1-x] + 2 Log[x]) ]
-    ,
-    0
-  ];
-
-
-
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U1] - ( - (2 I0 - x Log[x] + (1+x) Log[1-x]) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x] - (1-x) Log[1-x]^2/2 - 2 x Li2[1]) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U2] - ( - (I0 + Log[1-x]) / eir + I1 - I0 Log[x] + Li2[1-x] - Log[x]^2/2 + Log[1-x]^2/2 - 3 Li2[1]) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U3] - ( - (I0 + (1-x) Log[x] + x Log[1-x]) / euv - I1 + I0 Log[x] - x Li2[1-x] + Log[x]^2/2 - x Log[1-x]^2/2 + (1+2x) Li2[1]) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U4] - ( (2 I0 - x^2 Log[x] + (1+x^2) Log[1-x] + x - 2) / eir - 4 I1 + 2 I0 Log[1-x] - x^2 Li2[1-x] + (1-x^2) Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + 2 x^2 Li2[1] + 2 x - 4 ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U5] - ( 1 / eir + x Log[x] - x Log[1-x] + 2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U6] - ( (I0 + Log[1-x] - 1) / eir - I1 + I0 Log[x] - Li2[1-x] + Log[x]^2/2 - Log[1-x]^2/2 - Log[x] + Log[1-x] + 3 Li2[1] - 2 ) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U7] - ( - (- (1-x) Log[x] + (1-x) Log[1-x] - 1) / euv - (1-x) Li2[1-x] - (1-x) Log[1-x]^2/2 - (2-x) Log[x] + (2-x) Log[1-x] + 2 (1-x) Li2[1] - 2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U8] - ( (I0 + (1-x) Log[x] + x Log[1-x] - 1) / euv + I1 - I0 Log[x] + x Li2[1-x] - Log[x]^2/2 + x Log[1-x]^2/2 + x Log[x] - x Log[1-x] - (1+2x) Li2[1] + 2) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U9] - ( - (I0 + (1-x^2) Log[x] + x^2 Log[1-x] + x - 2) / euv - I1 + I0 Log[x] - x^2 Li2[1-x] + Log[x]^2/2 - x^2 Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + (1+2x^2) Li2[1] + 2 x - 4) ]
-    ,
-    0
-  ];
-
-  UT$AssertEquivalent[
-    Simplify[ PaVeExpand[U10] - (1-x)/2 ( - (Log[x] - Log[1-x]) / euv + Li2[1-x] + Log[1-x]^2/2 + 2 Log[x] - 2 Log[1-x] - 2 Li2[1]) ]
+    Simplify[ PaVeExpand[$Series[H6, eps]] - ( 1/(12 eps) - 2/9 ) ]
     ,
     0
   ];
 
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W1] - ( ((-2+4x) I0 - 2 x Log[x] - (1-3x) Log[1-x]) / eir + (4-7x) I1 - 3 x I0 Log[x] + (-2+3x) I0 Log[1-x] + 2 x Li2[1-x] + x Log[x]^2 - (2+x) Log[1-x]^2/4 + x Log[x] Log[1-x] + 5 x Li2[1] ) ]
+    Simplify[ PaVeExpand[S1[eir]] - ((2 I0 + Log[1-x] + x Log[x]/(1-x)) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x]/(1-x) - Log[1-x]^2/2) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W2] - ( (I0 + Log[1-x]) / eir - 2 I1 + I0 Log[1-x] + Log[1-x]^2/4) ]
+    Simplify[ PaVeExpand[S2[eir]] - ( - Log[x]/((1-x) eir) - Li2[1-x]/(1-x) ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W3] - ( (x I0 + Log[1-x]) / euv + 2 x I1 - x I0 Log[1-x] - x Log[1-x]^2/4) ]
+    Simplify[ PaVeExpand[S3[euv]] - ( (I0 + Log[x]/(1-x)) / euv + I1 - I0 Log[x] + x Li2[1-x]/(1-x) - Log[x]^2/2 - Li2[1] ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W4] - ( ((4-5x) I0 + 2 x Log[x] + (2-3x) Log[1-x] + x - 2) / eir - (8-9x) I1 + 3 x I0 Log[x] + 4 (1-x) I0 Log[1-x] - 2 x Li2[x] - 2 x Li2[1-x] - x Log[x]^2 + (2-x) Log[1-x]^2/2 - x Log[x] Log[1-x] + x Log[1-x] - 5 x Li2[1] + 2 (2-x) (x^2 + x - 1)/(1-x) ) ]
+    Simplify[ PaVeExpand[S4[eir]] - 1/(1-x) ( - (2 (1-x) I0 - x^2 Log[x]/(1-x) + (1-x) Log[1-x] + x - 2) / eir - 4 (1-x) I1 + 2 (1-x) I0 Log[1-x] + x^2 Li2[1-x]/(1-x) + (1-x) Log[1-x]^2/2 - x^2 Log[x]/(1-x) + 2 x - 4 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W5] - ( - (I0 + Log[1-x] - 1) / eir + 2 I1 - I0 Log[1-x] + 2 Li2[x] + Log[1-x]^2/4 - Log[1-x] + 2 (1-3x+x^2)/(1-x)) ]
+    Simplify[ PaVeExpand[S5[eir]] - 1/(1-x)^2 ( - (x Log[x] - x + 1) / eir - x Li2[1-x] + x Log[x] - 2 x + 2 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W6] - ( - 1 / eir - 2 Li2[x]/x - Log[1-x]^2/(2x) + Log[1-x]/x + 2/(1-x) ) ]
+    Simplify[ PaVeExpand[S6[eir]] - 1/(1-x)^2 ( (Log[x] - x + 1) / eir + Li2[1-x] - Log[x] + 2 x - 2) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W7] - ( - (I0 + Log[1-x]/x - 1) / euv - 2 I1 + I0 Log[1-x] - 2 (2-x) Li2[x]/x - (4-3x) Log[1-x]^2/(4x) + (2 - x) Log[1-x]/x + 2 (3-3x+x^2)/(1-x) ) ]
+    Simplify[ PaVeExpand[S7[euv]] - 1/(1-x)^2 ( (Log[x] - x + 1) / euv + Li2[1-x] - (2-x) Log[x] + 2 x - 2) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W8] - ( - ((1-x) Log[1-x] + x) / (x euv) + 2 Li2[x]/x + Log[1-x]^2/(2x) - Log[1-x] - 2/(1-x)) ]
+    Simplify[ PaVeExpand[S8[euv]] - 1/(1-x)^2 ( - (x Log[x] - x + 1) / euv - x Li2[1-x] + x Log[x] - 2 x + 2 ) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W9] - ( (2 (1-x) Log[1-x] - x^2 + 2x) / (x euv) - 2 (2-2x+x^2) Li2[x]/x - (2-2x+x^2) Log[1-x]^2/(2x) + x Log[1-x] + 2 (2-x) (1-x+x^2)/(1-x)) ]
+    Simplify[ PaVeExpand[S9[euv]] - 1/(1-x) ( - ((1-x) I0 + (1-2x) Log[x]/(1-x) + x - 2) / euv - (1-x) I1 + (1-x) I0 Log[x] + x^2 Li2[1-x]/(1-x) + (1-x) Log[x]^2/2 - x^2 Log[x]/(1-x) + (1-x) Li2[1] + 2 x - 4) ]
     ,
     0
   ];
 
   UT$AssertEquivalent[
-    Simplify[ PaVeExpand[W10] - (1-x)/x ( Log[1-x] / (2 euv) + Li2[x] + Log[1-x]^2/4 - Log[1-x] + (x^2-2x)/(1-x) ) ]
+    Simplify[ PaVeExpand[S10[euv]] - 1/(2 (1-x)) ( - Log[x] / euv - Li2[1-x] + 2 Log[x]) ]
+    ,
+    0
+  ];
+
+
+
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U1[eir]] - ( (2 I0 - x Log[x] + (1+x) Log[1-x]) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x] - (1-x) Log[1-x]^2/2 - 2 x Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U2[eir]] - ( (I0 + Log[1-x]) / eir + I1 - I0 Log[x] + Li2[1-x] - Log[x]^2/2 + Log[1-x]^2/2 - 3 Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U3[euv]] - ( - (I0 + (1-x) Log[x] + x Log[1-x]) / euv - I1 + I0 Log[x] - x Li2[1-x] + Log[x]^2/2 - x Log[1-x]^2/2 + (1+2x) Li2[1]) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U4[eir]] - ( - (2 I0 - x^2 Log[x] + (1+x^2) Log[1-x] + x - 2) / eir - 4 I1 + 2 I0 Log[1-x] - x^2 Li2[1-x] + (1-x^2) Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + 2 x^2 Li2[1] + 2 x - 4 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U5[eir]] - ( -1/eir + x Log[x] - x Log[1-x] + 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U6[eir]] - ( - (I0 + Log[1-x] - 1) / eir - I1 + I0 Log[x] - Li2[1-x] + Log[x]^2/2 - Log[1-x]^2/2 - Log[x] + Log[1-x] + 3 Li2[1] - 2 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U7[euv]] - ( - (- (1-x) Log[x] + (1-x) Log[1-x] - 1) / euv - (1-x) Li2[1-x] - (1-x) Log[1-x]^2/2 - (2-x) Log[x] + (2-x) Log[1-x] + 2 (1-x) Li2[1] - 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U8[euv]] - ( (I0 + (1-x) Log[x] + x Log[1-x] - 1) / euv + I1 - I0 Log[x] + x Li2[1-x] - Log[x]^2/2 + x Log[1-x]^2/2 + x Log[x] - x Log[1-x] - (1+2x) Li2[1] + 2) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U9[euv]] - ( - (I0 + (1-x^2) Log[x] + x^2 Log[1-x] + x - 2) / euv - I1 + I0 Log[x] - x^2 Li2[1-x] + Log[x]^2/2 - x^2 Log[1-x]^2/2 - x^2 Log[x] + x^2 Log[1-x] + (1+2x^2) Li2[1] + 2 x - 4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[U10[euv]] - (1-x)/2 ( - (Log[x] - Log[1-x]) / euv + Li2[1-x] + Log[1-x]^2/2 + 2 Log[x] - 2 Log[1-x] - 2 Li2[1]) ]
+    ,
+    0
+  ];
+
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W1[eir]] - ( ((2-4x) I0 + 2 x Log[x] + (1-3x) Log[1-x]) / eir + (4-7x) I1 - 3 x I0 Log[x] + (-2+3x) I0 Log[1-x] + 2 x Li2[1-x] + x Log[x]^2 - (2+x) Log[1-x]^2/4 + x Log[x] Log[1-x] + 5 x Li2[1] ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W2[eir]] - ( - (I0 + Log[1-x]) / eir - 2 I1 + I0 Log[1-x] + Log[1-x]^2/4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W3[euv]] - ( (x I0 + Log[1-x]) / euv + 2 x I1 - x I0 Log[1-x] - x Log[1-x]^2/4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W4[eir]] - ( - ((4-5x) I0 + 2 x Log[x] + (2-3x) Log[1-x] + x - 2) / eir - (8-9x) I1 + 3 x I0 Log[x] + 4 (1-x) I0 Log[1-x] - 2 x Li2[x] - 2 x Li2[1-x] - x Log[x]^2 + (2-x) Log[1-x]^2/2 - x Log[x] Log[1-x] + x Log[1-x] - 5 x Li2[1] + 2 (2-x) (x^2 + x - 1)/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W5[eir]] - ( (I0 + Log[1-x] - 1) / eir + 2 I1 - I0 Log[1-x] + 2 Li2[x] + Log[1-x]^2/4 - Log[1-x] + 2 (1-3x+x^2)/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W6[eir]] - ( 1/eir - 2 Li2[x]/x - Log[1-x]^2/(2x) + Log[1-x]/x + 2/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W7[euv]] - ( - (I0 + Log[1-x]/x - 1) / euv - 2 I1 + I0 Log[1-x] - 2 (2-x) Li2[x]/x - (4-3x) Log[1-x]^2/(4x) + (2 - x) Log[1-x]/x + 2 (3-3x+x^2)/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W8[euv]] - ( - ((1-x) Log[1-x] + x) / (x euv) + 2 Li2[x]/x + Log[1-x]^2/(2x) - Log[1-x] - 2/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W9[euv]] - ( (2 (1-x) Log[1-x] - x^2 + 2x) / (x euv) - 2 (2-2x+x^2) Li2[x]/x - (2-2x+x^2) Log[1-x]^2/(2x) + x Log[1-x] + 2 (2-x) (1-x+x^2)/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W10[euv]] - (1-x)/x ( Log[1-x] / (2 euv) + Li2[x] + Log[1-x]^2/4 - Log[1-x] + (x^2-2x)/(1-x) ) ]
     ,
     0
   ];

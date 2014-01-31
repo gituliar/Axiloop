@@ -182,7 +182,7 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 	];
 	
 	exclusive = exclusiveBare - counterterm / euv
-		/. {eir -> - eps, euv -> -eps}
+		/. {eir -> eps, euv -> eps}
 		/. {p.p -> 0, Qv[p] -> 0}
         /. {q.q -> 0, Qv[q] -> 0}
         /. {Qv[r_] :> Qv (r.r)^eps}
