@@ -299,8 +299,18 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"DEBUG\"\>", "\[InvisibleSpace]", "\<\"::\"\>", 
    "\[InvisibleSpace]", "\<\"ExtractFormFactors::$$k$ir2\"\>", 
-   "\[InvisibleSpace]", "\<\" : \"\>", "\[InvisibleSpace]", "0"}],
-  SequenceForm["DEBUG", "::", "ExtractFormFactors::$$k$ir2", " : ", 0],
+   "\[InvisibleSpace]", "\<\" : \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["x", "2"]}], ")"}]}], 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}]]}]}],
+  SequenceForm[
+  "DEBUG", "::", "ExtractFormFactors::$$k$ir2", 
+   " : ", (-4) (-1 + Axiloop`Core`x)^(-1) (1 + Axiloop`Core`x^2)],
   Editable->False]], "Print",
  CellChangeTimes->{
   3.575615592335848*^9, 3.575615667733543*^9, 3.5756157429643106`*^9, 
