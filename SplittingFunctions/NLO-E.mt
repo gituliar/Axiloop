@@ -44,21 +44,18 @@ UT$BeginTestCase["NLO-E"];
   ];
 
 
-(*
-  $$factors = SplittingFunctionFormFactors[$Get[$result, "exclusive-bare"]];
-  LG$Output[ $$factors ];
-
-  $$k$0  = "W_0^k"  /. $$factors;
-  $$k$ir = "W_ir^k" /. $$factors;
-  $$k$uv = "W_uv^k" /. $$factors;
-  $$p$uv = "W_uv^p" /. $$factors;
-  $$q$uv = "W_uv^q" /. $$factors;
+  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
 
   UT$AssertEquivalent[
-    Expand[$Get[$result, "inclusive"]]
+    "W_0^k" /. $W
     ,
-    Expand[1/16 (($$k$uv + $$p$uv + $$q$uv) (Log[1-x]/2 + (1-x)^2/(1+x^2)) + $$k$0/2)]
+    I g^4 ( (1+x^2)/(1-x) (-14 - 8 I1 + 8 Li2[1] + 8 I0 Log[x] + 4 Log[x]^2) + (1-x) (6 - 8 I0 - 8 Log[x]) )
   ];
-*)
+
+  UT$AssertEquivalent[
+    "W_uv^k" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (6 - 8 I0 - 8 Log[x]) )
+  ];
 
 UT$EndTestCase[];
