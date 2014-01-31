@@ -35,7 +35,7 @@ $topology = x (G[n]/(4 k.n)) ** FP[k] ** FV[i1] ** FP[l+k] ** FV[mu] **
 
 $result = SplittingFunction[$topology, $LO];
 
-
+(*
 Test[
 	$Get[$result, "Z"]
 	,
