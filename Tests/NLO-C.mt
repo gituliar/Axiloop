@@ -27,6 +27,8 @@ ExpandLoopIntegrals = Axiloop`Integrate`Private`$$ExpandLoopIntegrals;
 
 $LO = << "LO.result";
 
+$LO = << "LO.result";
+
 $topology = x (G[n]/(4 k.n)) ** FP[k] ** FV[i1] ** FP[l+k] ** FV[mu] **
 	FP[l+p] ** FV[i2] ** GP[i1, i2, l] ** FPx[p] ** GPx[mu, nu, p-k] **
 	FV[nu] ** FP[k];

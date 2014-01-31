@@ -40,6 +40,13 @@ Cell[BoxData[{
   RowBox[{"$LO", " ", "=", " ", 
    RowBox[{"<<", "\"\<LO.result\>\""}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$LO", " ", "=", " ", 
+   RowBox[{"<<", "\"\<LO.result\>\""}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"$topology", " ", "=", " ", 
    RowBox[{"x", " ", 
     RowBox[{
