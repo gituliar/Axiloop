@@ -1018,6 +1018,44 @@ UT$BeginTestCase["PaVeExpand"];
 
   PaVeExpand = $$ExpandMPV;
 
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H1] - ( (2 I0 + Log[1-x] - 11/3) / eir - 85/9) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H2] - ( 1/(3 eir) + 11/9 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H3] - ( 1/(6 eir) + 4/9 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H4] - ( 1/(3 eir) + 13/18 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H5] - ( -1/(12 euv) - 11/36 ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[H6] - ( -1/(12 euv) - 2/9 ) ]
+    ,
+    0
+  ];
+
+
   UT$AssertEquivalent[
     Simplify[ PaVeExpand[S1] - (- (2 I0 + Log[1-x] + x Log[x]/(1-x)) / eir + 4 I1 - 2 I0 Log[1-x] + x Li2[1-x]/(1-x) - Log[1-x]^2/2) ]
     ,
