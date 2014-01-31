@@ -1,6 +1,6 @@
 (*============================================================================*)
 (*                                                                            *)
-(*  Copyright (C) 2012-2013 Oleksandr Gituliar.                               *)
+(*  Copyright (C) 2012-2014 Oleksandr Gituliar.                               *)
 (*                                                                            *)
 (*  This file is part of Axiloop.                                             *)
 (*                                                                            *)
@@ -32,15 +32,14 @@
 
 
 BeginPackage["Axiloop`", {
-	"Axiloop`Core`",
-	"Axiloop`Integrate`",
-	"Axiloop`Tracer`"
-}]
+  "Axiloop`Core`",
+  "Axiloop`Integrate`",
+  "Axiloop`Tracer`"}]
 
-Clear[ "Axiloop`*" , "Axiloop`Private`*"];
+  Clear[ "Axiloop`*" , "Axiloop`Private`*"];
 
-Axiloop`$Author = "Oleksandr Gituliar <oleksandr@gituliar.org>";
-Axiloop`$Version = "1.6a (June 2013)";
+  Axiloop`$Author = "Oleksandr Gituliar <oleksandr@gituliar.org>";
+  Axiloop`$Version = "2.1 (Jan 2014)";
 
 Clear[ "Axiloop`*" , "Axiloop`Private`*"];
 
@@ -49,27 +48,33 @@ Clear[ "Axiloop`*" , "Axiloop`Private`*"];
 (*---------------------- FEYNMAN RULES and GAMMA TRACE ----------------------*)
 (*---------------------------------------------------------------------------*)
 
-FP::usage = "FP[momentum, Line -> f1] -- a fermion propagator in the light-cone
-gauge."
+FP::usage =
+"FP[momentum, Line -> f1] -- a fermion propagator in the light-cone gauge."
 
-FPx::usage = "FPx[momentum, Line -> f1] -- a crossed (final-state, on-shell)
-fermion propagator in the light-cone gauge."
+FPx::usage =
+"FPx[momentum, Line -> f1] -- a crossed (final-state, on-shell) fermion
+propagator in the light-cone gauge."
 
-FV::usage = "FV[index, Line -> f1] -- a fermion vertex in the light-cone gauge."
+FV::usage =
+"FV[index, Line -> f1] -- a fermion vertex in the light-cone gauge."
 
-G::usage = "G[<vector or index>, Line -> f1] -- a gamma matrix.
+G::usage =
+"G[<vector or index>, Line -> f1] -- a gamma matrix.
 
 Usage:
     G[{mu}]     a gamma matrix with vector index `mu`;
     G[p]        a gamma matrix convoluted with a vector,
                 the same as `G[{mu}] p.{mu}`;"
 
-GP::usage = "GP[mu, nu, p] -- a gluon propagator in the light-cone gauge."
+GP::usage =
+"GP[mu, nu, p] -- a gluon propagator in the light-cone gauge."
 
-GPx::usage = "GPx[mu, nu, p] -- a crossed (final-state, on-shell) gluon
-propagator in the light-cone gauge."
+GPx::usage =
+"GPx[mu, nu, p] -- a crossed (final-state, on-shell) gluon propagator in
+the light-cone gauge."
 
-GV::usage = "GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
+GV::usage =
+"GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
 
 
 (*---------------------------------------------------------------------------*)
@@ -96,7 +101,7 @@ ExtractFormFactors::usage = ""
 ExtractFormFactors::usage = ""
 
 IntegrateFinal::usage =
-	"Integrate over final-state momenta."
+"Integrate over final-state momenta."
 
 SplittingFunction::usage = ""
 
