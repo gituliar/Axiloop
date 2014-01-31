@@ -1,5 +1,3 @@
-(* ::Package:: *)
-
 (*============================================================================*)
 (*                                                                            *)
 (*  Copyright (C) 2012-2014 Oleksandr Gituliar.                               *)
@@ -25,6 +23,7 @@
 BeginPackage["Axiloop`Integrate`", {
   "Axiloop`Core`",
   "Axiloop`Exception`",
+  "Axiloop`FeynmanRules`",
   "Axiloop`Tracer`"}]
 
 $$::usage = ""
@@ -34,9 +33,6 @@ eir::usage =
 
 euv::usage =
 	"UV pole in 4 - 2 eta dimensions."
-
-l::usage =
-	"Loop momentum."
 
 IntegrateLoop::usage =
 	"Integrate over loop momenta."
@@ -487,7 +483,7 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 		$$[{},{0,k, p},{0}] -> - Q (k.k)^(-1-eir) / p.n S0,
 
         (* calka S3 jest inna niz u MS ale blad jest u MS !!! (same UV part) *)
-        $$[{x_},{0,k,p},{0}] :> Q (k.k)^(-1-eir) / p.n (
+    $$[{x_},{0,k,p},{0}] :> Q (k.k)^(-1-eir) / p.n (
 			p.x S1 + k.x S2 + n.x k.k/(2 k.n) S3
 		),
 
@@ -630,7 +626,7 @@ $$ExpandMPV[expr_] := Module[
         (*S1olek -> -(2I0 + Log[1 - x] + x Log[x]/(1 - x))/eir + 4I1 - 2I0 Log[1 - x] - Log[1 - x]^2/2 + x Li2[1 - x]/(1 - x)*)
 		S2 -> Li2[1 - x]/(-1 + x) - Log[x]/(eir (-1 + x)),
 		S3 -> (I0 - I0 x + Log[x])/(euv (-1 + x)) + (-2 x Li2[1 - x] + (-1 + x) (2 I1 - 2 Li2[1] - 2 I0 Log[x] - Log[x]^2))/(2 (-1 + x)),
-        S3ms -> -( I0/euv + Log[x]/(1 - x)/euv - I1 + I0 Log[x]/(1-x) - Li2[1] - x Li2[1 - x]/(1-x) + Log[x]^2/2 ),
+    S3ms -> -( I0/euv + Log[x]/(1 - x)/euv - I1 + I0 Log[x]/(1-x) - Li2[1] - x Li2[1 - x]/(1-x) + Log[x]^2/2 ),
   		
 		S4 -> ((2 + 2 I0 (-1 + x) - x) (-1 + x) + (-1 + x)^2 Log[1 - x] - x^2 Log[x])/(eir (-1 + x)^2) + (1/(2 (-1 + x)^2))(2 x^2 Li2[1 - x] + 4 I0 (-1 + x)^2 Log[1 - x] + (-1 + x)^2 Log[1 - x]^2 - 2 (2 (-1 + x) (-2 + 2 I1 (-1 + x) + x) + x^2 Log[x])),
 		S5 -> (1 - x + x Log[x])/(eir (-1 + x)^2) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(-1 + x)^2,

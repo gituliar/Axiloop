@@ -1,42 +1,9 @@
-(*============================================================================*)
-(*                                                                            *)
-(*  Copyright (C) 2012-2014 Oleksandr Gituliar.                               *)
-(*                                                                            *)
-(*  This file is part of Axiloop.                                             *)
-(*                                                                            *)
-(*  Axiloop is free software: you can redistribute it and/or modify           *)
-(*  it under the terms of the GNU General Public License as published by      *)
-(*  the Free Software Foundation, either version 3 of the License, or         *)
-(*  (at your option) any later version.                                       *)
-(*                                                                            *)
-(*  This program is distributed in the hope that it will be useful,           *)
-(*  but WITHOUT ANY WARRANTY; without even the implied warranty of            *)
-(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             *)
-(*  GNU General Public License for more details.                              *)
-(*                                                                            *)
-(*  You should have received a copy of the GNU General Public License         *)
-(*  along with this program.  If not, see <http://www.gnu.org/licenses/>.     *)
-(*                                                                            *)
-(*============================================================================*)
-
-(*============================================================================*)
-(*                                                                            *)
-(*  Axiloop -- a package for Wolfram Mathematica that can calculate DGLAP     *)
-(*             evolution kernels up to next-to-leading order.                 *)
-(*                                                                            *)
-(*  Author:   Oleksandr Gituliar <oleksandr@gituliar.org>                     *)
-(*  Created:  04-05-2012                                                      *)
-(*  Homepage: http://gituliar.org/axiloop.html                                *)
-(*                                                                            *)
-(*============================================================================*)
-
-
 BeginPackage["Axiloop`", {
   "Axiloop`Core`",
-  "Axiloop`Integrate`",
-  "Axiloop`Tracer`"}]
+  "Axiloop`FeynmanRules`",
+  "Axiloop`GammaTrace`",
+  "Axiloop`Integrate`"}];
 
-  Clear[ "Axiloop`*" , "Axiloop`Private`*"];
 
   Axiloop`$Author = "Oleksandr Gituliar <oleksandr@gituliar.org>";
   Axiloop`$Version = "2.1 (Jan 2014)";
@@ -73,26 +40,6 @@ GPx::usage =
 "GPx[mu, nu, p] -- a crossed (final-state, on-shell) gluon propagator in
 the light-cone gauge."
 
-GV::usage =
-"GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
-
-
-(*---------------------------------------------------------------------------*)
-
-
-GammaTrace::usage =
-"GammaTrace[expr, NumberOfDimensions -> 4 + 2 eps] calculates trace
-of the gamma matrices product in arbitrary number of dimensions. Be
-sure to use non-commutative product `**` operation instead of commonly
-used commutative product `*`.
-
-Example:
-
-   	In[1] := GammaTrace[G[{mu}]**G[{mu}]]
-   	Out[1] = 4 (4 + 2 eps)
-   	
-   	In[2] := GammaTrace[G[{mu}]**G[{mu}], NumberOfDimensions -> ndim]
-   	Out[2] = 4 ndim"
 
 ExtractFormFactors::usage = ""
 
@@ -157,57 +104,6 @@ CollectExclusiveShort[expr_] := Module[{},
 		,
 		Simplify
 	]
-];
-
-
-(*---------------------------------------------------------------------------*)
-(*---------------------- FEYNMAN RULES and GAMMA TRACE ----------------------*)
-(*---------------------------------------------------------------------------*)
-
-$fermionLines = {};   (* A list of fermion lines used by user. `GammaTrace`  *)
-                      (* calculates trace over each line from that list.     *)
-                      (* By default `f1` line is used.                       *)
-
-Options[G] = {Line -> f1};
-G[x_, OptionsPattern[]] := (
-	$fermionLines = Union[$fermionLines, {OptionValue[Line]}];
-	GTrace[OptionValue[Line], x]
-);
-
-Options[FP] = {Line -> f1};
-FP[p_, OptionsPattern[]] := 1/p.p FPx[p, Line -> OptionValue[Line]];
-
-Options[FPx] = {Line -> f1};
-FPx[p_, OptionsPattern[]] := I G[p, Line -> OptionValue[Line]];
-
-Options[FV] = {Line -> f1};
-FV[mu_, OptionsPattern[]] := - I g G[{mu}, Line -> OptionValue[Line]];
-
-GP[mu_, nu_, p_] := 1/p.p GPx[mu, nu, p];
-
-GPx[mu_, nu_, p_] := - I ({mu}.{nu} - (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n)
-
-GV[i1_,p1_, i2_,p2_, i3_,p3_] :=
-	g ( {i1}.{i2} (p1.{i3}-p2.{i3})
-	  + {i2}.{i3} (p2.{i1}-p3.{i1})
-	  + {i3}.{i1} (p3.{i2}-p1.{i2})
-);
-
-Options[GammaTrace] = {NumberOfDimensions -> 4 + 2 eps};
-GammaTrace[expr_, OptionsPattern[]] := Module[
-	{$ndim = OptionValue[NumberOfDimensions], $result},
-	
-	Spur[f0];
-	$result = Block[
-		{Global`d = $ndim},
-		
-		Expand[expr
-			/. ((#->f0)& /@ $fermionLines)
-			/. NonCommutativeMultiply -> Times
-		]
-	];
-	NoSpur[f0];
-	$result
 ];
 
 
@@ -289,7 +185,7 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 			,
 			euv
 		] / $Get[$LO, "exclusive"]
-	] /. {eir -> 0, eps -> 0}];
+	] /. {eir -> 0, eps -> 0}] /. $onShellRules;
 
 	counterterm = If[
 		SameQ[$LO, Null]

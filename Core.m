@@ -20,7 +20,8 @@
 (*============================================================================*)
 
 
-BeginPackage["Axiloop`Core`"]
+BeginPackage["Axiloop`Core`", {
+  "Axiloop`FeynmanRules`"}];
 
 DEBUG::usage = "";
 INFO::usage = "";
@@ -45,9 +46,6 @@ $kinematicRules::usage = ""
 eps::usage =
 	"Dimensional regulator; n = 4 + 2 eps."
 
-g::usage =
-	"Quark-gluon coupling constant."
-
 x::usage =
 	"x = k.n/p.n"
 
@@ -59,8 +57,6 @@ p::usage =
 
 q::usage = "Final state particle momentum; q.q = 0."
 
-n::usage =
-	"Light-cone gauge vector; n.n = 0."
 
 $$debug = True;
 
