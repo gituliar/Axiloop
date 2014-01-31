@@ -99,8 +99,6 @@ PartonDensity::usage =
 
 SplittingFunction::usage = ""
 
-Counterterm::usage = ""
-
 
 Begin["`Private`"]
 
