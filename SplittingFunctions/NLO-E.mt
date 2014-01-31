@@ -33,7 +33,7 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    - I g^2 Qv (3 - 4 I0 - 4 Log[x])
+    I g^2 Qv (3 - 4 I0 - 4 Log[x])
   ];
 
 

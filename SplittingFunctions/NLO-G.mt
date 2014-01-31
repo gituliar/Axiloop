@@ -41,7 +41,7 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    - I g^2 Qv (4/3)
+    I g^2 Qv (4/3)
   ];
 
 

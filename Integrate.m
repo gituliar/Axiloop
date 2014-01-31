@@ -583,7 +583,7 @@ $$ExpandCommon[expr_] := Module[
 		E2 ->   1/euv (x + Log[1-x])/x^2 + (2 Li2[x] + (Log[1-x]^2)/2 - 2x)/x^2,
 		E3 ->   1/euv ((x-2)Log[1-x] - 2x)/x^3 + (4x + (x-2)(2 Li2[x] + (Log[1-x]^2)/2))/x^3,
 
-        K0 -> - Log[x]/euv + 2Li2[1-x] + Log[x]^2/2,
+        K0 ->   Log[x]/euv + 2Li2[1-x] + Log[x]^2/2,
 
 		P0 -> (I0 + Log[x])/euv - I1 + I0 Log[x] + (Log[x]^2)/2 + Li2[1],
 		P1 -> 1/euv + 2,
