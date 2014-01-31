@@ -48,11 +48,14 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[
     $Get[$result, "inclusive"]
     ,
-    2 (g/(4 Pi))^4 ((1+x^2)/(1-x) (4/3 Log[1-x] + 4/3 Log[k.k]) + 4/3 (1-x))
+    (g/(4 Pi))^4 ((1+x^2)/(1-x) (8/3 Log[1-x] + 8/3 Log[k.k]) + 8/3 (1-x))
   ];
 
 
   $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+(*
+  LG$Output[ Series[Simplify[$Get[$result, "exclusive-bare"] /. euv -> eps], {eps,0,0}] ];
+*)
 
   UT$AssertEquivalent[
     "W_uv^q" /. $W
