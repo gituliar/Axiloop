@@ -94,6 +94,9 @@ IntegrateFinal::usage =
 SplittingFunction::usage = ""
 
 
+PartonDensity::usage =
+	"Kernel constructor; define and integrate a kernel."
+
 Counterterm::usage = ""
 
 
