@@ -22,6 +22,7 @@
 
 BeginPackage["Axiloop`PaVeReduce`", {
   "Axiloop`Core`",
+  "Axiloop`FeynmanRules`",
   "Axiloop`Integrate`"}];
 
   PaVeReduce::usage = ""
@@ -32,44 +33,33 @@ BeginPackage["Axiloop`PaVeReduce`", {
     PaVeReduce[lhs_, rhs_, basis_, vars_] := Block[
       {$lhs, $result},
 
-      $PutOnShell[expr_] := Replace[
-        Expand[expr] /. {
-          S[x_,x_]^(eir) :> 0 /; (x == p || x == q)
-          ,
-          S[x_,x_]^(n_Integer+eir) :> 0 /; n > 0 && (x == p || x == q)
-          ,
-          S[x_,x_]^n_Integer :> 0 /; n > 1 && (x == p || x == q)
-        }
-        ,
-        {p.p -> 0, q.q -> 0, n.n -> 0, (n.n)^2 -> 0, k.p -> (k.k)/2, (k.p)^n_ :> ((k.k)/2)^n}
-        ,
-        2
-      ];
+      $PutOnShell[expr_] := Block[
+        {},
 
+        expr /. {n.n -> 0, k.p -> (k.k)/2}
+             /. {p.p -> 0, Qv[p] -> 0}
+             /. {q.q -> 0, Qv[q] -> 0}
+      ];
 
       $equations = {};
       For[i = 1, i <= Length[basis], i++,
         ff = basis[[i]];    
         $lhs = $$CollectLoopIntegrals[lhs  ff, l];
         $lhs = $$SimplifyNumeratorAndDenominator[$lhs];
+        $lhs = $$SimplifyTranslate[$lhs];
         $lhs = IntegrateLoopGeneral[$lhs, l];
-        $lhs = $PutOnShell[$lhs] /. {n.p -> 1, k.n -> x, n.q -> 1-x};
-        (*
-        $lhs = $lhs /. {eir -> 0};
-        *)
+        $lhs = $PutOnShell[ $lhs ];
 
         $rhs = Simplify[rhs ff];
         $rhs = $PutOnShell[$rhs];
-        $rhs = $rhs /. {Global`d -> 4 - 2 eps, n.p -> 1, k.n -> x, n.q -> 1-x};
+        $rhs = $rhs /. {n.p -> 1, k.n -> x, n.q -> 1-x};
     
         AppendTo[$equations, $lhs == $rhs];
       ];
 
-      $result = Simplify[Expand[First[Solve[$equations, vars]]]];
-      (*
+      $result = Simplify[Expand[First[Solve[$equations, vars]]]] /. {Rule[e1_,e2_] :> Rule[e1, CollectFormFactors[$$ExpandPaVe[$PutOnShell[e2]] /. {eir -> eps, euv -> eps}] ]};
       Print[$result];
-      *)
-      $result = $result /. {Rule[e1_,e2_] :> Rule[e1, Simplify[$PutOnShell[$$ExpandMPV[e2]] /. {eir -> eps, euv -> eps}]]};
+      $result = $result /. {Rule[e1_,e2_] :> Rule[e1, Collect[Normal[Series[$PutOnShell[$$ExpandMPV[e2]], {eps,0,0}]], 1/eps, Simplify]]};
       $result
     ];
 
