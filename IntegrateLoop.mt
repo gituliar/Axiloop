@@ -160,7 +160,7 @@ UT$BeginTestCase["$$CollectLoopIntegrals"];
   ];
 
 (*
-  Test[
+  UT$AssertEquivalent[
     Try[CollectLoopIntegrals[1 / (l.l (l+x).(l+x) (l+y).(l+y) (l+p).(l+n)), l]]
     ,
     $UnevaluatedError
@@ -168,6 +168,728 @@ UT$BeginTestCase["$$CollectLoopIntegrals"];
     {Axiloop`Integrate`$$CollectLoopIntegrals::unevaluated}
     ,
     TestID->"CollectLoopIntegrals-20130328-N4T8G4"
+  ];
+*)
+
+UT$EndTestCase[];
+
+
+UT$BeginTestCase["SimplifyAlgebraic"];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{}]]
+    ,
+    $$[{},{k,p},{}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{0}]]
+    ,
+    - $$[{},{k,p},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{-k,-p},{}]]
+    ,
+    - $$[{k},{k,p},{}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{-k,-p},{0}]]
+    ,
+    $$[{k},{k,p},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{0,-k,-p},{}]]
+    ,
+    $$[{},{0,k,p},{}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{0,-k,-p},{0}]]
+    ,
+    - $$[{},{0,k,p},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{0,-k,-p},{}]]
+    ,
+    - $$[{k},{0,k,p},{}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{0,-k,-p},{0}]]
+    ,
+    1/2 ($$[{}, {0,p}, {0}] - $$[{}, {k,p}, {0}] - k.k $$[{}, {0,k,p}, {0}])
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p},{0,-k,-p},{}]]
+    ,
+    - $$[{p},{0,k,p},{}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p},{0,-k,-p},{0}]]
+    ,
+    1/2 ($$[{}, {0,k}, {0}] - $$[{}, {k,p}, {0}] - p.p $$[{}, {0,k,p}, {0}])
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k,k},{0,-k,-p},{}]]
+    ,
+    $$[{k,k},{0,k,p},{}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k,k},{0,-k,-p},{0}]]
+    ,
+    - 1/2 (
+        $$[{k},{0,p},{0}]
+        - k.k/2 (
+            $$[{}, {0,p}, {0}]
+            - $$[{}, {k,p}, {0}]
+            - k.k $$[{}, {0,k,p}, {0}])
+        - $$[{k},{k,p},{0}]
+    )
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k,p},{0,-k,-p},{}]]
+    ,
+    $$[{k,p},{0,k,p},{}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k,p},{0,-k,-p},{0}]]
+    ,
+    - 1/2 (
+        $$[{k},{0,k},{0}]
+        - $$[{k},{k,p},{0}]
+        - p.p 1/2 (
+            $$[{}, {0,p}, {0}]
+            - $$[{}, {k,p}, {0}]
+            - k.k $$[{}, {0,k,p}, {0}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k,k},{0,-k,-p},{0}]]
+    ,
+    - 1/2 (
+        $$[{k},{0,p},{0}]
+        - k.k/2 (
+            $$[{}, {0,p}, {0}]
+            - $$[{}, {k,p}, {0}]
+            - k.k $$[{}, {0,k,p}, {0}]
+        )
+        - $$[{k},{k,p},{0}]
+    )
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{k,p},{0,k}]]
+    ,
+    ($$[{}, {k,p}, {0}] - $$[{}, {k,p}, {k}]) / k.n
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{k,p},{k,p}]]
+    ,
+    ($$[{}, {k,p}, {p}] - $$[{}, {k,p}, {k}]) / (k.n-n.p)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{k,p},{0,k,p}]]
+    ,
+    (
+          ($$[{},{k,p},{0}] - $$[{},{k,p},{p}]) / n.p
+        - ($$[{},{k,p},{p}] - $$[{},{k,p},{k}]) / (k.n - n.p)
+    ) / k.n
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{}]]
+    ,
+    $$[{},{k,p},{}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{-k}]]
+    ,
+    - $$[{},{k,p},{k}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{-p}]]
+    ,
+    - $$[{},{k,p},{p}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{},{-k,-p},{-k,-p}]]
+    ,
+    ($$[{},{k,p},{k}] - $$[{},{k,p},{p}]) / (p.n - k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{-k,-p},{-k}]]
+    ,
+    $$[{k},{k,p},{k}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k},{-k,-p},{-p}]]
+    ,
+    $$[{k},{k,p},{p}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k}, {-k,-p}, {-k,-p}]]
+    ,
+    - ($$[{k},{k,p},{k}] - $$[{k},{k,p},{p}]) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k}, {0,-k,-p}, {}]]
+    ,
+    - $$[{k}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k}, {0,-k,-p}, {-k}]]
+    ,
+    1/2 (
+        $$[{}, {0,p}, {k}] - $$[{}, {k,p}, {k}] - k.k $$[{}, {0,k,p}, {k}]
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k}, {0,-k,-p}, {-p}]]
+    ,
+    1/2 (
+        $$[{}, {0,p}, {p}] - $$[{}, {k,p}, {p}] - k.k $$[{}, {0,k,p}, {p}]
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k}, {0,-k,-p}, {-k,-p}]]
+    ,
+    - 1/2 (
+         $$[{}, {0,p}, {k}] - $$[{}, {k,p}, {k}] - k.k $$[{}, {0,k,p}, {k}]
+        - 
+        ($$[{}, {0,p}, {p}] - $$[{}, {k,p}, {p}] - k.k $$[{}, {0,k,p}, {p}])
+    ) / (p.n-k.n)
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{l}, {-k, -p}, {-k, -p}]]
+    ,
+    (
+        $$[{}, {p}, {k}] - 2 $$[{k}, {k,p}, {k}] - k.k $$[{}, {k,p}, {k}]
+        - ($$[{}, {p}, {p}] - 2 $$[{k}, {k,p}, {p}] - k.k $$[{}, {k,p}, {p}])
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {-k, -p}, {-k}]]
+    ,
+    $$[{}, {k,p}, {}] - k.n $$[{}, {k,p}, {k}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {-k, -p}, {-p}]]
+    ,
+    $$[{}, {k,p}, {}] - p.n $$[{}, {k,p}, {p}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {-k, -p}, {-k, -p}]]
+    ,
+    - ($$[{}, {k,p}, {}] - k.n $$[{}, {k,p}, {k}]
+        - ($$[{}, {k,p}, {}] - p.n $$[{}, {k,p}, {p}])
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {0, -k, -p}, {}]]
+    ,
+    - $$[{n}, {0,k,p}, {}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {0, -k, -p}, {-k}]]
+    ,
+    $$[{}, {0,k,p}, {}] - k.n $$[{}, {0,k,p}, {k}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {0, -k, -p}, {-p}]]
+    ,
+    $$[{}, {0,k,p}, {}] - p.n $$[{}, {0,k,p}, {p}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n}, {0, -k, -p}, {-k, -p}]]
+    ,
+    - ($$[{}, {0,k,p}, {}] - k.n $$[{}, {0,k,p}, {k}]
+        - ($$[{}, {0,k,p}, {}] - p.n $$[{}, {0,k,p}, {p}])
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {-k, -p}, {-k}]]
+    ,
+    $$[{p}, {k,p}, {k}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {-k, -p}, {-p}]]
+    ,
+    $$[{p}, {k,p}, {p}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {-k, -p}, {-k, -p}]]
+    ,
+    - ($$[{p}, {k,p}, {k}] - $$[{p}, {k,p}, {p}]) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {0, -k, -p}, {}]]
+    ,
+    - $$[{p}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {0, -k, -p}, {-k}]]
+    ,
+    1/2 (
+        $$[{}, {0,k}, {k}] - $$[{}, {k,p}, {k}] - p.p $$[{}, {0,k,p}, {k}]
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {0, -k, -p}, {-p}]]
+    ,
+    1/2 (
+        $$[{}, {0,k}, {p}] - $$[{}, {k,p}, {p}] - p.p $$[{}, {0,k,p}, {p}]
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p}, {0, -k, -p}, {-k, -p}]]
+    ,
+    - 1/2 (
+        $$[{}, {0,k}, {k}] - $$[{}, {k,p}, {k}] - p.p $$[{}, {0,k,p}, {k}]
+            - ($$[{}, {0,k}, {p}] - $$[{}, {k,p}, {p}] - p.p $$[{}, {0,k,p}, {p}])
+    ) / (p.n-k.n)
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, k}, {0, -k, -p}, {}]]
+    ,
+    $$[{k,k}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, k}, {0, -k, -p}, {-p}]]
+    ,
+    - 1/2 (
+        $$[{k}, {0,p}, {p}] - $$[{k}, {k,p}, {p}]
+            - k.k 1/2 ($$[{}, {0,p}, {p}] - $$[{}, {k,p}, {p}] - k.k $$[{}, {0,k,p}, {p}] )
+    )
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n}, {-k, -p}, {-k, -p}]]
+    ,
+    (- k.n $$[{k}, {k,p}, {k}] + p.n $$[{k}, {k,p}, {p}]) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n}, {0, -k, -p}, {}]]
+    ,
+    $$[{k,n}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n}, {0, -k, -p}, {-k}]]
+    ,
+    - ($$[{k}, {0,k,p}, {}]
+        - k.n 1/2 ($$[{}, {0,p}, {k}] - $$[{}, {k,p}, {k}] - k.k $$[{}, {0,k,p}, {k}])
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n}, {0, -k, -p}, {-p}]]
+    ,
+    - ($$[{k}, {0,k,p}, {}]
+        - p.n 1/2 ($$[{}, {0,p}, {p}] - $$[{}, {k,p}, {p}] - k.k $$[{}, {0,k,p}, {p}])
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n}, {0, -k, -p}, {-k, -p}]]
+    ,
+    (
+        ($$[{k}, {0,k,p}, {}]
+            - k.n 1/2 ($$[{}, {0,p}, {k}] - $$[{}, {k,p}, {k}] - k.k $$[{}, {0,k,p}, {k}])
+        )
+        -
+        ($$[{k}, {0,k,p}, {}]
+            - p.n 1/2 ($$[{}, {0,p}, {p}] - $$[{}, {k,p}, {p}] - k.k $$[{}, {0,k,p}, {p}])
+        )
+    ) / (p.n-k.n)
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, p}, {0, -k, -p}, {}]]
+    ,
+    $$[{k,p}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, p}, {0, -k, -p}, {-k}]]
+    ,
+    - 1/2 (
+        $$[{k}, {0,k}, {k}]
+        - $$[{k}, {k,p}, {k}]
+        - p.p 1/2 (
+             $$[{}, {0,p}, {k}]
+             - $$[{}, {k,p}, {k}]
+             - k.k $$[{}, {0,k,p}, {k}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, p}, {0, -k, -p}, {-p}]]
+    ,
+    - 1/2 (
+        $$[{k}, {0,k}, {p}]
+        - $$[{k}, {k,p}, {p}]
+        - p.p 1/2 (
+             $$[{}, {0,p}, {p}]
+             - $$[{}, {k,p}, {p}]
+             - k.k $$[{}, {0,k,p}, {p}]
+        )
+    )
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n}, {-k, -p}, {-k, -p}]]
+    ,
+    (
+        p.n ($$[{}, {k,p}, {}] - p.n $$[{}, {k,p}, {p}])
+        -
+        k.n ($$[{}, {k,p}, {}] - k.n $$[{}, {k,p}, {k}])
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n}, {0, -k, -p}, {}]]
+    ,
+    $$[{n,n}, {0,k,p}, {}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n}, {0, -k, -p}, {-k}]]
+    ,
+    - (
+        $$[{n}, {0,k,p}, {}]
+        -
+        k.n (
+            $$[{}, {0,k,p}, {}]
+            -
+            k.n $$[{}, {0,k,p}, {k}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n}, {0, -k, -p}, {-p}]]
+    ,
+    - (
+        $$[{n}, {0,k,p}, {}]
+        -
+        p.n (
+            $$[{}, {0,k,p}, {}]
+            -
+            p.n $$[{}, {0,k,p}, {p}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n}, {0, -k, -p}, {-k, -p}]]
+    ,
+    (
+        (
+            $$[{n}, {0,k,p}, {}]
+            -
+            k.n (
+                $$[{}, {0,k,p}, {}]
+                -
+                k.n $$[{}, {0,k,p}, {k}]
+            )
+        )
+        -
+        (
+            $$[{n}, {0,k,p}, {}]
+            -
+            p.n (
+                $$[{}, {0,k,p}, {}]
+                -
+                p.n $$[{}, {0,k,p}, {p}]
+            )
+        )
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, p}, {-k, -p}, {-k, -p}]]
+    ,
+    (
+        (
+            $$[{p}, {k,p}, {}]
+            -
+            k.n $$[{p}, {k,p}, {k}]
+        )
+        -
+        (
+            $$[{p}, {k,p}, {}]
+            -
+            p.n $$[{p}, {k,p}, {p}]
+        )
+    ) / (p.n-k.n)
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, p}, {0, -k, -p}, {}]]
+    ,
+    $$[{n,p}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, p}, {0, -k, -p}, {-k}]]
+    ,
+    - (
+        $$[{p}, {0,k,p}, {}]
+        -
+        k.n 1/2 (
+            $$[{}, {0,k}, {k}]
+            -
+            $$[{}, {k,p}, {k}]
+            -
+            p.p $$[{}, {0,k,p}, {k}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, p}, {0, -k, -p}, {-p}]]
+    ,
+    - (
+        $$[{p}, {0,k,p}, {}]
+        -
+        p.n 1/2 (
+            $$[{}, {0,k}, {p}]
+            -
+            $$[{}, {k,p}, {p}]
+            -
+            p.p $$[{}, {0,k,p}, {p}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, p}, {0, -k, -p}, {-k, -p}]]
+    ,
+    (
+        (
+            $$[{p}, {0,k,p}, {}]
+            -
+            k.n 1/2 (
+                $$[{}, {0,k}, {k}]
+                -
+                $$[{}, {k,p}, {k}]
+                -
+                p.p $$[{}, {0,k,p}, {k}]
+            )
+        )
+        -
+        (
+            $$[{p}, {0,k,p}, {}]
+            -
+            p.n 1/2 (
+                $$[{}, {0,k}, {p}]
+                -
+                $$[{}, {k,p}, {p}]
+                -
+                p.p $$[{}, {0,k,p}, {p}]
+            )
+        )
+    ) / (p.n-k.n)
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p, p}, {0, -k, -p}, {}]]
+    ,
+    $$[{p,p}, {0,k,p}, {}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{p, p}, {0, -k, -p}, {-k}]]
+    ,
+    - 1/2 (
+        $$[{p}, {0,k}, {k}]
+        -
+        $$[{p}, {k,p}, {k}]
+        -
+        p.p 1/2 (
+            $$[{}, {0,k}, {k}]
+            -
+            $$[{}, {k,p}, {k}]
+            -
+            p.p $$[{}, {0,k,p}, {k}]
+        )
+    )
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{k, n, n}, {0, -k, -p}, {-k, -p}]]
+    ,
+    - (
+        (
+            $$[{k,n}, {0,k,p}, {}]
+            -
+            k.n (
+                $$[{k}, {0,k,p}, {}]
+                -
+                k.n 1/2 (
+                    $$[{}, {0,p}, {k}]
+                    -
+                    $$[{}, {k,p}, {k}]
+                    -
+                    k.k $$[{}, {0,k,p}, {k}]
+                )
+            )
+        )
+        -
+        (
+            $$[{k,n}, {0,k,p}, {}]
+            -
+            p.n (
+                $$[{k}, {0,k,p}, {}]
+                -
+                p.n 1/2 (
+                    $$[{}, {0,p}, {p}]
+                    -
+                    $$[{}, {k,p}, {p}]
+                    -
+                    k.k $$[{}, {0,k,p}, {p}]
+                )
+            )
+        )
+    ) / (p.n-k.n)
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n, n}, {0, -k, -p}, {-k, -p}]]
+    ,
+    - (
+        (
+            $$[{n,n}, {0,k,p}, {}]
+            -
+            k.n (
+                $$[{n}, {0,k,p}, {}]
+                -
+                k.n (
+                    $$[{}, {0,k,p}, {}]
+                    -
+                    k.n $$[{}, {0,k,p}, {k}]
+                )
+            )
+        )
+        -
+        (
+            $$[{n,n}, {0,k,p}, {}]
+            -
+            p.n (
+                $$[{n}, {0,k,p}, {}]
+                -
+                p.n (
+                    $$[{}, {0,k,p}, {}]
+                    -
+                    p.n $$[{}, {0,k,p}, {p}]
+                )
+            )
+        )
+    ) / (p.n-k.n)
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyAlgebraic[$$[{n, n, p}, {0, -k, -p}, {-k, -p}]]
+    ,
+    - (
+        (
+            $$[{n,p}, {0,k,p}, {}]
+            -
+            k.n (
+                $$[{p}, {0,k,p}, {}]
+                -
+                k.n 1/2 (
+                    $$[{}, {0,k}, {k}]
+                    -
+                    $$[{}, {k,p}, {k}]
+                    -
+                    p.p $$[{}, {0,k,p}, {k}]
+                )
+            )
+        )
+        -
+        (
+            $$[{n,p}, {0,k,p}, {}]
+            -
+            p.n (
+                $$[{p}, {0,k,p}, {}]
+                -
+                p.n 1/2 (
+                    $$[{}, {0,k}, {p}]
+                    -
+                    $$[{}, {k,p}, {p}]
+                    -
+                    p.p $$[{}, {0,k,p}, {p}]
+                )
+            )
+        )
+    ) / (p.n-k.n)
   ];
 *)
 
