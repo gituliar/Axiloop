@@ -33,7 +33,7 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    (g/(4 Pi))^2 (22/3 - 8 I0 - 8 Log[1-x])
+    - I g^2 Qv (22/3 - 8 I0 - 8 Log[1-x])
   ];
 
 (*

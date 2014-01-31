@@ -43,7 +43,7 @@ UT$BeginTestCase["IntegrateLoop"];
   UT$AssertEquivalent[
     $Get[IntegrateLoop[l.k/((l+k).(l+k) (l+p).(l+p)), l], {"integrated", "short"}]
     ,
-    I 2^(-5+2 eir) Pi^(-2+eir) T1 Gamma[1+eir] (-3 k.k - p.p + q.q)/(q.q)^eir
+    Qv[q] T1 (-3 k.k - p.p + q.q) / 2
   ];
 
 UT$EndTestCase[];

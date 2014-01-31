@@ -59,6 +59,8 @@ PartonDensity::usage =
 
 SplittingFunction::usage = ""
 
+ExpandPhaseSpace::usage = ""
+Qr::usage = ""
 
 Begin["`Private`"]
 
@@ -117,19 +119,17 @@ IntegrateFinal[kernel_, ndim_] := Module[
 	{eps},
 
 	eps = Simplify[ndim/2 - 2];
-	(4 Pi)^(-2+eps)/Gamma[1-eps] (1 + eps Log[1-x])	Integrate[Expand[(k.k)^(eps) kernel], k.k]
+	Qr (1 + eps Log[1-x]) Integrate[Expand[(k.k)^(eps) kernel], k.k]
 ];
 
+ExpandPhaseSpace[expr_] := Block[{},
 
-(*---------------------------------------------------------------------------*)
-(*------------------------ LOOP MOMENTA INTEGRATION -------------------------*)
-(*---------------------------------------------------------------------------*)
-
-$onShellRules = {
-	p.p -> 0,
-	q.q -> 0
-}
-
+  expr //. {
+    Qr     -> (4 Pi)^(-2+eps)/Gamma[1-eps],
+    Qv     -> I (4 Pi)^(-2-eps) Gamma[1-eps],
+    Qv[r_] :> Qv (r.r)^eps
+  }
+];
 
 (*---------------------------------------------------------------------------*)
 (*--------------------------- SPLITTING FUNCTION ----------------------------*)
@@ -138,19 +138,7 @@ $onShellRules = {
 Options[SplittingFunction] = {IntegrateLoopPrescription -> "MPV"};
 SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 	{counterterm, exclusive, exclusiveBare, exclusiveBareShort, inclusive,
-	 integrated, trace, Z, $PutOnShell},
-	
-	$PutOnShell[expr_] := Replace[
-		Expand[expr] /. {
-			S[x_,x_]^(n_Integer-eir) :> 0 /; n > 0 && (x == p || x == q)
-			,
-			S[x_,x_]^n_Integer :> 0 /; n > 1 && (x == p || x == q)
-		}
-		,
-		{p.p -> 0, q.q -> 0}
-		,
-		2
-	];
+	 integrated, trace, Z},
 	
 	trace = Expand[
 		GammaTrace[Expand[$topology], NumberOfDimensions -> 4 + 2 eps]
@@ -168,47 +156,40 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 		,
 		Null
 		,
-		$PutOnShell[$Get[integrated, {"integrated", "short"}]]
-	] /. {k.n -> x, n.p -> 1, n.q -> 1-x};
+		$Get[integrated, {"integrated", "short"}]
+	] /. {k.n -> x, n.p -> 1, n.q -> 1-x}
+      /. {p.p -> 0, q.q -> 0};
 	
-	exclusiveBare = $PutOnShell[$Get[integrated, {"integrated", "long"}]]
-		/. {eps^2 -> 0}
-		/. {k.n -> x, n.p -> 1, n.q -> 1-x};
+	exclusiveBare = $Get[integrated, {"integrated", "long"}]
+		/. {k.n -> x, n.p -> 1, n.q -> 1-x}
+        /. {2^(2 eps) -> 4^eps}
+        /. {p.p -> 0, q.q -> 0};
 	
-	Z = Simplify[If[
-		SameQ[$LO, Null]
-		,
-		0
-		,
-		PolePart[
-			exclusiveBare
-				(* /. {(k.k)^(n_Integer-eir) :> (k.k)^n} *)
-				/. {S[_,_]^(-eir) :> 1}
-			,
-			euv
-		] / $Get[$LO, "exclusive"]
-	] /. {eir -> 0, eps -> 0}] /. $onShellRules;
+    Z = If[
+      SameQ[$LO, Null]
+      ,
+      0
+      ,
+      Simplify[ PolePart[exclusiveBare, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ]
+	];
 
 	counterterm = If[
 		SameQ[$LO, Null]
 		,
 		0
 		,
-		2^(2 eir) Pi^(eir) Gamma[1+eir] Z $Get[$LO, "exclusive"]
+		Z $Get[$LO, "exclusive"]
 	];
 	
 	exclusive = exclusiveBare - counterterm / euv
 		/. {eir -> - eps, euv -> -eps}
-		/. {p.p -> 0, q.q -> 0}
-		/. {0^eps -> 0, 0^(1+eps) -> 0}
+		/. {p.p -> 0, Qv[p] -> 0}
+        /. {q.q -> 0, Qv[q] -> 0}
+        /. {Qv[r_] :> Qv (r.r)^eps}
 	;
 
-	inclusive = Expand[
-		PolePart[
-			IntegrateFinal[Expand[exclusive], 4 + 2 eps]
-			,
-			eps
-		]
+	inclusive = ExpandPhaseSpace[
+		PolePart[ IntegrateFinal[Expand[exclusive], 4 + 2 eps], eps ]
 	];
 	
 	{
@@ -375,7 +356,7 @@ ExtractFormFactors[bare_] := Module[
     }
 ];
 
-End[]
+End[];
 
 
 EndPackage[]
