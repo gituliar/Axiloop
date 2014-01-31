@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (*============================================================================*)
 (*                                                                            *)
 (*  Copyright (C) 2012-2014 Oleksandr Gituliar.                               *)
@@ -21,10 +23,9 @@
 
 
 BeginPackage["Axiloop`Integrate`", {
-	"Axiloop`Core`",
-	"Axiloop`Exception`",
-	"Axiloop`Tracer`"}
-]
+  "Axiloop`Core`",
+  "Axiloop`Exception`",
+  "Axiloop`Tracer`"}]
 
 $$::usage = ""
 
@@ -56,9 +57,21 @@ S0;S1;S2;S3;S4;S5;S6;S7;S8;S9;S10;
 U0;U1;U2;U3;U4;U5;U6;U7;U8;U9;U10;
 W0;W1;W2;W3;W4;W5;W6;W7;W8;W9;W10;
 T0;T1;T2;T3;V0;V1;V2;U0;
+S3ms;
 
 
 PaVeReduce::usage = ""
+
+
+$$CollectLoopIntegrals::usage="CollectLoopIntegrals"
+$$ExpandLoopIntegrals::usage="ExpandLoopIntegrals"
+$$SimplifyAlgebraic::usage="SimplifyAlgebraic"
+$$SimplifyNumeratorAndDenominator::usage="SimplifyNumeratorAndDenominator"
+$$SimplifyOnePoint::usage="SimplifyOnePoint"
+$$SimplifyTranslate::usage="SimplifyTranslate"
+$$ExpandCommon::usage"ExpandCommon"
+$$ExpandMPV::usage"ExpandMPV"
+$$ExpandPV::usage"ExpandPV"
 
 
 Begin["`Private`"] 
@@ -425,7 +438,8 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 		$$[{x_, y_},{0,k,p},{}] :> Q (k.k)^(-1-eir) (
     		p.x p.y R3 + k.x k.y R4 + (k.x p.y + p.x k.y) R5 + k.k x.y R6
    		),
-   		$$[{x_,y_,z_},{0,k,p},{}] :> Q (k.k)^(-1-eir) (
+
+		$$[{x_,y_,z_},{0,k,p},{}] :> Q (k.k)^(-1-eir) (
    			  p.x p.y p.z H1
    			+ (p.x p.y k.z + p.x k.y p.z + k.x p.y p.z) H2
    			+ (p.x k.y k.z + k.x p.y k.z + k.x k.y p.z) H3
@@ -437,8 +451,8 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 		$$[{},{0, k},{0}] -> - Q (k.k)^(-eir) P0 / k.n,
 		$$[{},{0, p},{0}] -> - Q (p.p)^(-eir) B0 / n.p,
 		$$[{},{0, q},{0}] -> - Q (q.q)^(-eir) C0 / n.q,
-		$$[{},{k, p},{0}] -> - Q (q.q)^(-eir) K0 / n.p,
-		$$[{},{k,-q},{0}] ->   Q (p.p)^(-eir) D0 / n.p,
+        $$[{},{k, p},{0}] -> - Q (q.q)^(-eir) K0 / n.q,
+		$$[{},{k,-q},{0}] ->   Q (p.p)^(-eir) D0 / n.p, (* sign ??? *)
 		$$[{},{p, q},{0}] -> - Q (k.k)^(-eir) E0 / n.p,
 		
 		$$[{x_},{0,k},{0}] :> Q (k.k)^(-eir)/k.n (
@@ -450,28 +464,34 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 		$$[{x_},{0,q},{0}] :> Q (q.q)^(-eir)/q.n (
 			q.x C1 + n.x q.q/(2 q.n) C3
 		),
+        (* tego nie ma u MS: wydaje sie ze brakuje ogolnego 1/qn oraz 1/qn przy czlonie V3 -- ale to chyba i tak nie jest uzywane bo q^2=0 *)
 		$$[{x_},{k,p},{0}] :> Q (q.q)^(-eir) (
 			p.x V1 + k.x V2 + n.x q.q/2 V3
 		),
-		
+         (* tego nie ma u MS: wydaje sie ze brakuje 1/kn przy czlonie E3 (k^2\[NotEqual]0 !!!) *)
 		$$[{x_},{p,q},{0}] :> Q (k.k)^(-eir)/p.n (
 			p.x E1 + k.x E2 + n.x k.k/2 E3
 		),
+        (* tego nie ma u MS: co z wymiarem czlonu przy F3 (p^2=0) *)
 		$$[{x_},{k,-q},{0}] :> Q (p.p)^(-eir)/p.n (
 			p.x F1 + k.x F2 + n.x p.p/2 F3
 		),
-		
+
+		(* tego nie ma u MS: czy to jest wogole uzywane??  *)
 		$$[{p,p}, {0,p}, {k}] -> Q (p.p)^(-eir) X0
 		,
+        (* tego nie ma u MS: czy to jest wogole uzywane?? *)
 		$$[{p,p}, {k,p}, {k}] -> Q (q.q)^(-eir) Y0
 		,
 		
 		$$[{},{0,k, p},{0}] -> - Q (k.k)^(-1-eir) / p.n S0,
-		
-		$$[{x_},{0,k,p},{0}] :> Q (k.k)^(-1-eir) / p.n (
+
+        (* calka S3 jest inna niz u MS ale blad jest u MS !!! (same UV part) *)
+        $$[{x_},{0,k,p},{0}] :> Q (k.k)^(-1-eir) / p.n (
 			p.x S1 + k.x S2 + n.x k.k/(2 k.n) S3
 		),
-		
+
+		(* tego nie ma u MS *)
 		$$[{x_, y_},{0,k,p},{0}] :> Q (k.k)^(-1-eir)/p.n (
 			  S4 p.x p.y
 			+ S5 (p.x k.y + k.x p.y)
@@ -482,13 +502,15 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 			+ S10 x.y k.k
 		),
 		
-		
+		(* tego nie ma u MS: jest to samo po podstawieniu: l \[Rule] l+k; ie jestem tylko pewny zanku  *)
 		$$[{},{0,k,p},{k}] -> - Q (k.k)^(-1-eir)/q.n U0,
-		
+
+		(* tego nie ma u MS *)
 		$$[{x_},{0,k,p},{k}] :> Q (k.k)^(-1-eir)/q.n (
 			p.x U1 + k.x U2 + n.x k.k/(2 k.n) U3
 		),
-				
+
+		(* tego nie ma u MS *)	
 		$$[{x_, y_},{0,k,p},{k}] :> Q (k.k)^(-1-eir)/q.n (
 			  U4 p.x p.y
 			+ U5 (p.x k.y + k.x p.y)
@@ -499,14 +521,15 @@ IntegrateLoopGeneral[expr_, l_] := Module[
 			+ U10 x.y k.k
 		),
 		
-		
+		(* tego nie ma u MS *)
 		$$[{},{0,k,p},{p}] -> Q (k.k)^(-1-eir) k.n/q.n W0,
 		
-				
+		(* tego nie ma u MS *)
 		$$[{x_},{0,k,p},{p}] :> Q (k.k)^(-1-eir)/q.n (
 			p.x W1 + k.x W2 + n.x k.k/(2 k.n) W3
 		),
-		
+
+		(* tego nie ma u MS *)
 		$$[{x_, y_},{0,k,p},{p}] :> Q (k.k)^(-1-eir)/q.n (
 			  W4 p.x p.y
 			+ W5 (p.x k.y + k.x p.y)
@@ -564,7 +587,7 @@ $$ExpandCommon[expr_] := Module[
 		E2 ->   1/euv (x + Log[1-x])/x^2 + (2 Li2[x] + (Log[1-x]^2)/2 - 2x)/x^2,
 		E3 ->   1/euv ((x-2)Log[1-x] - 2x)/x^3 + (4x + (x-2)(2 Li2[x] + (Log[1-x]^2)/2))/x^3,
 
-		K0 -> - Log[x]/((1-x) euv),
+        K0 -> - Log[x]/euv + 2Li2[1-x] + Log[x]^2/2,
 
 		P0 -> (I0 + Log[x])/euv - I1 + I0 Log[x] + (Log[x]^2)/2 + Li2[1],
 		P1 -> 1/euv + 2,
@@ -604,8 +627,10 @@ $$ExpandMPV[expr_] := Module[
 		S0 -> - ((3 I0 + Log[1-x] - Log[x]) / eir - 5 I1 + 2 I0 Log[1-x] + I0 Log[x] + (Log[x]^2)/2 + (Log[1-x]^2)/2 + 2 Li2[1-x] + Li2[1]),
 		
 		S1 -> (-2 x Li2[1 - x] + (-1 + x) (8 I1 - 4 I0 Log[1 - x] - Log[1 - x]^2))/(2 (-1 + x)) + (-2 I0 (-1 + x) - (-1 + x) Log[1 - x] + x Log[x])/(eir (-1 + x)),
+        (*S1olek -> -(2I0 + Log[1 - x] + x Log[x]/(1 - x))/eir + 4I1 - 2I0 Log[1 - x] - Log[1 - x]^2/2 + x Li2[1 - x]/(1 - x)*)
 		S2 -> Li2[1 - x]/(-1 + x) - Log[x]/(eir (-1 + x)),
 		S3 -> (I0 - I0 x + Log[x])/(euv (-1 + x)) + (-2 x Li2[1 - x] + (-1 + x) (2 I1 - 2 Li2[1] - 2 I0 Log[x] - Log[x]^2))/(2 (-1 + x)),
+        S3ms -> -( I0/euv + Log[x]/(1 - x)/euv - I1 + I0 Log[x]/(1-x) - Li2[1] - x Li2[1 - x]/(1-x) + Log[x]^2/2 ),
   		
 		S4 -> ((2 + 2 I0 (-1 + x) - x) (-1 + x) + (-1 + x)^2 Log[1 - x] - x^2 Log[x])/(eir (-1 + x)^2) + (1/(2 (-1 + x)^2))(2 x^2 Li2[1 - x] + 4 I0 (-1 + x)^2 Log[1 - x] + (-1 + x)^2 Log[1 - x]^2 - 2 (2 (-1 + x) (-2 + 2 I1 (-1 + x) + x) + x^2 Log[x])),
 		S5 -> (1 - x + x Log[x])/(eir (-1 + x)^2) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(-1 + x)^2,
