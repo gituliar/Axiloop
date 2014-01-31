@@ -94,6 +94,9 @@ IntegrateFinal::usage =
 SplittingFunction::usage = ""
 
 
+Counterterm::usage = ""
+
+
 Begin["`Private`"]
 
 
