@@ -19,12 +19,11 @@
 (*                                                                            *)
 (*============================================================================*)
 
-Needs["Axiloop`Integrate`"]
-
+Get["Axiloop`"]
 Get["Tests/core.mt"]
 
 
-CollectLoopIntegrals = Axiloop`Integrate`Private`$$CollectLoopIntegrals;
+CollectLoopIntegrals = Axiloop`Integrate`$$CollectLoopIntegrals;
 
 Test[
 	CollectLoopIntegrals[l.k l.p / l.n + X, l]
@@ -177,7 +176,7 @@ Test[
 	,
 	$UnevaluatedError
 	,
-	{Axiloop`Integrate`Private`$$CollectLoopIntegrals::unevaluated}
+	{Axiloop`Integrate`$$CollectLoopIntegrals::unevaluated}
 	,
 	TestID->"CollectLoopIntegrals-20130328-N4T8G4"
 ];
