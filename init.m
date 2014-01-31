@@ -58,6 +58,9 @@ PartonDensity::usage =
 	"Kernel constructor; define and integrate a kernel."
 
 SplittingFunction::usage = ""
+SplittingFunctionFormFactors::usage = ""
+
+$Cases::usage = ""
 
 ExpandPhaseSpace::usage = ""
 Qr::usage = ""
@@ -74,12 +77,6 @@ AX$Get[filename_] := Get[filename, Path -> DirectoryName[$InputFileName]];
 Unprotect[Dot];
     (-x_).y_ := -x.y;
 Protect[Dot];
-
-(*
-Unprotect[S];
-    S[n,n] = 0;
-Protect[S];
-*)
 
 CollectExclusiveShort[expr_] := Module[{},
 	Collect[
@@ -123,10 +120,9 @@ IntegrateFinal[kernel_, ndim_] := Module[
 ];
 
 ExpandPhaseSpace[expr_] := Block[{},
-
   expr //. {
-    Qr     -> (4 Pi)^(-2+eps)/Gamma[1-eps],
-    Qv     -> I (4 Pi)^(-2-eps) Gamma[1-eps],
+    Qr ->   (4 Pi)^(-2+eps)/Gamma[1-eps],
+    Qv -> I (4 Pi)^(-2-eps) Gamma[1-eps],
     Qv[r_] :> Qv (r.r)^eps
   }
 ];
@@ -204,159 +200,23 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 	}
 ];
 
+$Cases[expr_, pattern_] := Plus @@ Cases[expr, e_ pattern -> e, 1];
 
-ExtractFormFactors[bare_] := Module[
-	{$$k$uv, $$p$uv, $$q$uv, $$k$ir, $$k$ir2, $$k$0, $$bare},
-	
-	$$bare = Expand[
-		bare / (I g^4 (4 Pi)^(-2+eir) Gamma[1+eir] / k.k)
-	];
-	
-	$$k$ir2 = PolePart[
-		$$bare
-			/. {eps -> -eir}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		eir
-		,
-		-2
-	] /. {p.p -> 0, q.q -> 0};
-	DEBUG[
-		"ExtractFormFactors::$$k$ir2"
-		,
-		Simplify[$$k$ir2]
-	];
-	
-	$$k$ir = PolePart[
-		$$bare
-			/. {(k.k)^(-eir) -> 1, (k.k)^(n_Integer-eir) :> (k.k)^n}
-			/. {(p.p)^(-eir) -> 0, (p.p)^(n_Integer-eir) :> (p.p)^n}
-			/. {(q.q)^(-eir) -> 0, (q.q)^(n_Integer-eir) :> (q.q)^n}
-			/. {q.q -> 0, p.p -> 0}
-			/. {eps -> -eir}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		eir
-	];
-	DEBUG[
-		"ExtractFormFactors::$$k$ir"
-		,
-		$$k$ir
-	];
-	
-	$$k$uv = PolePart[
-		$$bare
-			/. {(k.k)^(-eir) -> 1, (k.k)^(n_Integer-eir) :> (k.k)^n}
-			/. {(p.p)^(-eir) -> 0, (p.p)^(n_Integer-eir) :> (p.p)^n}
-			/. {(q.q)^(-eir) -> 0, (q.q)^(n_Integer-eir) :> (q.q)^n}
-			/. {q.q -> 0, p.p -> 0}
-			/. {eps -> -euv}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		euv
-	];
-	DEBUG[
-		"SplittingFunction::$$k$uv"
-		,
-		$$k$uv
-	];
+SplittingFunctionFormFactors[ebsf_] := Block[
+  {$CancelFormFactors, $ebsf, $result = {}},
 
-	$$p$uv = PolePart[
-		$$bare
-			/. {(k.k)^(-eir) -> 0, (k.k)^(n_Integer-eir) :> (k.k)^n}
-			/. {(p.p)^(-eir) -> 1, (p.p)^(n_Integer-eir) :> (p.p)^n}
-			/. {(q.q)^(-eir) -> 0, (q.q)^(n_Integer-eir) :> (q.q)^n}
-			/. {q.q -> 0, p.p -> 0}
-			/. {eps -> -euv}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		euv
-	];
-	DEBUG[
-		"SplittingFunction::$$p$uv"
-		,
-		$$p$uv
-	];
+  $ebsf = Expand[k.k ebsf];
 
+  AppendTo[ $result, "W_0^k"  -> Simplify[ PolePart[$Cases[$ebsf, Qv[k]] /. {eir -> eps, euv -> eps}, eps, 0]]];
+  AppendTo[ $result, "W_ir^k" -> Simplify[ PolePart[$Cases[$ebsf, Qv[k]], eir, -1] /. {eps -> 0}]];
+  AppendTo[ $result, "W_uv^k" -> Simplify[ PolePart[$Cases[$ebsf, Qv[k]], euv, -1] /. {eps -> 0, eir -> 0}]];
+  AppendTo[ $result, "W_uv^p" -> Simplify[ PolePart[$Cases[$ebsf, Qv[p]], euv, -1] /. {eps -> 0, eir -> 0}]];
+  AppendTo[ $result, "W_uv^q" -> Simplify[ PolePart[$Cases[$ebsf, Qv[q]], euv, -1] /. {eps -> 0, eir -> 0}]];
 
-	$$q$uv = PolePart[
-		$$bare
-			/. {(k.k)^(-eir) -> 0, (k.k)^(n_Integer-eir) :> (k.k)^n}
-			/. {(p.p)^(-eir) -> 0, (p.p)^(n_Integer-eir) :> (p.p)^n}
-			/. {(q.q)^(-eir) -> 1, (q.q)^(n_Integer-eir) :> (q.q)^n}
-			/. {q.q -> 0, p.p -> 0}
-			/. {eps -> -euv}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		euv
-	];
-	DEBUG[
-		"SplittingFunction::$$q$uv"
-		,
-		$$q$uv
-	];
-	
-	$$k$0 = PolePart[
-		$$bare
-			/. {(k.k)^(-eir) -> 1, (k.k)^(n_Integer-eir) :> (k.k)^n}
-			/. {(p.p)^(-eir) -> 0, (p.p)^(n_Integer-eir) :> (p.p)^n}
-			/. {(q.q)^(-eir) -> 0, (q.q)^(n_Integer-eir) :> (q.q)^n}
-			/. {q.q -> 0, p.p -> 0}
-			/. {eir -> -eps, euv -> -eps}
-			/. {k.n -> x, p.n -> 1, q.n -> 1-x}
-		,
-		eps
-		,
-		0
-	];
-	DEBUG[
-		"SplittingFunction::$$k$0"
-		,
-		Collect[
-			$$k$0
-			,
-			{I0, Log[x], Log[1-x], I1, Li2[1], Li2[1-x]}
-			,
-			Simplify
-		]
-	];
-	
-	
-	DEBUG[
-		"SplittingFunction:: $$k$uv + $$p$uv + $$q$uv"
-		,
-		Collect[
-			Expand[($$k$uv + $$p$uv + $$q$uv)]
-			,
-			{I0, Log[x], Log[1-x]}
-			,
-			Simplify
-		]
-	];
-	
-	DEBUG[
-		"SplittingFunction:: $$p$uv + $$q$uv - $$k$ir"
-		,
-		Collect[
-			Expand[$$p$uv + $$q$uv - $$k$ir]
-			,
-			{I0, Log[x], Log[1-x]}
-			,
-			Simplify
-		]
-	];
-
-    {
-        {"$$k$0", $$k$0},
-        {"$$k$ir", $$k$ir},
-        {"$$k$ir2", $$k$ir2},
-        {"$$k$uv", $$k$uv},
-        {"$$p$uv", $$p$uv},
-        {"$$q$uv", $$q$uv}
-    }
+  $result
 ];
+
 
 End[];
 
-
-EndPackage[]
+EndPackage[];
