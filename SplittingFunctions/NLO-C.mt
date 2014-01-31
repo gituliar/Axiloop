@@ -36,16 +36,25 @@ UT$BeginTestCase["NLO-C"];
     I g^2 Qv (-3 + 4 I0 + 2 Log[x])
   ];
 
+  $pqq = (1+x^2)/(1-x);
+
   UT$AssertEquivalent[
-    $Get[$result, "inclusive"]
+    4 $Get[$result, "inclusive"]
     ,
-    (g/(4 Pi))^4 ((1+x^2)/(1-x) (-7 + 2 Log[x]^2 + 2 Log[x] Log[1-x] - 3 Log[1-x] + 2 Li2[1-x] + 4 Li2[1] - 4 I1 + 4 I0 Log[x] + 4 I0 Log[1-x]) - (1-x) (3 - 2 Log[x] - 4 I0) + x)
+    aspi^2 ( $pqq (-7 + 2 Log[x]^2 + 2 Log[x] Log[1-x] - 3 Log[1-x] + 2 Li2[1-x] + 4 Li2[1] - 4 I1 + 4 I0 Log[x] + 4 I0 Log[1-x]) - (1-x) (3 - 2 Log[x] - 4 I0) + x)
+  ];
+
+  $virt = -4 $Get[$result, "inclusive"];
+
+  UT$AssertEquivalent[
+    $virt
+    ,
+    aspi^2 ($pqq (7 - 2 Log[x]^2 - 2 Li2[1-x] - 4 Li2[1] - 4 I0 Log[x] + 4 I1) + $pqq (3 - 2 Log[x] - 4 I0) Log[1-x] + (1-x) (7/2 - 2 Log[x] - 4 I0) - (1+x)/2)
   ];
 
 
-  $real = g^4 / Pi^4 ((1+x^2)/(1-x) ((Log[x])^2 + 2 Li2[1-x]) + 7 (1-x) + 2(1+x)Log[x] + 1 + 3/(1-x)Log[x]);
-  $virt = Expand[Simplify[-256 $Get[$result, "inclusive"]]];
-  $full = g^4 / Pi^4 ((1+x^2)/(1-x) (7 - 4 Li2[1] - (Log[x])^2 - 2 Log[x] Log[1-x] + 3/2 Log[x] + 3 Log[1-x] + 4 I1 - 4 I0 (Log[x] + Log[1-x])) + 7/2 (1+x) Log[x] + (1-x) (11 - 2 Log[x] - 4 I0));
+  $real = aspi^2 ($pqq ((Log[x])^2 + 2 Li2[1-x]) + 7 (1-x) + 2(1+x)Log[x] + 1 + 3/(1-x)Log[x]);
+  $full = aspi^2 ($pqq (7 - 4 Li2[1] - (Log[x])^2 - 2 Log[x] Log[1-x] + 3/2 Log[x] + 3 Log[1-x] + 4 I1 - 4 I0 (Log[x] + Log[1-x])) + 7/2 (1+x) Log[x] + (1-x) (11 - 2 Log[x] - 4 I0));
 
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
@@ -55,31 +64,31 @@ UT$BeginTestCase["NLO-C"];
   UT$AssertEquivalent[
     "W_0^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (14 + 8 I1 - 8 Li2[1] - 4 Li2[1-x] - 8 I0 Log[x] - 4 Log[x]^2) - (1+x) + (1-x) (-5 + 8 I0 + 4 Log[x]) )
+    I g^4 ( $pqq (14 + 8 I1 - 8 Li2[1] - 4 Li2[1-x] - 8 I0 Log[x] - 4 Log[x]^2) - (1+x) + (1-x) (-5 + 8 I0 + 4 Log[x]) )
   ];
 
   UT$AssertEquivalent[
     "W_ir^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (- 3/2 + 2 I0 - 2 Log[x]) - 2 (1-x) - 5/2 (1+x) )
+    I g^4 ( $pqq (- 3/2 + 2 I0 - 2 Log[x]) - 2 (1-x) - 5/2 (1+x) )
   ];
 
   UT$AssertEquivalent[
     "W_uv^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (- 9/2 + 6 I0 + 6 Log[x]) + 2 (1-x) + 5/2 (1+x) )
+    I g^4 ( $pqq (- 9/2 + 6 I0 + 6 Log[x]) + 2 (1-x) + 5/2 (1+x) )
   ];
 
   UT$AssertEquivalent[
     "W_uv^q" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (- 2 Log[x]) - 2 (1-x) - (1+x) )
+    I g^4 ( $pqq (- 2 Log[x]) - 2 (1-x) - (1+x) )
   ];
 
   UT$AssertEquivalent[
     "W_uv^p" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (-3/2 + 2 I0) - 3/2 (1+x) )
+    I g^4 ( $pqq (-3/2 + 2 I0) - 3/2 (1+x) )
   ];
 
 UT$EndTestCase[];
