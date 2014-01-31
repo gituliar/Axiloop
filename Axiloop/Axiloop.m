@@ -286,6 +286,13 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
 		]
 	];
 	
+	(*
+	eLO = GetValue[GetValue[kernel, "exclusive"], "expanded"];
+
+	var01 = IntegrateFinal[GetValue[exclusive, "expanded"] - eLO Z / eta] //. eta -> eps;
+	var02 = ExtractPole[var01, eps];
+	inclusive = Collect[Expand[var02], {(Log[x])^2, Log[x] Log[1-x], x Log[x], I0 Log[x], I0 Log[1-x], Log[x], Log[1-x], I0, I1, Li2[1]}, Simplify];
+ 	*)
 	{
 		{"trace", trace},
 		{"integrated", integrated},
