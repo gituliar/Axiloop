@@ -21,6 +21,10 @@ BeginPackage["Axiloop`FeynmanRules`", {
   GV::usage =
   "GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
 
+  as::usage = "g^2 / (4 Pi)";
+
+  aspi::usage = "Alpha_s / (2 Pi)";
+
   g::usage =
   "Quark-gluon coupling constant."
 
@@ -28,6 +32,9 @@ BeginPackage["Axiloop`FeynmanRules`", {
   "Light-cone gauge vector; n.n = 0."
 
   Begin["`Private`"]
+
+    as = g^2 / (4 Pi);
+    aspi = as / (2 Pi);
 
     Options[FP] = {Line -> f1};
     FP[p_, OptionsPattern[]] := 1/p.p FPx[p, Line -> OptionValue[Line]];
