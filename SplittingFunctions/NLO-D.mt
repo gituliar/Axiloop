@@ -43,4 +43,37 @@ UT$BeginTestCase["NLO-D"];
 
   UT$AssertEquivalent[$full - $real - (- 256 $virt), 0];
 
+
+  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+
+  UT$AssertEquivalent[
+    "W_0^k" /. $W
+    ,
+    g^4 ( (1+x^2)/(1-x) (14 + 24 I1 - 16 Li2[1] + 4 Li2[1-x] - 8 I0 Log[x] - 8 I0 Log[1-x] - 4 Log[x]^2) + (1+x) + (1-x) (-7 + 16 I0 + 4 Log[x] + 8 Log[1-x]) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_ir^k" /. $W
+    ,
+    g^4 ( (1+x^2)/(1-x) (-3/2 + 10 I0 - 2 Log[x] + 8 Log[1-x]) - 7/2 (1+x) - (1-x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^k" /. $W
+    ,
+    g^4 ( (1+x^2)/(1-x) (-9/2 + 6 I0 + 6 Log[x]) + 7/2 (1+x) + (1-x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^p" /. $W
+    ,
+    g^4 ( (1+x^2)/(1-x) (-3/2 + 4 I0 - 2 Log[x] + 2 Log[1-x]) - 3/2 (1+x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^q" /. $W
+    ,
+    g^4 ( (1+x^2)/(1-x) (6 I0 + 6 Log[1-x]) - 2 (1+x) - (1-x) )
+  ];
+
 UT$EndTestCase[];
