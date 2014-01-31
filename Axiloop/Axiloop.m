@@ -91,6 +91,8 @@ Example:
 
 ExtractFormFactors::usage = ""
 
+ExtractFormFactors::usage = ""
+
 IntegrateFinal::usage =
 	"Integrate over final-state momenta."
 

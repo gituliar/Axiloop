@@ -86,7 +86,8 @@ IPpB7x2mJ0C6vSaGGUSfZVkoA6Ibo4+BaQDDsu0c
   "],
  EmphasizeSyntaxErrors->True],
 
-Cell[CellGroupData[{
+  "],
+ EmphasizeSyntaxErrors->True],
 
 Cell[BoxData[
  InterpretationBox[
