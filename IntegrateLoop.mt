@@ -894,3 +894,120 @@ UT$BeginTestCase["SimplifyAlgebraic"];
 *)
 
 UT$EndTestCase[];
+
+
+UT$BeginTestCase["$$SimplifyTranslate"];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{p},{k}]]
+    ,
+    $$[{},{q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{p},{p}]]
+    ,
+    $$[{},{0},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{0,k},{k}]]
+    ,
+    - $$[{},{0,k},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{0,k},{p}]]
+    ,
+    - $$[{},{p,q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{0,p},{k}]]
+    ,
+    - $$[{},{k,-q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{},{0,p},{p}]]
+    ,
+    - $$[{},{0,p},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{}, {k, p}, {k}]]
+    ,
+    $$[{},{0,q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{}, {k, p}, {p}]]
+    ,
+    - $$[{},{0,q},{0}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{}, {0, k, p}, {k}]]
+    ,
+    - $$[{},{0,k,-q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{}, {0, k, p}, {p}]]
+    ,
+    - $$[{},{0,p,q},{0}]
+  ];
+*)
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{k}, {0, k}, {k}]]
+    ,
+    $$[{k},{0,k},{0}] + k.k $$[{},{0,k},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{k}, {0, k}, {p}]]
+    ,
+    $$[{k},{p,q},{0}] + k.p $$[{},{p,q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{k}, {0, p}, {p}]]
+    ,
+    $$[{k},{0,p},{0}] + k.p $$[{},{0,p},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{k}, {k, p}, {k}]]
+    ,
+    $$[{k},{0,q},{0}] - k.k $$[{},{0,q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{k}, {k, p}, {p}]]
+    ,
+    $$[{k},{0,q},{0}] + k.p $$[{},{0,q},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{p}, {0, k}, {k}]]
+    ,
+    $$[{p},{0,k},{0}] + k.p $$[{},{0,k},{0}]
+  ];
+
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{p}, {k, p}, {k}]]
+    ,
+    $$[{p},{0,q},{0}] - k.p $$[{},{0,q},{0}]
+  ];
+
+(*
+  UT$AssertEquivalent[
+    $$SimplifyTranslate[$$[{p}, {k, p}, {p}]]
+    ,
+    $$[{p},{0,q},{0}] + p.p $$[{},{0,q},{0}]
+  ];
+*)
+
+UT$EndTestCase[];
