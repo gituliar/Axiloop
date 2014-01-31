@@ -36,7 +36,6 @@ UT$BeginTestCase["NLO-C"];
     I g^2 Qv (-3 + 4 I0 + 2 Log[x])
   ];
 
-
   UT$AssertEquivalent[
     $Get[$result, "inclusive"]
     ,
@@ -51,27 +50,36 @@ UT$BeginTestCase["NLO-C"];
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
-(*
-  $$factors = ExtractFormFactors[$Get[$result, "exclusive-bare"]];
-
-  $$k$0  = $Get[$$factors, "$$k$0"];
-  $$k$ir = $Get[$$factors, "$$k$ir"];
-  $$k$uv = $Get[$$factors, "$$k$uv"];
-  $$p$uv = $Get[$$factors, "$$p$uv"];
-  $$q$uv = $Get[$$factors, "$$q$uv"];
-
-
-  UT$AssertEquivalent[ $$k$0,  4 I ((4 + 5 x + 5 x^2)/(2(1-x)) + (Log[x] + 2 I0) (1-x) + (2 I1 - 2 I0 Log[x] - Log[x]^2 - Li2[1-x] - 2 Li2[1]) (1+x^2)/(1-x)) ];
-  UT$AssertEquivalent[ $$k$ir, 4 I ((1-x)^3 + (1+x^3) Log[x])/(1-x)^2 ];
-  UT$AssertEquivalent[ $$k$uv, 4 I ((1-x) (1/2 + 2 x + x^2/2 - 2 I0 (1 + x^2)) - (2 - x + x^2) Log[x])/(1-x)^2 ];
-  UT$AssertEquivalent[ $$p$uv, 0 ];
-  UT$AssertEquivalent[ $$q$uv, 4 I ((1-x)^3 + (1 + x^3) Log[x])/(1-x)^2 ];
+  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
 
   UT$AssertEquivalent[
-    Expand[$Get[$result, "inclusive"]]
+    "W_0^k" /. $W
     ,
-    Expand[I (g/(4 Pi))^4 (($$k$uv + $$p$uv + $$q$uv) (Log[1-x]/2 + (1-x)^2/(1+x^2)) + $$k$0/2)]
+    I g^4 ( (1+x^2)/(1-x) (14 + 8 I1 - 8 Li2[1] - 4 Li2[1-x] - 8 I0 Log[x] - 4 Log[x]^2) - (1+x) + (1-x) (-5 + 8 I0 + 4 Log[x]) )
   ];
-*)
+
+  UT$AssertEquivalent[
+    "W_ir^k" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (- 3/2 + 2 I0 - 2 Log[x]) - 2 (1-x) - 5/2 (1+x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^k" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (- 9/2 + 6 I0 + 6 Log[x]) + 2 (1-x) + 5/2 (1+x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^q" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (- 2 Log[x]) - 2 (1-x) - (1+x) )
+  ];
+
+  UT$AssertEquivalent[
+    "W_uv^p" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (-3/2 + 2 I0) - 3/2 (1+x) )
+  ];
 
 UT$EndTestCase[];
