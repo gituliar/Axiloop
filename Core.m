@@ -52,6 +52,8 @@ x::usage =
 k::usage =
 	"Outgoing particle momentum; k.n = x."
 
+l::usage = "";
+
 p::usage =
 	"Incoming particle momentum; p.n = 1."
 
