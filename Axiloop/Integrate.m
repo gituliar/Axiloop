@@ -669,7 +669,6 @@ IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
 	{collected, integrated, integratedPV, simplified},
 	
 	collected = $$CollectLoopIntegrals[expr, l];
-	If[ErrorQ[collected], Return[collected]];
 	
 	simplified = collected;
 	simplified = $$SimplifyAlgebraic[simplified];
@@ -680,7 +679,6 @@ IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
 		IntegrateLoopGeneral[simplified, l]
 			/. $kinematicRules
 	];
-	If[ErrorQ[integrated], Return[integrated]];
 
 	integratedPV =  If[
 		OptionValue[Prescription] == "MPV"

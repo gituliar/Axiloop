@@ -36,7 +36,6 @@ PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
 
 $UnevaluatedError;
-ErrorQ;
 
 PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
@@ -131,8 +130,6 @@ $Get[hash_, keys_, default_:Null] := Module[
 		$Get[value, Rest[keys]]
 	]
 ];
-
-ErrorQ[symbol_] := StringMatchQ[ToString[symbol], "$*Error"];
 
 PolePart[kernel_, eta_] := Expand[
 	Coefficient[Series[kernel, {eta, 0, 1}], eta, -1]
