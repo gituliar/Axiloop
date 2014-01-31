@@ -1141,4 +1141,65 @@ UT$BeginTestCase["PaVeExpand"];
     0
   ];
 
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W1] - ( ((-2+4x) I0 - 2 x Log[x] - (1-3x) Log[1-x]) / eir + (4-7x) I1 - 3 x I0 Log[x] + (-2+3x) I0 Log[1-x] + 2 x Li2[1-x] + x Log[x]^2 - (2+x) Log[1-x]^2/4 + x Log[x] Log[1-x] + 5 x Li2[1] ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W2] - ( (I0 + Log[1-x]) / eir - 2 I1 + I0 Log[1-x] + Log[1-x]^2/4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W3] - ( - (x I0 + Log[1-x]) / euv + 2 x I1 - x I0 Log[1-x] - x Log[1-x]^2/4) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W4] - ( ((4-5x) I0 + 2 x Log[x] + (2-3x) Log[1-x] + x - 2) / eir - (8-9x) I1 + 3 x I0 Log[x] + 4 (1-x) I0 Log[1-x] - 2 x Li2[x] - 2 x Li2[1-x] - x Log[x]^2 + (2-x) Log[1-x]^2/2 - x Log[x] Log[1-x] + x Log[1-x] - 5 x Li2[1] + 2 (2-x) (x^2 + x - 1)/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W5] - ( - (I0 + Log[1-x] - 1) / eir + 2 I1 - I0 Log[1-x] + 2 Li2[x] + Log[1-x]^2/4 - Log[1-x] + 2 (1-3x+x^2)/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W6] - ( - 1 / eir - 2 Li2[x]/x - Log[1-x]^2/(2x) + Log[1-x]/x + 2/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W7] - ( (I0 + Log[1-x]/x - 1) / euv - 2 I1 + I0 Log[1-x] - 2 (2-x) Li2[x]/x - (4-3x) Log[1-x]^2/(4x) + (2 - x) Log[1-x]/x + 2 (3-3x+x^2)/(1-x) ) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W8] - ( ((1-x) Log[1-x] + x) / (x euv) + 2 Li2[x]/x + Log[1-x]^2/(2x) - Log[1-x] - 2/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W9] - ( - (2 (1-x) Log[1-x] - x^2 + 2x) / (x euv) - 2 (2-2x+x^2) Li2[x]/x - (2-2x+x^2) Log[1-x]^2/(2x) + x Log[1-x] + 2 (2-x) (1-x+x^2)/(1-x)) ]
+    ,
+    0
+  ];
+
+  UT$AssertEquivalent[
+    Simplify[ PaVeExpand[W10] - (1-x)/x ( - Log[1-x] / (2 euv) + Li2[x] + Log[1-x]^2/4 - Log[1-x] + (x^2-2x)/(1-x) ) ]
+    ,
+    0
+  ];
+
 UT$EndTestCase[];
