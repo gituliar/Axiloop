@@ -215,6 +215,9 @@ $$SimplifyAlgebraic[expr_] := Module[
 	result = result
 			/. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]];
 	
+	result = expr /. signRules //. simplifyRules;
+	result = result
+			/. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]];
 	DEBUG[
 		"$$SimplifyAlgebraic"
 		,
