@@ -21,13 +21,14 @@
 (*                                                                            *)
 (*============================================================================*)
 
-
 << UnitTest`
+
+<< Axiloop`
 
 
 UT$BeginTestCase["NLO-E"];
 
-  Get["NLO-E.ms"];
+  AX$Get["NLO-E.ms"];
 
   UT$AssertEquivalent[
     $Get[$result, "Z"]

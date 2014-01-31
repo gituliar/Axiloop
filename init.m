@@ -10,6 +10,7 @@ BeginPackage["Axiloop`", {
 
 Clear[ "Axiloop`*" , "Axiloop`Private`*"];
 
+AX$Get::usage = ""
 
 (*---------------------------------------------------------------------------*)
 (*---------------------- FEYNMAN RULES and GAMMA TRACE ----------------------*)
@@ -64,6 +65,7 @@ Begin["`Private`"]
 
 (*------------------- MISCELLANEOUS ROUTINES and HELPERS --------------------*)
 
+AX$Get[filename_] := Get[filename, Path -> DirectoryName[$InputFileName]];
 
 (* Useful modifications to standard functions *)
 

@@ -24,7 +24,7 @@
 << Axiloop`
 
 
-$LO = Get["LO.result", Path -> DirectoryName[$InputFileName]];
+$LO = AX$Get["LO.result"];
 
 $propagator = Expand[
   GP[i1, i2, q] GV[i2, -q, i3, -l, i4, l+q] GP[i3, i5, l] GP[i4, i6, l+q] *

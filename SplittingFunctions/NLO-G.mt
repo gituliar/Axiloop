@@ -26,12 +26,9 @@
 << Axiloop`
 
 
-UT$BeginTestCase["NLO-D"];
-  $$debug = False;
+UT$BeginTestCase["NLO-G"];
 
-  ExpandLoopIntegrals = Axiloop`Integrate`$$ExpandLoopIntegrals;
-
-  $LO = Get["LO.result", Path -> DirectoryName[$InputFileName]];
+  $LO = AX$Get["LO.result"];
 
   $topology = Expand[
     GammaTrace[(G[n]/(4 p.n)) ** FP[k] ** FV[i1] ** FPx[p] ** FV[nu] ** FP[k]]
@@ -49,9 +46,9 @@ UT$BeginTestCase["NLO-D"];
 
 
   UT$AssertEquivalent[
-    Simplify[$Get[$result, "inclusive"]
+    $Get[$result, "inclusive"]
     ,
-    2 (g/(4 Pi))^4 ((1+x^2)/(1-x) (4/3 Log[1-x] + 4/3 Log[k.k]) + 4/3 (1-x))]
+    2 (g/(4 Pi))^4 ((1+x^2)/(1-x) (4/3 Log[1-x] + 4/3 Log[k.k]) + 4/3 (1-x))
   ];
 
 UT$EndTestCase[];

@@ -1,9 +1,9 @@
 #!/usr/bin/math -script
 
 << Axiloop`
-<< Axiloop`Core`
 
-$LO = Get["LO.result", Path -> DirectoryName[$InputFileName]];
+
+$LO = AX$Get["LO.result"];
 
 $topology = x (G[n]/(4 k.n)) ** FP[k] ** FV[i1] ** FP[l] ** FV[i2] ** 
   GP[i1, i3, l + k] ** GP[i2, i4, l + p] ** 

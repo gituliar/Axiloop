@@ -23,11 +23,12 @@
 
 << UnitTest`
 
+<< Axiloop`
+
 
 UT$BeginTestCase["NLO-F"];
-  $$debug = False;
 
-  Get["NLO-F.ms"];
+  AX$Get["NLO-F.ms"];
 
   UT$AssertEquivalent[
     $Get[$result, "Z"]

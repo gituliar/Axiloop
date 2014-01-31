@@ -21,26 +21,31 @@
 (*                                                                            *)
 (*============================================================================*)
 
-<< UnitTest`
+<< Logging`
 
 << Axiloop`
 
 
-UT$BeginTestCase["NLO-D"];
+$LO = << "LO.result";
 
-  AX$Get["NLO-D.ms"];
+d = 4 + 2 eps;
 
-  UT$AssertEquivalent[
-    $Get[$result, "Z"]
-    ,
-    I g^2 (4 Pi)^-2 (3 - 8 I0 - 4 Log[1-x] - 2 Log[x])
-  ];
+$result = Expand[
+  GammaTrace[(G[n]/(4 p.n)) ** FP[k] ** FV[i1] ** FPx[p] ** FV[nu] ** FP[k]]
+  GammaTrace[ FV[i2] ** FP[l] ** FV[mu] ** FP[l + q] ] GP[i1, i2, q] GPx[mu, nu, q]
+] /. { n.n -> 0, p.q -> -(k.k/2), k.p -> k.k/2, k.q -> -(k.k/2)};
+(*
+*)
 
+$result = SplittingFunction[$result, $LO, IntegrateLoopPrescription -> "MPV"]
+LG$Output[ $Get[$result, {"Z"}] ]
+LG$Output[ Simplify[$Get[$result, {"counterterm"}]] ]
+LG$Output[ Simplify[$Get[$result, {"exclusive"}]] ]
+(*
+LG$Output[ Collect[ 256 $Get[$result, {"exclusive-bare"}] /. {euv -> eps}, {Log[k.k], Log[1-x]}, Simplify] ]
+LG$Output[ Collect[ 256 $Get[$result, {"inclusive"}], {Log[k.k], Log[1-x]}, Simplify] ]
+*)
 
-  $full = I g^4/Pi^4 ((1+x^2)/(1-x) (-11 + 6 Li2[1] + Log[x]^2 + 2 Log[1-x]^2 + 6 Log[x] Log[1-x] - 3/2 Log[x] + 5 Log[1-x] - 8 I1 + 8 I0 + 8 I0 (Log[x] + Log[1-x])) + (1+x) Log[x]/2 + (1-x) (-1 + 8 I0 + 2 (Log[x] + 2 Log[1-x])));
-  $real = I g^4/Pi^4 ((1+x^2)/(1-x) ((8 - 4 (Log[1-x] - Log[x])) (I0 + Log[1-x]) + 4 (I1 + (Log[1-x])^2/2) + 2 Li2[1-x] - 2 Li2[1] - Log[x]^2) + 1/(1-x) (-Log[x] - 2 x^2 Log[x] - 3 x (1+x) - 2));
-  $virt = Expand[Simplify[$Get[$result, "inclusive"]]];
-
-  UT$AssertEquivalent[$full - $real - (- 256 $virt), 0];
-
-UT$EndTestCase[];
+(*
+LG$Output[ $Get[$result, {"simplified"}] ]
+*)
