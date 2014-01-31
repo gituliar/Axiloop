@@ -19,15 +19,14 @@
 (*                                                                            *)
 (*============================================================================*)
 
+(* Some routines commonly used within test cases.                             *)
 
-TestSuite[{
-	"Integrate/CollectLoopIntegrals.mt",
-	"Integrate/IntegrateLoop.mt",
-	"Integrate/SimplifyAlgebraic.mt",
-	"Integrate/SimplifyTranslate.mt",
-	"$Get.mt",
-	"GammaTrace.mt",
-	"NLO-C.mt",
-	"NLO-D.mt",
-	"NLO-E.mt"
-}]
+(* This function is supposed to be passed as `EquivalenceFunction` to `Test`. *)
+EquivalentQ[x_, y_] := Module[{},
+	If[ListQ[x] && ListQ[y],
+		EquivalentQ[First[x], First[y]] && EquivalentQ[Rest[x], Rest[y]],
+	If[StringQ[x] && StringQ[y],
+		TrueQ[x == y],
+		TrueQ[Simplify[x-y == 0]]
+	]]
+];

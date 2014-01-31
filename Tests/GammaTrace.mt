@@ -23,6 +23,7 @@ Needs["Axiloop`"]
 
 Get["Tests/core.mt"];
 
+Print[?GammaTrace]
 
 Test[
 	GammaTrace[G[{mu}]**G[{mu}], NumberOfDimensions -> 4 + eps]
