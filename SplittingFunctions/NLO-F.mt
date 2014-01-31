@@ -47,4 +47,13 @@ UT$BeginTestCase["NLO-F"];
     (g/(4 Pi))^4 (11/3 - 4 I0 - 4 Log[1-x]) ((1+x^2)/(1-x) (Log[1-x] + Log[k.k]) + 1 - x)
   ];
 
+
+  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+
+  UT$AssertEquivalent[
+    "W_uv^q" /. $W
+    ,
+    I g^4 ( (1+x^2)/(1-x) (44/3 - 16 I0 - 16 Log[1-x]) )
+  ];
+
 UT$EndTestCase[];
