@@ -23,7 +23,7 @@
 Get["Tests/core.mt"];
 
 
-ExpandLoopIntegrals = Axiloop`Integrate`Private`$$ExpandLoopIntegrals;
+ExpandLoopIntegrals = Axiloop`Integrate`$$ExpandLoopIntegrals;
 
 $LO = << "LO.result";
 

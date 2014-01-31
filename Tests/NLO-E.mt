@@ -23,8 +23,6 @@
 Get["Tests/core.mt"];
 
 
-ExpandLoopIntegrals = Axiloop`Integrate`Private`$$ExpandLoopIntegrals;
-
 $LO = << "LO.result";
 
 $topology = x (G[n]/(4 k.n)) ** FP[k] ** FV[i1] ** FP[k - l] ** GP[i1, i2, l] **
