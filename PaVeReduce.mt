@@ -24,8 +24,7 @@
 
 << UnitTest`
 
-<< Axiloop`Core`
-<< Axiloop`Integrate`
+<< Axiloop`
 << Axiloop`PaVeReduce`
 
 
@@ -34,7 +33,7 @@ UT$BeginTestCase["PaVeReduce"];
   $result = PaVeReduce[
     l.{mu}/(l.l (l+k).(l+k) (l+p).(l+p)) / l.n
     , 
-    I Gamma[1+eir] (4 Pi)^(-2+eir)/(k.k)^(1+eir) 1/p.n (S1 p.{mu} + S2 k.{mu} + S3 n.{mu} k.k/(2 k.n))
+    Qv[k] (k.k)^-1 1/p.n (S1 p.{mu} + S2 k.{mu} + S3 n.{mu} k.k/(2 k.n))
     ,
     {p.{mu}, k.{mu}, n.{mu}}
     ,
@@ -44,7 +43,7 @@ UT$BeginTestCase["PaVeReduce"];
   UT$AssertEquivalent[
 	S1 /. $result
     ,
-	$$ExpandMPV[S1]
+	$$ExpandMPV[S1[eps]]
   ];
 
 UT$EndTestCase[];
