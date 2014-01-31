@@ -35,6 +35,9 @@ $Get::usage =
 PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
 
+PolePart::usage =
+	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
+
 $kinematicRules::usage = ""
 
 eps::usage =
@@ -124,6 +127,10 @@ $Get[hash_, keys_, default_:Null] := Module[
 		,
 		$Get[value, Rest[keys]]
 	]
+];
+
+PolePart[kernel_, eta_] := Expand[
+	Coefficient[Series[kernel, {eta, 0, 1}], eta, -1]
 ];
 
 End[]
