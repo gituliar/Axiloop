@@ -1,7 +1,7 @@
 #!/usr/bin/math -script
 
 << Axiloop`
-<< Axiloop`Core`
+
 
 $LO = AX$Get["LO.result"];
 

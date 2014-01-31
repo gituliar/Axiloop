@@ -44,18 +44,21 @@ UT$BeginTestCase["NLO-E"];
   ];
 
 
-  $$factors = ExtractFormFactors[$Get[$result, "exclusive-bare"]];
+(*
+  $$factors = SplittingFunctionFormFactors[$Get[$result, "exclusive-bare"]];
+  LG$Output[ $$factors ];
 
-  $$k$0  = $Get[$$factors, "$$k$0"];
-  $$k$ir = $Get[$$factors, "$$k$ir"];
-  $$k$uv = $Get[$$factors, "$$k$uv"];
-  $$p$uv = $Get[$$factors, "$$p$uv"];
-  $$q$uv = $Get[$$factors, "$$q$uv"];
+  $$k$0  = "W_0^k"  /. $$factors;
+  $$k$ir = "W_ir^k" /. $$factors;
+  $$k$uv = "W_uv^k" /. $$factors;
+  $$p$uv = "W_uv^p" /. $$factors;
+  $$q$uv = "W_uv^q" /. $$factors;
 
   UT$AssertEquivalent[
     Expand[$Get[$result, "inclusive"]]
     ,
-    Expand[I (g/(4 Pi))^4 (($$k$uv + $$p$uv + $$q$uv) (Log[1-x]/2 + (1-x)^2/(1+x^2)) + $$k$0/2)]
+    Expand[1/16 (($$k$uv + $$p$uv + $$q$uv) (Log[1-x]/2 + (1-x)^2/(1+x^2)) + $$k$0/2)]
   ];
+*)
 
 UT$EndTestCase[];

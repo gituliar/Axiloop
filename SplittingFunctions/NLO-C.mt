@@ -51,6 +51,7 @@ UT$BeginTestCase["NLO-C"];
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
+(*
   $$factors = ExtractFormFactors[$Get[$result, "exclusive-bare"]];
 
   $$k$0  = $Get[$$factors, "$$k$0"];
@@ -71,5 +72,6 @@ UT$BeginTestCase["NLO-C"];
     ,
     Expand[I (g/(4 Pi))^4 (($$k$uv + $$p$uv + $$q$uv) (Log[1-x]/2 + (1-x)^2/(1+x^2)) + $$k$0/2)]
   ];
+*)
 
 UT$EndTestCase[];
