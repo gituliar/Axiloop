@@ -86,7 +86,7 @@ BeginPackage["Axiloop`Integrate`", {
       {$result},
 
       $result = Collect[expr,
-        {Qv[_], B0[_],B1[_],K0[_],P0[_],P1[_],P3[_],R0[_],R1[_],R2[_],R3[_],R4[_],R5[_],S0[_],T0[_],T1[_],V1[_],V2[_]},
+        {Qv[_], B0[_],B1[_],E0[_],E1[_],E2[_],E3[_],K0[_],P0[_],P1[_],P3[_],R0[_],R1[_],R2[_],R3[_],R4[_],R5[_],S0[_],T0[_],T1[_],V1[_],V2[_]},
         Simplify
       ];
 
@@ -128,15 +128,15 @@ BeginPackage["Axiloop`Integrate`", {
         ,
 
         $$[{},{},{}] -> 1
-    };
+      };
 
-    result = Expand[expr $$[{},{},{}]]
+      result = Expand[expr $$[{},{},{}]]
         //. collectRules
         /. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]
-    ];
+      ];
 
 
-    If[
+      If[
         !(FreeQ[result, Dot[l,_]] && FreeQ[result, Dot[_,l]])
         ,
         Message[
@@ -144,42 +144,42 @@ BeginPackage["Axiloop`Integrate`", {
             result
         ];
         Raise[$UnevaluatedError];
-    ];
+      ];
 
-    DEBUG[
+      DEBUG[
         "$$CollectLoopIntegrals"
         ,
         ToString[#] &/@ Union[Cases[{result}, $$[__], Infinity]]
+      ];
+
+      result
     ];
 
-    result
-];
 
+    $$ExpandLoopIntegrals[expr_, l_] := Module[
+      {expandRules},
 
-$$ExpandLoopIntegrals[expr_, l_] := Module[
-    {expandRules},
-
-    expandRules = {
+      expandRules = {
         $$[{x_,a___},{b___},{c___}] :> $$[{a},{b},{c}] l.x,
         $$[{a___},{x_,b___},{c___}] :> $$[{a},{b},{c}] / (l+x).(l+x),
         $$[{a___},{b___},{x_,c___}] :> $$[{a},{b},{c}] / (l+x).n,
         $$[{},{},{}] -> 1
-    };
+      };
 
-    Expand[expr //. expandRules]
-];
+      Expand[expr //. expandRules]
+    ];
 
 
-$$SimplifyAlgebraic[expr_] := Module[
-    {result, signRules, simplifyRules},
+    $$SimplifyAlgebraic[expr_] := Module[
+      {result, signRules, simplifyRules},
 
-    signRules = {
-        $$[{a___}, {b___}, {c___}] :>
-            (-1)^(Length[Select[{a}, !MatchQ[#,l] &]]+Length[{c}]) $$[{a}, -# &/@ {b}, -# &/@ {c}] /;
-                {b} == Select[{b}, Or[# == 0, MatchQ[#, Times[-1, _Symbol]]] &]
-    };
+      signRules = {
+          $$[{a___}, {b___}, {c___}] :>
+              (-1)^(Length[Select[{a}, !MatchQ[#,l] &]]+Length[{c}]) $$[{a}, -# &/@ {b}, -# &/@ {c}] /;
+                  {b} == Select[{b}, Or[# == 0, MatchQ[#, Times[-1, _Symbol]]] &]
+      };
 
-    simplifyRules = {
+      simplifyRules = {
         $$[{a1___,q,a2___}, {b__}, {c___}] :> $$[Sort[{a1,p,a2}], {b}, {c}] - $$[Sort[{a1,k,a2}], {b}, {c}]
         ,
 
@@ -197,62 +197,55 @@ $$SimplifyAlgebraic[expr_] := Module[
         $$[{a1___,n,a2___}, b_, {x_}] :>
             $$[{a1,a2}, b, {}] - x.n $$[{a1,a2}, b, {x}]
         ,
-        
+
         (* l.l terms in the numerator *)
         $$[{l}, {k,p}, {c_}] :>
             $$[{}, {p}, {c}] - 2 $$[{k}, {k,p}, {c}] - k.k $$[{}, {k,p}, {c}]
-    };
+      };
 
-    result = expr
-           /.  signRules
-           //. simplifyRules
-           /.  $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]];
+      result = expr /. signRules //. simplifyRules /. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]];
 
-    DEBUG[
-        "$$SimplifyAlgebraic"
-        ,
-        ToString[#] &/@ Union[Cases[{result}, $$[__], Infinity]]
+      DEBUG[ "$$SimplifyAlgebraic" , ToString[#] &/@ Union[Cases[{result}, $$[__], Infinity]] ];
+
+      Expand[result]
     ];
 
-    Expand[result]
-];
 
-$$SimplifyNumeratorAndDenominator[expr_] := Block[
-  {result, signRules, simplifyRules},
+    $$SimplifyNumeratorAndDenominator[expr_] := Block[
+      {result, signRules, simplifyRules},
 
-  expr //. {
-    $$[{a1___,q,a2___}, {b__}, {c___}] :>
-      $$[Sort[{a1,p,a2}], {b}, {c}] - $$[Sort[{a1,k,a2}], {b}, {c}],
-    $$[{a1___,n,a2___}, b_, {x_}] :>
-      $$[{a1,a2}, b, {}] - x.n $$[{a1,a2}, b, {x}],
-    $$[{a1___,p,a2___}, {0,k,p}, {c___}] :>
-      1/2 ($$[{a1,a2}, {0,k}, {c}] - $$[{a1,a2}, {k,p}, {c}] - p.p $$[{a1,a2}, {0,k,p}, {c}]),
-    $$[{a1___,k,a2___}, {0,k,p}, {c___}] ->
-      1/2 ($$[{a1,a2}, {0,p}, {c}] - $$[{a1,a2}, {k,p}, {c}] - k.k $$[{a1,a2}, {0,k,p}, {c}])        
-  } /. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]]
-];
+      expr //. {
+        $$[{a1___,q,a2___}, {b__}, {c___}] :>
+          $$[Sort[{a1,p,a2}], {b}, {c}] - $$[Sort[{a1,k,a2}], {b}, {c}],
+        $$[{a1___,n,a2___}, b_, {x_}] :>
+          $$[{a1,a2}, b, {}] - x.n $$[{a1,a2}, b, {x}],
+        $$[{a1___,p,a2___}, {0,k,p}, {c___}] :>
+          1/2 ($$[{a1,a2}, {0,k}, {c}] - $$[{a1,a2}, {k,p}, {c}] - p.p $$[{a1,a2}, {0,k,p}, {c}]),
+        $$[{a1___,k,a2___}, {0,k,p}, {c___}] ->
+          1/2 ($$[{a1,a2}, {0,p}, {c}] - $$[{a1,a2}, {k,p}, {c}] - k.k $$[{a1,a2}, {0,k,p}, {c}])        
+      } /. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]]
+    ];
 
-$$SimplifyOnePoint[expr_] := Module[
-    {simplifyRules},
-    
-    simplifyRules = {
-        $$[{}, {k}, {0}] ->
-            $$[{}, {0}, {0}] - 2 $$[{k}, {0,k}, {0}] - k.k $$[{}, {0,k}, {0}]
+
+    $$SimplifyOnePoint[expr_] := Module[
+      {simplifyRules},
+
+      simplifyRules = {
+        $$[{}, {k}, {0}] -> $$[{}, {0}, {0}] - 2 $$[{k}, {0,k}, {0}] - k.k $$[{}, {0,k}, {0}]
         ,
-        $$[{}, {q}, {0}] ->
-            $$[{}, {0}, {0}] - 2 $$[{q}, {0,q}, {0}] - q.q $$[{}, {0,q}, {0}]
+        $$[{}, {q}, {0}] -> $$[{}, {0}, {0}] - 2 $$[{q}, {0,q}, {0}] - q.q $$[{}, {0,q}, {0}]
         ,
         $$[{},{0},{}] -> 0
-    };
-    
-    Expand[expr /. simplifyRules]
-]
+      };
+
+      Expand[expr /. simplifyRules]
+    ];
 
 
-$$SimplifyTranslate[expr_] := Module[
-    {result, simplifyRules},
-    
-    simplifyRules = {
+    $$SimplifyTranslate[expr_] := Module[
+      {result, simplifyRules},
+
+      simplifyRules = {
         $$[{}, {k}, {}] -> $$[{}, {0}, {}]
         ,
         $$[{}, {q}, {}] -> $$[{}, {0}, {}]
@@ -300,28 +293,22 @@ $$SimplifyTranslate[expr_] := Module[
 
         $$[{k},{0,q},{q}] ->   $$[{k},{0, q},{0}] + k.q $$[{},{0, q},{0}],
         $$[{p},{0,q},{q}] ->   $$[{p},{0, q},{0}] + p.q $$[{},{0, q},{0}]
-    };
+      };
 
-    result = Expand[expr /. simplifyRules
-        /. {k.n -> x, n.p -> 1, n.q -> 1-x}
+      result = Expand[expr /. simplifyRules /. {k.n -> x, n.p -> 1, n.q -> 1-x}];
+
+      DEBUG[ "$$SimplifyTranslate" , ToString[#] &/@ Union[Cases[{result}, $$[__], Infinity]] ];
+
+      result
     ];
 
-    DEBUG[
-        "$$SimplifyTranslate"
-        ,
-        ToString[#] &/@ Union[Cases[{result}, $$[__], Infinity]]
-    ];
 
-    result
-];
+    IntegrateLoopGeneral::unevaluated = "`1`"
 
+    IntegrateLoopGeneral[expr_, l_] := Module[
+      {integrateRules, result, unevaluated},
 
-IntegrateLoopGeneral::unevaluated = "`1`"
-
-IntegrateLoopGeneral[expr_, l_] := Module[
-    {integrateRules, result, unevaluated},
-
-    integrateRules = {
+      integrateRules = {
         $$[{},{0},{ }] -> 0,
         $$[{},{0},{0}] -> 0,
 
@@ -425,145 +412,142 @@ IntegrateLoopGeneral[expr_, l_] := Module[
             + W9[euv] n.x n.y (k.k/(2 k.n))^2
             + W10[euv] x.y k.k
         )
-    };
-    
-    result = Expand[expr /. integrateRules];
+      };
 
-    unevaluated = Union[Cases[result, $$[__], {0, Infinity}]];
-    If[
+      result = Expand[expr /. integrateRules];
+
+      unevaluated = Union[Cases[result, $$[__], {0, Infinity}]];
+      If[
         unevaluated != {}
         ,
-        Message[
-            IntegrateLoopGeneral::unevaluated,
-            ToString[#] &/@ unevaluated
-        ];
+        Message[ IntegrateLoopGeneral::unevaluated, ToString[#] &/@ unevaluated ];
         Raise[$UnevaluatedError];
+      ];
+
+      result
     ];
 
-    result
-];
+
+    $$ExpandPaVe[expr_] := Block[
+      {B0,B1,B3,C0,C1,C3,D0,E0,E1,E2,E3,H1,H2,H3,H4,H5,H6,K0,P0,P1,P3,R1,R2,R3,R4,R5,R6,
+       S1,S2,S3,T0,T1,T2,T3,U1,U2,U3,V1,V2,W1,W2,W3},
+
+      H1[eps_] := (-(1 + eps) R0[eps] - 8 (1 + eps) T2[eps] + 12 T3[eps])/(1 + eps);
+      H2[eps_] := -((2 (T2[eps] + 2 (3 + eps) T3[eps]))/(1 + eps));
+      H3[eps_] := (2 (T2[eps] + (3 + eps) T3[eps]))/(1 + eps);
+      H4[eps_] := T2[eps];
+      H5[eps_] := T3[eps]/(1 + eps);
+      H6[eps_] := - T2[eps]/(4 + 2 eps);
+
+      P1[eps_] := T0[eps];
+      P3[eps_] := P0[eps] - 2 T0[eps];
+
+      R1[eps_] := - R0[eps] - 2 T0[eps];
+      R2[eps_] :=   T0[eps];
+      R3[eps_] :=   (R0[eps] + eps R0[eps] + 6 T1[eps] + 4 eps T1[eps])/(1 + eps);
+      R4[eps_] := - T1[eps]; 
+      R5[eps_] := - (T1[eps]/(1 + eps));
+      R6[eps_] :=   T1[eps]/(2 + 2 eps);
+
+      T1[eps_] :=   T0[eps] / 2;
+      T3[eps_] := - T2[eps]/(4 + 2 eps);
+
+      Expand[expr]
+    ];
+
+    $$ExpandCommon[expr_] := Block[
+      {B0,B1,B3,C0,C1,C3,D0,E0,E1,E2,E3,H1,H2,H3,H4,H5,H6,K0,P0,P1,P3,R1,R2,R3,R4,R5,R6,
+       S1,S2,S3,T0,T1,T2,T3,U1,U2,U3,V1,V2,W1,W2,W3},
+
+      B0[eps_] := - I0/eps - I1 + Li2[1];
+      B1[eps_] := - 1/eps + 2;
+      B3[eps_] := - (I0 - 2)/eps - I1 - 4 + Li2[1];
+
+      C0[eps_] := - (I0 + Log[1-x])/eps - I1 + I0 Log[1-x] + (Log[1-x]^2)/2 + Li2[1];
+      C1[eps_] := - 1/eps + 2;
+      C3[eps_] := - (I0 + Log[1-x] - 2)/eps - I1 + I0 Log[1-x] + (Log[1-x]^2)/2 - 4 + Li2[1];
+
+      D0[eps_] := - (Log[1-x] - Log[x])/eps + (Log[x]^2)/2 - (Log[1-x]^2)/2 + Li2[1] - 2 Li2[1-x] - Log[x]Log[1-x];
+
+      E0[eps_] :=   Log[1-x]/(x eps);
+
+      E1[eps_] :=   1/eps Log[1-x]/x - (2 Li2[x] + (Log[1-x]^2)/2)/x;
+      E2[eps_] := - 1/eps (x + Log[1-x])/x^2 + (2 Li2[x] + (Log[1-x]^2)/2 - 2x)/x^2;
+      E3[eps_] := - 1/eps ((x-2)Log[1-x] - 2x)/x^3 + (4x + (x-2)(2 Li2[x] + (Log[1-x]^2)/2))/x^3;
+
+      K0[eps_] :=   Log[x]/euv + 2 Li2[1-x] + Log[x]^2/2;
+
+      P0[eps_] := - (I0 + Log[x])/eps - I1 + I0 Log[x] + (Log[x]^2)/2 + Li2[1];
+
+      S1[eps_] := (R0[eps] (-2 + x) + (P0[eps] + S0[eps]) x)/(2 (-1 + x));
+      S2[eps_] := (P0[eps] - R0[eps] + S0[eps])/(2 - 2 x);
+      S3[eps_] := (-P0[eps] (-2 + x) + (-R0[eps] + S0[eps]) x)/(2 (-1 + x));
+
+      T0[eps_] := - 1/eps + 2;
+      T2[eps_] := - 1/(3 eps) + 13/18;
+
+      U1[eps_] := 1/2 (x P0[eps] - (-2 + x) R0[eps] + x U0[eps]);
+      U2[eps_] := 1/2 (- P0[eps] - R0[eps] + U0[eps]);
+      U3[eps_] := 1/2 (-(-2 + x) P0[eps] + x (R0[eps] - U0[eps]));
+
+      V1[eps_] := - (1-x + x Log[x])/(1-x)^2 / eps;
+      V2[eps_] :=   (1-x + Log[x])/(1-x)^2 / eps;
+
+      W1[eps_] := 1/2 (-(-2 + x) R0[eps] + x (E0[eps] x - 2 W0[eps]));
+      W2[eps_] := 1/2 (-E0[eps] x - R0[eps]);
+      W3[eps_] := 1/2 x (-E0[eps] (-2 + x) + R0[eps]);
+
+      Expand[ expr ]
+    ];
 
 
-$$ExpandPaVe[expr_] := Block[
-  {B0,B1,B3,C0,C1,C3,D0,E0,E1,E2,E3,H1,H2,H3,H4,H5,H6,K0,P0,P1,P3,R1,R2,R3,R4,R5,R6,
-   S1,S2,S3,T0,T1,T2,T3,U1,U2,U3,V1,V2,W1,W2,W3},
+    $$ExpandMPV[expr_] := Block[
+      {R0,S0,S4,S5,S6,S7,S8,S9,S10,U0,U4,U5,U6,U7,U8,U9,U10,W0,W4,W5,W6,W7,W8,W9,W10,$expr},
 
-  H1[eps_] := (-(1 + eps) R0[eps] - 8 (1 + eps) T2[eps] + 12 T3[eps])/(1 + eps);
-  H2[eps_] := -((2 (T2[eps] + 2 (3 + eps) T3[eps]))/(1 + eps));
-  H3[eps_] := (2 (T2[eps] + (3 + eps) T3[eps]))/(1 + eps);
-  H4[eps_] := T2[eps];
-  H5[eps_] := T3[eps]/(1 + eps);
-  H6[eps_] := - T2[eps]/(4 + 2 eps);
+      $expr = $$ExpandCommon[ $$ExpandPaVe[expr] ];
 
-  P1[eps_] := T0[eps];
-  P3[eps_] := P0[eps] - 2 T0[eps];
+      R0[eps_] := - (- (2 I0 + Log[1-x])/eps - 4 I1 + 2 I0 Log[1-x] + (Log[1-x]^2)/2);
 
-  R1[eps_] := - R0[eps] - 2 T0[eps];
-  R2[eps_] :=   T0[eps];
-  R3[eps_] :=   (R0[eps] + eps R0[eps] + 6 T1[eps] + 4 eps T1[eps])/(1 + eps);
-  R4[eps_] := - T1[eps]; 
-  R5[eps_] := - (T1[eps]/(1 + eps));
-  R6[eps_] :=   T1[eps]/(2 + 2 eps);
-
-  T1[eps_] :=   T0[eps] / 2;
-  T3[eps_] := - T2[eps]/(4 + 2 eps);
-
-  Expand[expr]
-];
-
-$$ExpandCommon[expr_] := Block[
-  {B0,B1,B3,C0,C1,C3,D0,E0,E1,E2,E3,H1,H2,H3,H4,H5,H6,K0,P0,P1,P3,R1,R2,R3,R4,R5,R6,
-   S1,S2,S3,T0,T1,T2,T3,U1,U2,U3,V1,V2,W1,W2,W3},
-
-  B0[eps_] := - I0/eps - I1 + Li2[1];
-  B1[eps_] := - 1/eps + 2;
-  B3[eps_] := - (I0 - 2)/eps - I1 - 4 + Li2[1];
-
-  C0[eps_] := - (I0 + Log[1-x])/eps - I1 + I0 Log[1-x] + (Log[1-x]^2)/2 + Li2[1];
-  C1[eps_] := - 1/eps + 2;
-  C3[eps_] := - (I0 + Log[1-x] - 2)/eps - I1 + I0 Log[1-x] + (Log[1-x]^2)/2 - 4 + Li2[1];
-
-  D0[eps_] := - (Log[1-x] - Log[x])/eps + (Log[x]^2)/2 - (Log[1-x]^2)/2 + Li2[1] - 2 Li2[1-x] - Log[x]Log[1-x];
-
-  E0[eps_] :=   Log[1-x]/(x eps);
-
-  E1[eps_] :=   1/eps Log[1-x]/x - (2 Li2[x] + (Log[1-x]^2)/2)/x;
-  E2[eps_] := - 1/eps (x + Log[1-x])/x^2 + (2 Li2[x] + (Log[1-x]^2)/2 - 2x)/x^2;
-  E3[eps_] := - 1/eps ((x-2)Log[1-x] - 2x)/x^3 + (4x + (x-2)(2 Li2[x] + (Log[1-x]^2)/2))/x^3;
-
-  K0[eps_] :=   Log[x]/euv + 2 Li2[1-x] + Log[x]^2/2;
-
-  P0[eps_] := - (I0 + Log[x])/eps - I1 + I0 Log[x] + (Log[x]^2)/2 + Li2[1];
-
-  S1[eps_] := (R0[eps] (-2 + x) + (P0[eps] + S0[eps]) x)/(2 (-1 + x));
-  S2[eps_] := (P0[eps] - R0[eps] + S0[eps])/(2 - 2 x);
-  S3[eps_] := (-P0[eps] (-2 + x) + (-R0[eps] + S0[eps]) x)/(2 (-1 + x));
-
-  T0[eps_] := - 1/eps + 2;
-  T2[eps_] := - 1/(3 eps) + 13/18;
-
-  U1[eps_] := 1/2 (x P0[eps] - (-2 + x) R0[eps] + x U0[eps]);
-  U2[eps_] := 1/2 (- P0[eps] - R0[eps] + U0[eps]);
-  U3[eps_] := 1/2 (-(-2 + x) P0[eps] + x (R0[eps] - U0[eps]));
-
-  V1[eps_] := - (1-x + x Log[x])/(1-x)^2 / eps;
-  V2[eps_] :=   (1-x + Log[x])/(1-x)^2 / eps;
-
-  W1[eps_] := 1/2 (-(-2 + x) R0[eps] + x (E0[eps] x - 2 W0[eps]));
-  W2[eps_] := 1/2 (-E0[eps] x - R0[eps]);
-  W3[eps_] := 1/2 x (-E0[eps] (-2 + x) + R0[eps]);
-
-  Expand[ expr ]
-];
+      S0[eps_] := - ( - (3 I0 + Log[1-x] - Log[x]) / eps - 5 I1 + 2 I0 Log[1-x] + I0 Log[x] + (Log[x]^2)/2 + (Log[1-x]^2)/2 + 2 Li2[1-x] + Li2[1]);
 
 
-$$ExpandMPV[expr_] := Block[
-  {R0,S0,S4,S5,S6,S7,S8,S9,S10,U0,U4,U5,U6,U7,U8,U9,U10,W0,W4,W5,W6,W7,W8,W9,W10,$expr},
+      S4[eps_] := ((2 - 2 I0 (1-x) - x) (1-x) - (1-x)^2 Log[1-x] + x^2 Log[x])/(eps (1-x)) + (1/(2 (1-x)))(2 x^2 Li2[1-x] + 4 I0 (1-x)^2 Log[1-x] + (1-x)^2 Log[1-x]^2 - 2 (2 (1-x) (2 + 2 I1 (1-x) - x) + x^2 Log[x]));
+      S5[eps_] := (-1 + x - x Log[x])/(eps (1-x)) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(1-x);
+      S6[eps_] := (-2 + 2 x + Li2[1 - x] - Log[x])/(1-x) + (1 - x + Log[x])/(eps (1-x)); 
+      S7[eps_] := (1 - x + Log[x])/(eps (1-x)) + (2 (-1 + x) + Li2[1 - x] + (-2 + x) Log[x])/(1-x); 
+      S8[eps_] := (-1 + x - x Log[x])/(eps (1-x)) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(1-x); 
+      S9[eps_] := ((2 - I0(1-x) - x)(1-x) - (1-2 x)Log[x])/(eps(1-x)) + (2 (1-x)(-4 - I1(1-x) + 2 x + (1-x)Li2[1]) + 2 x^2 Li2[1-x] + 2 (I0(1-x)^2 - x^2)Log[x] + (1-x)^2 Log[x]^2)/(2 (1-x));
+      S10[eps_] := -(Li2[1 - x] - 2 Log[x])/2 - Log[x]/(2 eps);
 
-  $expr = $$ExpandCommon[ $$ExpandPaVe[expr] ];
+      U0[eps_] := - (- (3 I0 + 3 Log[1-x] - Log[x])/eps - 5 I1 + 2 I0 Log[1-x] + I0 Log[x] + (Log[x]^2)/2 - (Log[1-x]^2)/2 - 2 Li2[1-x] + 5 Li2[1]);
 
-  R0[eps_] := - (- (2 I0 + Log[1-x])/eps - 4 I1 + 2 I0 Log[1-x] + (Log[1-x]^2)/2);
-
-  S0[eps_] := - ( - (3 I0 + Log[1-x] - Log[x]) / eps - 5 I1 + 2 I0 Log[1-x] + I0 Log[x] + (Log[x]^2)/2 + (Log[1-x]^2)/2 + 2 Li2[1-x] + Li2[1]);
-
-
-  S4[eps_] := ((2 - 2 I0 (1-x) - x) (1-x) - (1-x)^2 Log[1-x] + x^2 Log[x])/(eps (1-x)) + (1/(2 (1-x)))(2 x^2 Li2[1-x] + 4 I0 (1-x)^2 Log[1-x] + (1-x)^2 Log[1-x]^2 - 2 (2 (1-x) (2 + 2 I1 (1-x) - x) + x^2 Log[x]));
-  S5[eps_] := (-1 + x - x Log[x])/(eps (1-x)) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(1-x);
-  S6[eps_] := (-2 + 2 x + Li2[1 - x] - Log[x])/(1-x) + (1 - x + Log[x])/(eps (1-x)); 
-  S7[eps_] := (1 - x + Log[x])/(eps (1-x)) + (2 (-1 + x) + Li2[1 - x] + (-2 + x) Log[x])/(1-x); 
-  S8[eps_] := (-1 + x - x Log[x])/(eps (1-x)) + (2 - 2 x - x Li2[1 - x] + x Log[x])/(1-x); 
-  S9[eps_] := ((2 - I0(1-x) - x)(1-x) - (1-2 x)Log[x])/(eps(1-x)) + (2 (1-x)(-4 - I1(1-x) + 2 x + (1-x)Li2[1]) + 2 x^2 Li2[1-x] + 2 (I0(1-x)^2 - x^2)Log[x] + (1-x)^2 Log[x]^2)/(2 (1-x));
-  S10[eps_] := -(Li2[1 - x] - 2 Log[x])/2 - Log[x]/(2 eps);
-
-  U0[eps_] := - (- (3 I0 + 3 Log[1-x] - Log[x])/eps - 5 I1 + 2 I0 Log[1-x] + I0 Log[x] + (Log[x]^2)/2 - (Log[1-x]^2)/2 - 2 Li2[1-x] + 5 Li2[1]);
-
-  U4[eps_] := 1/2 (-8 - 8 I1 + 4 x + 4 x^2 Li2[1] - 2 x^2 Li2[1-x] + 2 (2 I0 + x^2) Log[1-x] - (-1 + x^2) Log[1-x]^2 - 2 x^2 Log[x]) + (2 - 2 I0 - x - (1 + x^2) Log[1-x] + x^2 Log[x])/eps;
-  U5[eps_] := 2 - 1/eps - x Log[1 - x] + x Log[x];
-  U6[eps_] := -2 - I1 + 3 Li2[1] - Li2[1 - x] + (1 - I0 - Log[1 - x])/eps + Log[1 - x] - 1/2 Log[1 - x]^2 - Log[x] + I0 Log[x] + Log[x]^2/2;
-  U7[eps_] := (-1 + x) Li2[1 - x] + 1/2 (-4 + 4 Li2[1] - 4 x Li2[1] - 2 (-2 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2 + 2 (-2 + x) Log[x]) + (1 + (-1 + x) Log[1 - x] + Log[x] - x Log[x])/eps; 
-  U8[eps_] := 2 + I1 - Li2[1] - 2 x Li2[1] + x Li2[1 - x] - x Log[1 - x] + 1/2 x Log[1 - x]^2 - I0 Log[x] + x Log[x] - Log[x]^2/2 + (-1 + I0 + x Log[1 - x] + Log[x] - x Log[x])/eps; 
-  U9[eps_] := -4 - I1 + 2 x + Li2[1] + 2 x^2 Li2[1] - x^2 Li2[1-x] + x^2 Log[1-x] - x^2 Log[1-x]^2/2 + I0 Log[x] - x^2 Log[x] + Log[x]^2/2 + (2 - I0 - x - x^2 Log[1-x] - (1-x^2) Log[x])/eps; 
-  U10[eps_] := 1/4 (-1 + x) (4 Li2[1] - 2 Li2[1 - x] + 4 Log[1 - x] - Log[1 - x]^2 - 4 Log[x]) - ((-1 + x) (Log[1 - x] - Log[x]))/(2 eps);
+      U4[eps_] := 1/2 (-8 - 8 I1 + 4 x + 4 x^2 Li2[1] - 2 x^2 Li2[1-x] + 2 (2 I0 + x^2) Log[1-x] - (-1 + x^2) Log[1-x]^2 - 2 x^2 Log[x]) + (2 - 2 I0 - x - (1 + x^2) Log[1-x] + x^2 Log[x])/eps;
+      U5[eps_] := 2 - 1/eps - x Log[1 - x] + x Log[x];
+      U6[eps_] := -2 - I1 + 3 Li2[1] - Li2[1 - x] + (1 - I0 - Log[1 - x])/eps + Log[1 - x] - 1/2 Log[1 - x]^2 - Log[x] + I0 Log[x] + Log[x]^2/2;
+      U7[eps_] := (-1 + x) Li2[1 - x] + 1/2 (-4 + 4 Li2[1] - 4 x Li2[1] - 2 (-2 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2 + 2 (-2 + x) Log[x]) + (1 + (-1 + x) Log[1 - x] + Log[x] - x Log[x])/eps; 
+      U8[eps_] := 2 + I1 - Li2[1] - 2 x Li2[1] + x Li2[1 - x] - x Log[1 - x] + 1/2 x Log[1 - x]^2 - I0 Log[x] + x Log[x] - Log[x]^2/2 + (-1 + I0 + x Log[1 - x] + Log[x] - x Log[x])/eps; 
+      U9[eps_] := -4 - I1 + 2 x + Li2[1] + 2 x^2 Li2[1] - x^2 Li2[1-x] + x^2 Log[1-x] - x^2 Log[1-x]^2/2 + I0 Log[x] - x^2 Log[x] + Log[x]^2/2 + (2 - I0 - x - x^2 Log[1-x] - (1-x^2) Log[x])/eps; 
+      U10[eps_] := 1/4 (-1 + x) (4 Li2[1] - 2 Li2[1 - x] + 4 Log[1 - x] - Log[1 - x]^2 - 4 Log[x]) - ((-1 + x) (Log[1 - x] - Log[x]))/(2 eps);
 
 
-  W0[eps_] := - (- (3 I0 + 3 Log[1-x] - 2 Log[x])/eps - 5 I1 + 2 I0 Log[1-x] - 3 I0 Log[x] - (Log[1-x]^2)/2 + Log[x] Log[1-x] + 2 Li2[1-x] + Log[x]^2 + 5 Li2[1]);
+      W0[eps_] := - (- (3 I0 + 3 Log[1-x] - 2 Log[x])/eps - 5 I1 + 2 I0 Log[1-x] - 3 I0 Log[x] - (Log[1-x]^2)/2 + Log[x] Log[1-x] + 2 Li2[1-x] + Log[x]^2 + 5 Li2[1]);
 
-  W4[eps_] := (2 - 4 I0 - x + 5 I0 x + (-2 + 3 x) Log[1 - x] - 2 x Log[x])/eps - (1/(2 (-1 + x)))(-8 - 16 I1 + 12 x + 34 I1 x + 4 x^2 - 18 I1 x^2 - 4 x^3 - 10 x Li2[1] + 10 x^2 Li2[1] + 4 (-1 + x) x Li2[1 - x] + 4 (-1 + x) x Li2[x] + 8 I0 Log[1 - x] + 2 x Log[1 - x] - 16 I0 x Log[1 - x] - 2 x^2 Log[1 - x] + 8 I0 x^2 Log[1 - x] + 2 Log[1 - x]^2 - 3 x Log[1 - x]^2 + x^2 Log[1 - x]^2 + 6 I0 x Log[x] - 6 I0 x^2 Log[x] - 2 x Log[1 - x] Log[x] + 2 x^2 Log[1 - x] Log[x] - 2 x Log[x]^2 + 2 x^2 Log[x]^2);
-  W5[eps_] := (-1 + I0 + Log[1 - x])/eps + (8 (-1 + I1 (-1 + x) + 3 x - x^2) + 8 (-1 + x) Li2[x] - 4 (1 + I0) (-1 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2)/(4 (-1 + x));
-  W6[eps_] := 1/eps - (4 x + 4 (-1 + x) Li2[x] - 2 (-1 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2)/(2 (-1 + x) x);
-  W7[eps_] := (1 - I0 - Log[1-x]/x)/eps + (-8 x (3 - I1 (1-x) - 3 x + x^2) + 8 (2 - 3 x + x^2) Li2[x] + 4 (-1 + x) (2 + (-1 + I0) x) Log[1-x] + (4 - 7 x + 3 x^2) Log[1-x]^2)/(4 (-1 + x) x);
-  W8[eps_] := (-x + (-1 + x) Log[1 - x])/(eps x) + (4 x + 4 (-1 + x) Li2[x] - 2 (-1 + x) x Log[1 - x] + (-1 + x) Log[1 - x]^2)/(2 (-1 + x) x);
-  W9[eps_] := ((2-x) x + 2 (1-x) Log[1-x])/(eps x) - (4 x (-2 + 3 x - 3 x^2 + x^3) + 4 (2 - 4 x + 3 x^2 - x^3) Li2[x] - 2 (1-x) x^2 Log[1-x] + (2 - 4 x + 3 x^2 - x^3) Log[1-x]^2)/(2 (1-x) x);
-  W10[eps_] := -(((-1 + x) Log[1 - x])/(2 eps x)) + (4 (-2 + x) x - 4 (-1 + x) Li2[x] + 4 (-1 + x) Log[1 - x] - (-1 + x) Log[1 - x]^2)/(4 x);
+      W4[eps_] := (2 - 4 I0 - x + 5 I0 x + (-2 + 3 x) Log[1 - x] - 2 x Log[x])/eps - (1/(2 (-1 + x)))(-8 - 16 I1 + 12 x + 34 I1 x + 4 x^2 - 18 I1 x^2 - 4 x^3 - 10 x Li2[1] + 10 x^2 Li2[1] + 4 (-1 + x) x Li2[1 - x] + 4 (-1 + x) x Li2[x] + 8 I0 Log[1 - x] + 2 x Log[1 - x] - 16 I0 x Log[1 - x] - 2 x^2 Log[1 - x] + 8 I0 x^2 Log[1 - x] + 2 Log[1 - x]^2 - 3 x Log[1 - x]^2 + x^2 Log[1 - x]^2 + 6 I0 x Log[x] - 6 I0 x^2 Log[x] - 2 x Log[1 - x] Log[x] + 2 x^2 Log[1 - x] Log[x] - 2 x Log[x]^2 + 2 x^2 Log[x]^2);
+      W5[eps_] := (-1 + I0 + Log[1 - x])/eps + (8 (-1 + I1 (-1 + x) + 3 x - x^2) + 8 (-1 + x) Li2[x] - 4 (1 + I0) (-1 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2)/(4 (-1 + x));
+      W6[eps_] := 1/eps - (4 x + 4 (-1 + x) Li2[x] - 2 (-1 + x) Log[1 - x] + (-1 + x) Log[1 - x]^2)/(2 (-1 + x) x);
+      W7[eps_] := (1 - I0 - Log[1-x]/x)/eps + (-8 x (3 - I1 (1-x) - 3 x + x^2) + 8 (2 - 3 x + x^2) Li2[x] + 4 (-1 + x) (2 + (-1 + I0) x) Log[1-x] + (4 - 7 x + 3 x^2) Log[1-x]^2)/(4 (-1 + x) x);
+      W8[eps_] := (-x + (-1 + x) Log[1 - x])/(eps x) + (4 x + 4 (-1 + x) Li2[x] - 2 (-1 + x) x Log[1 - x] + (-1 + x) Log[1 - x]^2)/(2 (-1 + x) x);
+      W9[eps_] := ((2-x) x + 2 (1-x) Log[1-x])/(eps x) - (4 x (-2 + 3 x - 3 x^2 + x^3) + 4 (2 - 4 x + 3 x^2 - x^3) Li2[x] - 2 (1-x) x^2 Log[1-x] + (2 - 4 x + 3 x^2 - x^3) Log[1-x]^2)/(2 (1-x) x);
+      W10[eps_] := -(((-1 + x) Log[1 - x])/(2 eps x)) + (4 (-2 + x) x - 4 (-1 + x) Li2[x] + 4 (-1 + x) Log[1 - x] - (-1 + x) Log[1 - x]^2)/(4 x);
 
-  Expand[ $expr ]
-];
+      Expand[ $expr ]
+    ];
 
 
-$$ExpandPV[expr_] := Module[
-    {},
+    $$ExpandPV[expr_] := Module[
+      {},
 
-    Expand[$$ExpandCommon[expr] //. {
+      Expand[$$ExpandCommon[expr] //. {
         R0 ->  1/eir^2 - Li2[1],
         R1 ->  1/eir^2 + 2/eir + 4 - Li2[1],
         R2 -> -1/eir - 2,
@@ -574,33 +558,29 @@ $$ExpandPV[expr_] := Module[
 
         U0 -> 1/eir^2 + (-I0 + Log[x] - 2 Log[1-x])/eir + I1 -I0 Log[x] + 2 Li2[1-x] - (Log[x]^2)/2 + Log[1-x]^2 - 6 Li2[1],
 
-        S0 -> 1/eir^2 - (I0 - Log[x])/eir + I1 - I0 Log[x] - 2 Li2[1]
-                - 2 Li2[1-x] - (Log[x]^2)/2,
+        S0 -> 1/eir^2 - (I0 - Log[x])/eir + I1 - I0 Log[x] - 2 Li2[1] - 2 Li2[1-x] - (Log[x]^2)/2,
 
         S1 -> 1/eir^2 - x Log[x]/((1-x) eir)  + x/(1-x) Li2[1-x] - Li2[1],
         S2 -> Log[x]/((1-x) eir) - Li2[1-x]/(1-x)
-    }]
-]
-
-
-Options[IntegrateLoop] = {Prescription -> "MPV"};
-IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
-    {collected, integrated, integratedPV, simplified},
-
-    collected = $$CollectLoopIntegrals[expr, l];
-
-    simplified = collected;
-    simplified = $$SimplifyAlgebraic[simplified];
-    simplified = $$SimplifyNumeratorAndDenominator[simplified];
-    simplified = $$SimplifyTranslate[simplified];
-    simplified = $$SimplifyOnePoint[simplified];
-
-    integrated = Expand[
-        IntegrateLoopGeneral[simplified, l]
-            /. $kinematicRules
+      }]
     ];
 
-    integratedPV =  If[
+
+    Options[IntegrateLoop] = {Prescription -> "MPV"};
+    IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
+      {collected, integrated, integratedPV, simplified},
+
+      collected = $$CollectLoopIntegrals[expr, l];
+
+      simplified = collected;
+      simplified = $$SimplifyAlgebraic[simplified];
+      simplified = $$SimplifyNumeratorAndDenominator[simplified];
+      simplified = $$SimplifyTranslate[simplified];
+      simplified = $$SimplifyOnePoint[simplified];
+
+      integrated = Expand[ IntegrateLoopGeneral[simplified, l] /. $kinematicRules ];
+
+      integratedPV =  If[
         OptionValue[Prescription] == "MPV"
         ,
         $$ExpandMPV[integrated]
@@ -608,17 +588,17 @@ IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
         If[OptionValue[Prescription] == "PV"
         ,
         $$ExpandPV[integrated]
-    ]];
+      ]];
 
-    {
-        {"collected", collected},
-        {"simplified", simplified},
-        {"integrated", {
-            {"short", integrated},
-            {"long", integratedPV}}}
-    }
-];
+      {
+          {"collected", collected},
+          {"simplified", simplified},
+          {"integrated", {
+              {"short", integrated},
+              {"long", integratedPV}}}
+      }
+    ];
 
-  End[]
+  End[];
 
 EndPackage[]
