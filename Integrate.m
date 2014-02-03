@@ -442,15 +442,15 @@ BeginPackage["Axiloop`Integrate`", {
       P1[eps_] := T0[eps];
       P3[eps_] := P0[eps] - 2 T0[eps];
 
-      R1[eps_] := - R0[eps] - 2 T0[eps];
-      R2[eps_] :=   T0[eps];
-      R3[eps_] :=   (R0[eps] + eps R0[eps] + 6 T1[eps] + 4 eps T1[eps])/(1 + eps);
-      R4[eps_] := - T1[eps]; 
-      R5[eps_] := - (T1[eps]/(1 + eps));
-      R6[eps_] :=   T1[eps]/(2 + 2 eps);
+      R1[e_] := - R0[e] - 2 T0[e];
+      R2[e_] :=   T0[e];
+      R3[e_] :=   (R0[e] + eps R0[e] + 6 T1[e] + 4 eps T1[e])/(1 + eps);
+      R4[e_] := - T1[e]; 
+      R5[e_] := - (T1[e]/(1 + eps));
+      R6[e_] :=   T1[e]/(2 + 2 eps);
 
-      T1[eps_] :=   T0[eps] / 2;
-      T3[eps_] := - T2[eps]/(4 + 2 eps);
+      T1[e_] :=   T0[e] / 2;
+      T3[e_] := - T2[e]/(4 + 2 eps);
 
       Expand[expr]
     ];
