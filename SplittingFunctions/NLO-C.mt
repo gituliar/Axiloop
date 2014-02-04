@@ -30,22 +30,11 @@ UT$BeginTestCase["NLO-C"];
 
   AX$Get["NLO-C.ms"];
 
+
   UT$AssertEquivalent[
-    $Get[$result, "exclusive-bare-short"]
+    AX$Get["NLO-C.ebs.mx"]
     ,
-    I g^4 / ((1-x) k.k) (
-      Qv[p](-2(1+x^2 + (1-x)^2eps) B0[euv] +
-        2x(x - (1-x)eps) B1[euv] +
-        (3-2x^2 + (1-2x^2)eps - 2(1-x)eps^2) T0[euv]) +
-      Qv[k](-6(1+x^2 + (1-x)^2eps) P0[euv] -
-        2(1+x^2 + (1-x)^2eps) R0[eir] +
-        2(1+x^2 + (1-x)^2eps) S0[eir] +
-        (6-4x+x^2 + (4-8x+3x^2)eps - 2(2-3x+x^2)eps^2) T0[eir] +
-        x(4+5x - (2+x)eps + 2(1-x)eps^2) T0[euv]) +
-      Qv[q]*((-2(1-x+x^2 + (1-3x+2x^2)eps)/(1-x) K0[euv] +
-        (1-x)(3-x + (1-3x)eps - 2(1-x)eps^2) T0[euv] +
-        2x^2(x - (1-x)eps) V1[euv] +
-        2x^2(x - (1-x)eps) V2[euv])))
+    $Get[$result, "exclusive-bare-short"]
   ];
 
   UT$AssertEquivalent[
