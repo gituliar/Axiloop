@@ -31,26 +31,9 @@ UT$BeginTestCase["NLO-D"];
   AX$Get["NLO-D.ms"];
 
   UT$AssertEquivalent[
-   Simplify[
-    $Get[$result, "exclusive-bare-short"] -
-    I g^4/((1-x)k.k) (
-      Qv[q] (-6(1+x^2 + (1-x)^2eps) C0[euv] +
-        4x(1+x) C1[euv] +
-        (3-6x-5x^2 + 3(1-x)^2eps) T0[euv]) +
-      Qv[p] (-4(1+x^2 + (1-x)^2eps) B0[euv] +
-        2x(x - (1-x)eps) B1[euv] -
-        2(1+x^2 + (1-x)^2eps) D0[euv] +
-        (3-2x^2 + (3-2x-2x^2)eps) T0[euv]) +
-      Qv[k] (-2x^2(x-(1-x)eps) E1[euv] -
-        4x^2(x-(1-x)eps) E2[euv] -
-        2x^3(x-(1-x)eps) E3[euv] -
-        6(1+x^2 + (1-x)^2eps) P0[euv] +
-        2(1+x^2 + (1-x)^2eps) R0[eir] +
-        (6-2x-x^2 + (4-8x+3x^2)eps) T0[eir] +
-        x(2+7x - 3(2-x)eps) T0[euv] +
-        2(1+x^2 + (1-x)^2eps) U0[eir]))
-   ]
-    , 0
+    AX$Get["NLO-D.ebs.mx"]
+    ,
+    $Get[$result, "exclusive-bare-short"]
   ];
 
   UT$AssertEquivalent[
