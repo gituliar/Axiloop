@@ -28,15 +28,14 @@
 
 UT$BeginTestCase["NLO-G"];
 
-  $LO = AX$Get["LO.result"];
+  AX$Get["NLO-G.ms"];
 
-  $topology = Expand[
-    GammaTrace[(G[n]/(4 p.n)) ** FP[k] ** FV[i1] ** FPx[p] ** FV[nu] ** FP[k]]
-    GammaTrace[ FV[i2] ** FP[l] ** FV[mu] ** FP[l + q] ] GP[i1, i2, q] GPx[mu, nu, q]
+
+  UT$AssertEquivalent[
+    AX$Get["NLO-G.ebs.mx"]
+    ,
+    $Get[$result, "exclusive-bare-short"]
   ];
-
-  $result = SplittingFunction[$topology, $LO];
-
 
   UT$AssertEquivalent[
     $Get[$result, "Z"]

@@ -32,3 +32,10 @@ $propagator = Expand[
 $topology = GammaTrace[(G[n]/(4 p.n)) ** FP[k] ** FV[i1] ** FPx[p] ** FV[nu] ** FP[k]] $propagator GPx[mu, nu, q];
 
 $result = SplittingFunction[$topology, $LO];
+
+(*
+$ebsf = $Get[$result, "exclusive-bare-short"];
+$n = I g^4 / ((1-x) k.k);
+$ebsf = $n CollectFormFactors[$ebsf / $n];
+$ebsf >> "NLO-F.ebs.mx";
+*)

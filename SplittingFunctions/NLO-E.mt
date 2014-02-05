@@ -30,6 +30,13 @@ UT$BeginTestCase["NLO-E"];
 
   AX$Get["NLO-E.ms"];
 
+
+  UT$AssertEquivalent[
+    AX$Get["NLO-E.ebs.mx"]
+    ,
+    $Get[$result, "exclusive-bare-short"]
+  ];
+
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,

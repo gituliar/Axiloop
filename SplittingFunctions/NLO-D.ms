@@ -15,4 +15,9 @@ $result = SplittingFunction[$topology, $LO];
 (*
 << Logging`
 LG$Output[ SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ] ];
+
+$ebsf = $Get[$result, "exclusive-bare-short"];
+$n = I g^4 / ((1-x) k.k);
+$ebsf = $n CollectFormFactors[$ebsf / $n];
+$ebsf >> "NLO-D.mx";
 *)

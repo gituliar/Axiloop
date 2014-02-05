@@ -31,6 +31,12 @@ UT$BeginTestCase["NLO-F"];
   AX$Get["NLO-F.ms"];
 
   UT$AssertEquivalent[
+    AX$Get["NLO-F.ebs.mx"]
+    ,
+    $Get[$result, "exclusive-bare-short"]
+  ];
+
+  UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
     I g^2 Qv (-22/3 + 8 I0 + 8 Log[1-x])
