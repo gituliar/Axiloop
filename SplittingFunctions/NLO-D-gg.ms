@@ -40,7 +40,6 @@ $vertex = Block[
     GP[i2, i12, p - l] GV[i12, l - p, i10, k - l, mu, q] GP[i5, i10, l - k]
   ]
 ];
-LG$Output[ Length[$vertex] ];
 
 $topology = Expand[ 
   x (1 - eps) GPx[i1, i11, p] GP[i6, i7, k] ({i7}.{i8}) GP[i8, i9, k]
