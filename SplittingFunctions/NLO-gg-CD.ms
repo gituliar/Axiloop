@@ -32,7 +32,7 @@ $vertex = Block[
   Unprotect[S];
     S[n,n] = 0;
     S /: g^n_Integer S[p,p] := 0;
-    S /: g^n_Integer S[q,q] = 0;
+    S /: g^n_Integer S[q,q] := 0;
   Protect[S];
 
   Expand[
@@ -47,3 +47,10 @@ $topology = Expand[
 ] /. {n.n -> 0, p.p -> 0, q.q -> 0};
 
 $result = SplittingFunction[$topology $vertex, $LO];
+
+(*
+$ebsf = $Get[$result, "exclusive-bare-short"];
+$n = I g^4 / ((1-x) k.k);
+$ebsf = $n CollectFormFactors[$ebsf / $n];
+$ebsf >> "NLO-gg-CD.ebs.mx";
+*)

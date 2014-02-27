@@ -26,16 +26,22 @@
 << Axiloop`
 
 
-UT$BeginTestCase["NLO-D-gg"];
+UT$BeginTestCase["NLO-gg-CD"];
 
-  AX$Get["NLO-D-gg.ms"];
+  AX$Get["NLO-gg-CD.ms"];
 
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-	2 I g^2 Qv (-11/3 + 6 I0 + 2 Log[1-x] + 2 Log[x])
+	I g^2 Qv (-22/3 + 12 I0 + 4 Log[1-x] + 4 Log[x])
   ];
 
+
+  UT$AssertEquivalent[
+    AX$Get["NLO-gg-CD.ebs.mx"]
+    ,
+    $Get[$result, "exclusive-bare-short"]
+  ];
 
 (*
 $virt = Expand[Simplify[$Get[$result, "inclusive"]]];
