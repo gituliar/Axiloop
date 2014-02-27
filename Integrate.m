@@ -432,15 +432,15 @@ BeginPackage["Axiloop`Integrate`", {
       {B0,B1,B3,C0,C1,C3,D0,E0,E1,E2,E3,H1,H2,H3,H4,H5,H6,K0,P0,P1,P3,R1,R2,R3,R4,R5,R6,
        S1,S2,S3,T0,T1,T2,T3,U1,U2,U3,V1,V2,W1,W2,W3},
 
-      H1[eps_] := (-(1 + eps) R0[eps] - 8 (1 + eps) T2[eps] + 12 T3[eps])/(1 + eps);
-      H2[eps_] := -((2 (T2[eps] + 2 (3 + eps) T3[eps]))/(1 + eps));
-      H3[eps_] := (2 (T2[eps] + (3 + eps) T3[eps]))/(1 + eps);
-      H4[eps_] := T2[eps];
-      H5[eps_] := T3[eps]/(1 + eps);
-      H6[eps_] := - T2[eps]/(4 + 2 eps);
+      H1[e_] := (-(1 + eps) R0[e] - 8 (1 + eps) T2[e] + 12 T3[e])/(1 + eps);
+      H2[e_] := -((2 (T2[e] + 2 (3 + eps) T3[e]))/(1 + eps));
+      H3[e_] := (2 (T2[e] + (3 + eps) T3[e]))/(1 + eps);
+      H4[e_] := T2[e];
+      H5[e_] := T3[e]/(1 + eps);
+      H6[e_] := - T2[e]/(4 + 2 eps);
 
-      P1[eps_] := T0[eps];
-      P3[eps_] := P0[eps] - 2 T0[eps];
+      P1[e_] := T0[e];
+      P3[e_] := P0[e] - 2 T0[e];
 
       R1[e_] := - R0[e] - 2 T0[e];
       R2[e_] :=   T0[e];
