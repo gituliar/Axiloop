@@ -37,20 +37,20 @@ BeginPackage["Axiloop`FeynmanRules`", {
     aspi = as / (2 Pi);
 
     Options[FP] = {Line -> f1};
-    FP[p_, OptionsPattern[]] := 1/p.p FPx[p, Line -> OptionValue[Line]];
+    FP[p_, OptionsPattern[]] := I/p.p G[p, Line -> OptionValue[Line]];
 
     Options[FPx] = {Line -> f1};
-    FPx[p_, OptionsPattern[]] := I G[p, Line -> OptionValue[Line]];
+    FPx[p_, OptionsPattern[]] := G[p, Line -> OptionValue[Line]];
 
     Options[FV] = {Line -> f1};
     FV[mu_, OptionsPattern[]] := - I g G[{mu}, Line -> OptionValue[Line]];
 
-    GP[mu_, nu_, p_] := 1/p.p GPx[mu, nu, p];
+    GP[mu_, nu_, p_] := I/p.p (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
 
-    GPx[mu_, nu_, p_] := - I ({mu}.{nu} - (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n)
+    GPx[mu_, nu_, p_] := (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
 
     GV[i1_,p1_, i2_,p2_, i3_,p3_] :=
-      I g ( {i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
+      g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
 
   End[];
 

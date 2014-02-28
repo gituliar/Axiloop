@@ -57,6 +57,13 @@ SplittingFunction::usage = ""
 PartonDensity::usage =
 	"Kernel constructor; define and integrate a kernel."
 
+PFi::usage = "";
+PFo::usage = "";
+
+PGi::usage = "";
+PGo::usage = "";
+
+
 SplittingFunction::usage = ""
 SplittingFunctionFormFactors::usage = ""
 
@@ -71,6 +78,16 @@ Begin["`Private`"]
 (*------------------- MISCELLANEOUS ROUTINES and HELPERS --------------------*)
 
 AX$Get[filename_] := Get[filename, Path -> DirectoryName[$InputFileName]];
+
+
+
+  Options[PFi] = {Line -> f1};
+  PFi[p_, OptionsPattern[]] := G[p, Line -> OptionValue[Line]];
+  Options[PFo] = {Line -> f1};
+  PFo[p_, OptionsPattern[]] := G[n, Line -> OptionValue[Line]]/(4 p.n);
+
+  PGi[mu_,nu_,p_] := 1/(2 (1+eps)) (-{mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
+  PGo[mu_,nu_] := - {mu}.{nu};
 
 (* Useful modifications to standard functions *)
 
