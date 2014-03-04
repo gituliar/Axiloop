@@ -30,6 +30,7 @@ UT$BeginTestCase["NLO-E"];
 
   AX$Get["NLO-E.ms"];
 
+  pqq = (1+x^2)/(1-x);
 
   UT$AssertEquivalent[
     AX$Get["NLO-E.ebs.mx"]
@@ -40,14 +41,25 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    I g^2 Qv (3 - 4 I0 - 4 Log[x])
+    I g^2 Qv (-3 + 4 Log[x] + 4 I0)
   ];
 
+  UT$AssertEquivalent[
+    $Get[$result, "Wz"]
+    ,
+    as^2 (pqq + (1-x) eps) (6 - 8 Log[x] - 8 I0) / k.k
+  ];
 
   UT$AssertEquivalent[
-    $Get[$result, "inclusive"]
+    $Get[$result, "Wr"]
     ,
-    (g/(4 Pi))^4 ( (1+x^2)/(1-x) (7 - 2 Log[x]^2 - 4 Log[x] Log[1-x] + 3 Log[1-x] - 4 Li2[1] + 4 I1 - 4 I0 Log[x] - 4 I0 Log[1-x]) + (1-x) (3 - 4 Log[x] - 4 I0) )
+    as^2 (pqq + eps (1-x)) (((-k.k)^eps - 1) (6 - 8 I0 - 8 Log[x]) / eps + (-k.k)^eps (-14 + 4 Log[x]^2 + 8 Li2[1] + 8 I0 Log[x] - 8 I1 + 4 eps))/(k.k)
+  ];
+
+  UT$AssertEquivalent[
+    $Get[$result, "G1"]
+    ,
+    aspi^2 1/4 ( (1+x^2)/(1-x) (7 - 2 Log[x]^2 - 4 Log[x] Log[1-x] + 3 Log[1-x] - 4 Li2[1] + 4 I1 - 4 I0 Log[x] - 4 I0 Log[1-x]) + (1-x) (3 - 4 Log[x] - 4 I0) )
   ];
 
 
@@ -56,13 +68,13 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[
     "W_0^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (-14 - 8 I1 + 8 Li2[1] + 8 I0 Log[x] + 4 Log[x]^2) + (1-x) (6 - 8 I0 - 8 Log[x]) )
+    I g^4 ( pqq (14 + 8 I1 - 8 Li2[1] - 8 I0 Log[x] - 4 Log[x]^2) - (1-x) (6 - 8 I0 - 8 Log[x]) )
   ];
 
   UT$AssertEquivalent[
     "W_uv^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (6 - 8 I0 - 8 Log[x]) )
+    I g^4 ( (1+x^2)/(1-x) (-6 + 8 I0 + 8 Log[x]) )
   ];
 
 UT$EndTestCase[];

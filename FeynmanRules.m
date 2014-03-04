@@ -3,6 +3,8 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
   FP::usage =
   "FP[momentum, Line -> f1] -- a fermion propagator in the light-cone gauge."
+  FPc::usage =
+  "The complex conjugated Fermion Propagator."
 
   FPx::usage =
   "FPx[momentum, Line -> f1] -- a crossed (final-state, on-shell) fermion
@@ -10,9 +12,13 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
   FV::usage =
   "FV[index, Line -> f1] -- a fermion vertex in the light-cone gauge."
+  FVc::usage =
+  "The complex conjugated Fermion Vertex."
 
   GP::usage =
   "GP[mu, nu, p] -- a gluon propagator in the light-cone gauge."
+  GPc::usage =
+  "The complex conjugated Gluon Propagator."
 
   GPx::usage =
   "GPx[mu, nu, p] -- a crossed (final-state, on-shell) gluon propagator in
@@ -20,6 +26,8 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
   GV::usage =
   "GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
+  GVc::usage =
+  "The complex conjugated Gluon Vertex."
 
   as::usage = "g^2 / (4 Pi)";
 
@@ -38,19 +46,23 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
     Options[FP] = {Line -> f1};
     FP[p_, OptionsPattern[]] := I/p.p G[p, Line -> OptionValue[Line]];
+    FPc[args__] := - FP[args];
 
     Options[FPx] = {Line -> f1};
     FPx[p_, OptionsPattern[]] := G[p, Line -> OptionValue[Line]];
 
     Options[FV] = {Line -> f1};
     FV[mu_, OptionsPattern[]] := - I g G[{mu}, Line -> OptionValue[Line]];
+    FVc[argv__] := - FV[argv];
 
     GP[mu_, nu_, p_] := I/p.p (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
+    GPc[argv__] := - GP[argv];
 
     GPx[mu_, nu_, p_] := (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
 
     GV[i1_,p1_, i2_,p2_, i3_,p3_] :=
       g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
+    GVc[argv__] := GV[argv];
 
   End[];
 
