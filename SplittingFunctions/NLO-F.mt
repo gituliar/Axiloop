@@ -30,6 +30,8 @@ UT$BeginTestCase["NLO-F"];
 
   AX$Get["NLO-F.ms"];
 
+  pqq = (1+x^2)/(1-x);
+
   UT$AssertEquivalent[
     AX$Get["NLO-F.ebs.mx"]
     ,
@@ -39,7 +41,13 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    I g^2 Qv (-22/3 + 8 I0 + 8 Log[1-x])
+    I g^2 Qv (22/3 - 8 Log[1-x] - 8 I0)
+  ];
+
+  UT$AssertEquivalent[
+    $Get[$result, "Wz"]
+    ,
+    as^2 (pqq + (1-x) eps) (-44/3 + 16 Log[1-x] + 16 I0) / k.k
   ];
 
 (*
@@ -48,9 +56,9 @@ UT$BeginTestCase["NLO-F"];
 *)
 
   UT$AssertEquivalent[
-    1/4 $Get[$result, "inclusive"]
+    $Get[$result, "inclusive"]
     ,
-    (g/(4 Pi))^4 (-11/3 + 4 I0 + 4 Log[1-x]) ((1+x^2)/(1-x) (Log[1-x] + Log[k.k]) + 1 - x)
+    aspi^2 (-11/3 + 4 I0 + 4 Log[1-x]) ((1+x^2)/(1-x) (Log[1-x] + Log[Q^2]) + 1 - x)
   ];
 
 
@@ -59,7 +67,7 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     "W_uv^q" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (-44/3 + 16 I0 + 16 Log[1-x]) )
+    I g^4 ( (1+x^2)/(1-x) (44/3 - 16 I0 - 16 Log[1-x]) )
   ];
 
 UT$EndTestCase[];
