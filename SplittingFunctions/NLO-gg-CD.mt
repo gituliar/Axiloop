@@ -59,7 +59,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $W0k
     ,
-    I g^4 / k.k ( 32 Pgg ( 4 I1 - 3 Li2[1] - I0 Log[1 - x] - 2 I0 Log[x] - Log[x]^2 ) - (8*(134 - 268*x + 405*x^2 - 271*x^3 + 134*x^4))/(9*(-1 + x)*x))
+    I g^4 / k.k ( 32 Pgg ( 4 I1 - 3 Li2[1] - I0 Log[1 - x] - 2 I0 Log[x] - Log[x]^2 ) + ( 1072/9 Pgg + 8/3 x ))
   ];
 
   $Wirk =  PolePart[$Cases[$ebsf, Qv[k]], eir, -1] /. {eps -> 0};
@@ -67,7 +67,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $Wirk
     ,
-    I g^4 / k.k ( 16 Pgg ( 3 I0 + 2 Log[1 - x] - Log[x]) + (4*(44 - 88*x + 102*x^2 - 58*x^3 + 11*x^4))/(3*(-1 + x)*x))
+    I g^4 / k.k ( 16 Pgg ( 3 I0 + 2 Log[1 - x] - Log[x]) + ( -44/x - 44/3 Pgg + 44 - 48 x ) )
   ];
 
   $Wuvk =  PolePart[$Cases[$ebsf, Qv[k]], euv, -1] /. {eps -> 0, eir -> 0};
@@ -75,7 +75,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $Wuvk
     ,
-    I g^4 / k.k ( 16 Pgg ( 3 I0 + 3 Log[x]) + (4*x*(10 - 10*x + 11*x^2))/(-1 + x))
+    I g^4 / k.k ( 16 Pgg ( 3 I0 + 3 Log[x]) + ( 44/x - 44 Pgg - 44 + 48 x ) )
   ];
 
   $Wuvp =  PolePart[$Cases[$ebsf, Qv[p]], euv, -1] /. {eps -> 0, eir -> 0};
@@ -83,7 +83,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $Wuvp
     ,
-    I g^4 / k.k ( 8 Pgg ( 3 I0 + Log[1 - x] - Log[x]) - (4*(-22 + 32*x - 33*x^2 + 12*x^3))/ (3*(-1 + x)*x))
+    I g^4 / k.k ( 8 Pgg ( 3 I0 + Log[1 - x] - Log[x]) + 1/3 ( -44/x - 44 Pgg - 4 - 4 x - 44 x^2 ) )
   ];
 
   $Wuvq =  PolePart[$Cases[$ebsf, Qv[q]], euv, -1] /. {eps -> 0, eir -> 0};
@@ -91,7 +91,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $Wuvq
     ,
-    I g^4 / k.k ( 8 Pgg ( 3 I0 + 3 Log[1 - x] - Log[x]) + (4*(-22 + 34*x - 35*x^2 + 11*x^3))/ (3*x))
+    I g^4 / k.k ( 8 Pgg ( 3 I0 + 3 Log[1 - x] - Log[x]) + 1/3 ( -88/x + 136 - 140 x + 44 x^2 ))
   ];
 
 
