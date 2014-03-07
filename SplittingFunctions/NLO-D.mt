@@ -48,15 +48,21 @@ UT$BeginTestCase["NLO-D"];
   UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 / k.k (pqq + (1-x) eps) (-6 + 4 Log[x] + 8 Log[1-x] + 16 I0)
+    as^2 /(-k.k) (pqq + (1-x) eps) (6 - 4 Log[x] - 8 Log[1-x] - 16 I0)
   ];
 
+  $virt = 4 $Get[$result, "G1"];
 
-  $full = aspi^2 ((1+x^2)/(1-x) (-11 + 6 Li2[1] + Log[x]^2 + 2 Log[1-x]^2 + 6 Log[x] Log[1-x] - 3/2 Log[x] + 5 Log[1-x] - 8 I1 + 8 I0 + 8 I0 (Log[x] + Log[1-x])) + (1+x) Log[x]/2 + (1-x) (-1 + 8 I0 + 2 (Log[x] + 2 Log[1-x])));
-  $real = aspi^2 ((1+x^2)/(1-x) ((8 - 4 (Log[1-x] - Log[x])) (I0 + Log[1-x]) + 4 (I1 + (Log[1-x])^2/2) + 2 Li2[1-x] - 2 Li2[1] - Log[x]^2) + 1/(1-x) (-Log[x] - 2 x^2 Log[x] - 3 x (1+x) - 2));
-  $virt = Expand[Simplify[$Get[$result, "inclusive"]]];
+  UT$AssertEquivalent[
+    $virt
+    ,
+    aspi^2 ( pqq (-7 - 2 Li2[1-x] + 2 Log[x]^2 + 8 Li2[1] - 12 I1 + 4 I0 Log[x] + 4 I0 Log[1-x] + (-3 + 2 Log[x] + 4 Log[1-x] + 8 I0) Log[1-x]) + (1-x) (-3 + 2 Log[x] + 4 Log[1-x] + 8 I0) + x)
+  ];
 
-  UT$AssertEquivalent[$full - $real - 4 $virt, 0];
+  $real = aspi^2 (pqq ((8 - 4 (Log[1-x] - Log[x])) (I0 + Log[1-x]) + 4 (I1 + (Log[1-x])^2/2) + 2 Li2[1-x] - 2 Li2[1] - Log[x]^2) + 1/(1-x) (-Log[x] - 2 x^2 Log[x] - 3 x (1+x) - 2));
+  $full = aspi^2 (pqq (-11 + 6 Li2[1] + Log[x]^2 + 2 Log[1-x]^2 + 6 Log[x] Log[1-x] - 3/2 Log[x] + 5 Log[1-x] - 8 I1 + 8 I0 + 8 I0 (Log[x] + Log[1-x])) + (1+x) Log[x]/2 + (1-x) (-1 + 8 I0 + 2 (Log[x] + 2 Log[1-x])));
+
+  UT$AssertEquivalent[$full - $real - $virt, 0];
 
 
   $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
