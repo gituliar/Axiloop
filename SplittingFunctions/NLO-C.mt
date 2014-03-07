@@ -51,24 +51,16 @@ UT$BeginTestCase["NLO-C"];
     as^2 / k.k (pqq + (1-x) eps) (-6 + 4 Log[x] + 8 I0)
   ];
 
-  UT$AssertEquivalent[
-    $Get[$result, "G1"]
-    ,
-    aspi^2 1/4 ( pqq (-7 + 2 Log[x]^2 + 2 Log[x] Log[1-x] - 3 Log[1-x] + 2 Li2[1-x] + 4 Li2[1] - 4 I1 + 4 I0 Log[x] + 4 I0 Log[1-x]) - (1-x) (3 - 2 Log[x] - 4 I0) + x)
-  ];
-
+  $virt = 4 $Get[$result, "G1"];
 
   UT$AssertEquivalent[
-    $Get[$result, "inclusive"]
+    $virt
     ,
-    1/4 aspi^2 ( pqq (-7 + 2 Log[x]^2 + 2 Log[x] Log[1-x] - 3 Log[1-x] + 2 Li2[1-x] + 4 Li2[1] - 4 I1 + 4 I0 Log[x] + 4 I0 Log[1-x]) - (1-x) (3 - 2 Log[x] - 4 I0) + x)
+    - aspi^2 ( pqq (7 - 2 Log[x]^2 - 2 Log[x] Log[1-x] + 3 Log[1-x] - 2 Li2[1-x] - 4 Li2[1] + 4 I1 - 4 I0 Log[x] - 4 I0 Log[1-x]) + (1-x) (3 - 2 Log[x] - 4 I0) - x)
   ];
 
-
-  $virt = -4 $Get[$result, "inclusive"];
-
-  $real = aspi^2 (pqq ((Log[x])^2 + 2 Li2[1-x]) + 7 (1-x) + 2(1+x)Log[x] + 1 + 3/(1-x)Log[x]);
-  $full = aspi^2 (pqq (7 - 4 Li2[1] - (Log[x])^2 - 2 Log[x] Log[1-x] + 3/2 Log[x] + 3 Log[1-x] + 4 I1 - 4 I0 (Log[x] + Log[1-x])) + 7/2 (1+x) Log[x] + (1-x) (11 - 2 Log[x] - 4 I0));
+  $real = - aspi^2 (pqq ((Log[x])^2 + 2 Li2[1-x]) + 7 (1-x) + 2(1+x)Log[x] + 1 + 3/(1-x)Log[x]);
+  $full =   aspi^2 (pqq (-7 + 4 Li2[1] + (Log[x])^2 + 2 Log[x] Log[1-x] - 3/2 Log[x] - 3 Log[1-x] - 4 I1 + 4 I0 (Log[x] + Log[1-x])) - 7/2 (1+x) Log[x] + (1-x) (-11 + 2 Log[x] + 4 I0));
 
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
