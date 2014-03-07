@@ -56,7 +56,7 @@ UT$BeginTestCase["NLO-C"];
   UT$AssertEquivalent[
     $virt
     ,
-    - aspi^2 ( pqq (7 - 2 Log[x]^2 - 2 Log[x] Log[1-x] + 3 Log[1-x] - 2 Li2[1-x] - 4 Li2[1] + 4 I1 - 4 I0 Log[x] - 4 I0 Log[1-x]) + (1-x) (3 - 2 Log[x] - 4 I0) - x)
+    aspi^2 ( pqq (-7 + 2 Log[x]^2 + 2 Log[x] Log[1-x] - 3 Log[1-x] + 2 Li2[1-x] + 4 Li2[1] - 4 I1 + 4 I0 Log[x] + 4 I0 Log[1-x]) + (1-x) (-3 + 2 Log[x] + 4 I0) + x)
   ];
 
   $real = - aspi^2 (pqq ((Log[x])^2 + 2 Li2[1-x]) + 7 (1-x) + 2(1+x)Log[x] + 1 + 3/(1-x)Log[x]);
