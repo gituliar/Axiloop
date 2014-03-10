@@ -52,17 +52,21 @@ UT$BeginTestCase["NLO-G"];
   ];
 
 
+  $virt = 4 $Get[$result, "G1"];
+
   UT$AssertEquivalent[
-    $Get[$result, "inclusive"]
+    $virt
     ,
-    1/4 aspi^2 8/3 ((1+x^2)/(1-x) (Log[1-x] + Log[Q^2]) + (1-x))
+    aspi^2 8/3 ( pqq(Log[1-x] + Log[Q^2]) + (1-x))
   ];
+
+  $real = aspi^2 (pqq (-10/9 - 2/3 Log[x] - 8/3 Log[1-x] - 8/3 Log[Q^2]) - 4 (1-x));
+  $full = aspi^2 (pqq (-10/9 - 2/3 Log[x]) - 4/3 (1-x));
+
+  UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
   $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
-(*
-  LG$Output[ Series[Simplify[$Get[$result, "exclusive-bare"] /. euv -> eps], {eps,0,0}] ];
-*)
 
   UT$AssertEquivalent[
     "W_uv^q" /. $W
