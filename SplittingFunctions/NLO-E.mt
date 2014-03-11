@@ -81,7 +81,7 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[
     "W_uv^k" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (-6 + 8 I0 + 8 Log[x]) )
+    I g^4 ( pqq (-6 + 8 I0 + 8 Log[x]) )
   ];
 
 UT$EndTestCase[];
