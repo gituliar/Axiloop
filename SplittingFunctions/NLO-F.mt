@@ -41,23 +41,29 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    I g^2 Qv (22/3 - 8 Log[1-x] - 8 I0)
+    I g^2 Qv (-11/3 + 4 Log[1-x] + 4 I0)
   ];
 
   UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 (pqq + (1-x) eps) (-44/3 + 16 Log[1-x] + 16 I0) / k.k
+    as^2/(-k.k) (pqq + (1-x) eps) (-22/3 + 8 Log[1-x] + 8 I0)
+  ];
+
+  UT$AssertEquivalent[
+    $Get[$result, "Wr"]
+    ,
+    as^2/(-k.k) (pqq + eps (1-x)) (22/3 - 8 Log[1-x] - 8 I0) / eps
   ];
 
   $virt = 4 $Get[$result, "G1"];
 
   UT$AssertEquivalent[
     $virt,
-    aspi^2 (-44/3 + 16 I0 + 16 Log[1-x]) (pqq (Log[1-x] + Log[Q^2]) + 1-x)
+    aspi^2 (22/3 - 8 I0 - 8 Log[1-x]) (pqq (Log[1-x] + Log[Q^2]) + 1-x)
   ];
 
-  $real = aspi^2 ( pqq (103/9 - 4 Li2[1] - 18 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] + 32/3 Log[1-x] + 4 I1 - 4 I0 - 4 I0 Log[x] - 20 I0 Log[1-x] + (44/3 - 16 Log[1-x] - 16 I0) Log[Q^2]) + (1-x) (18 - 20 Log[1-x] - 20 I0));
+  $real = aspi^2 ( pqq (103/9 - 4 Li2[1] + 6 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] - 34/3 Log[1-x] + 4 I1 - 4 I0 - 4 I0 Log[x] + 4 I0 Log[1-x] + (-22/3 + 8 Log[1-x] + 8 I0) Log[Q^2]) + (1-x) (-4 + 4 Log[1-x] + 4 I0));
   $full = aspi^2 ( pqq (103/9 - 4 Li2[1] - 2 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] - 4 Log[1-x] + 4 I1 - 4 I0 (1 + Log[x] + Log[1-x]) ) + (1-x) (10/3 - 4 Log[1-x] - 4 I0));
 
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
@@ -68,7 +74,7 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     "W_uv^q" /. $W
     ,
-    I g^4 ( pqq (44/3 - 16 I0 - 16 Log[1-x]) )
+    I g^4 ( pqq (-22/3 + 8 I0 + 8 Log[1-x]) )
   ];
 
 UT$EndTestCase[];
