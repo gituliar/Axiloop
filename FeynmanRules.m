@@ -29,6 +29,11 @@ BeginPackage["Axiloop`FeynmanRules`", {
   GVc::usage =
   "The complex conjugated Gluon Vertex."
 
+  Ca::usage = "Color factor."
+  Cf::usage = "Color factor."
+  Nf::usage = "Color factor; number of fermion flawours."
+  Tf::usage = "Color factor."
+
   as::usage = "g^2 / (4 Pi)";
 
   aspi::usage = "Alpha_s / (2 Pi)";
@@ -60,9 +65,8 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
     GPx[mu_, nu_, p_] := (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
 
-    GV[i1_,p1_, i2_,p2_, i3_,p3_] :=
-      g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
-    GVc[argv__] := GV[argv];
+    GV[i1_,p1_, i2_,p2_, i3_,p3_] := I g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
+    GVc[argv__] := - GV[argv];
 
   End[];
 
