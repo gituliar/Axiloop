@@ -48,7 +48,7 @@ UT$BeginTestCase["NLO-C"];
   UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 / k.k (pqq + (1-x) eps) (-6 + 4 Log[x] + 8 I0)
+    as^2 / (-k.k) (pqq + (1-x) eps) (6 - 4 Log[x] - 8 I0)
   ];
 
   $virt = 4 $Get[$result, "G1"];
