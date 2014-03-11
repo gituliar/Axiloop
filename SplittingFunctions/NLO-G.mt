@@ -42,13 +42,19 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[
     $Get[$result, "Z"]
     ,
-    I g^2 Qv (-4/3)
+    I g^2 Qv 4/3
   ];
 
   UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 (pqq + (1-x) eps) (8/3) / k.k
+    as^2 / (-k.k) (pqq + (1-x) eps) 8/3
+  ];
+
+  UT$AssertEquivalent[
+    $Get[$result, "Wr"]
+    ,
+    as^2 / (-k.k) (pqq + (1-x) eps) (-8/3) / eps
   ];
 
 
@@ -57,11 +63,11 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[
     $virt
     ,
-    aspi^2 8/3 ( pqq(Log[1-x] + Log[Q^2]) + (1-x))
+    aspi^2 (-8/3) ( pqq (Log[1-x] + Log[Q^2]) + (1-x))
   ];
 
-  $real = aspi^2 (pqq (-10/9 - 2/3 Log[x] - 8/3 Log[1-x] - 8/3 Log[Q^2]) - 4 (1-x));
-  $full = aspi^2 (pqq (-10/9 - 2/3 Log[x]) - 4/3 (1-x));
+  $real = aspi^2 (pqq (-20/9 - 4/3 Log[x] + 8/3 Log[1-x] + 8/3 Log[Q^2]));
+  $full = aspi^2 (pqq (-20/9 - 4/3 Log[x]) - 8/3 (1-x));
 
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
@@ -71,7 +77,7 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[
     "W_uv^q" /. $W
     ,
-    I g^4 ( (1+x^2)/(1-x) (-8/3) )
+    I g^4 pqq 8/3
   ];
 
 UT$EndTestCase[];
