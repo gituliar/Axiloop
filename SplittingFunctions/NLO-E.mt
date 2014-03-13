@@ -39,15 +39,9 @@ UT$BeginTestCase["NLO-E"];
   ];
 
   UT$AssertEquivalent[
-    $Get[$result, "Z"]
-    ,
-    I g^2 Qv (-3 + 4 Log[x] + 4 I0)
-  ];
-
-  UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 (pqq + (1-x) eps) (6 - 8 Log[x] - 8 I0) / k.k
+    as^2/(-k.k) (pqq + (1-x) eps) (-6 + 8 Log[x] + 8 I0)
   ];
 
   UT$AssertEquivalent[
