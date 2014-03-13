@@ -35,13 +35,7 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[
     AX$Get["NLO-F.ebs.mx"]
     ,
-    $Get[$result, "exclusive-bare-short"]
-  ];
-
-  UT$AssertEquivalent[
-    $Get[$result, "Z"]
-    ,
-    I g^2 Qv (-11/3 + 4 Log[1-x] + 4 I0)
+    $Get[$result, "Wbs"]
   ];
 
   UT$AssertEquivalent[
@@ -69,7 +63,7 @@ UT$BeginTestCase["NLO-F"];
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
-  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+  $W = SplittingFunctionFormFactors[ $Get[$result, "Wb"] ];
 
   UT$AssertEquivalent[
     "W_uv^q" /. $W

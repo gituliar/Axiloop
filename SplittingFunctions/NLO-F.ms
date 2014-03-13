@@ -26,8 +26,8 @@
 
 $LO = AX$Get["LO.result"];
 
-$propagator = 1/2 Expand[ GP[i1, i2, q] GV[i2, -q, i3, -l, i4, l+q] GP[i3, i5, l] GP[i4, i6, l+q] * GV[i5, l, mu, q, i6, -l-q] ];
-$topology = x (G[n]/(4 k.n))**FP[k]**FV[i1]**FPx[p]**FV[nu]**FP[k] $propagator GPx[mu, nu, q];
+$propagator = 1/2 Expand[ GP[i1,i2,q] GV[i2,-q, i3,-l, i4,l+q] GP[i3,i5,l] GP[i4,i6,l+q] * GV[i5,l, mu,q, i6,-l-q] ];
+$topology = x PFo[k]**FP[k]**FV[i1]**PFi[p]**FV[nu]**FP[k] $propagator GPx[mu,nu,q];
 
 $result = SplittingFunction[$topology, $LO];
 

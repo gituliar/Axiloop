@@ -34,21 +34,15 @@ UT$BeginTestCase["NLO-G"];
 
 
   UT$AssertEquivalent[
+    $Get[$result, "Wbs"]
+    ,
     AX$Get["NLO-G.ebs.mx"]
-    ,
-    $Get[$result, "exclusive-bare-short"]
-  ];
-
-  UT$AssertEquivalent[
-    $Get[$result, "Z"]
-    ,
-    I g^2 Qv 4/3
   ];
 
   UT$AssertEquivalent[
     $Get[$result, "Wz"]
     ,
-    as^2 / (-k.k) (pqq + (1-x) eps) 8/3
+    as^2/(-k.k) (pqq + (1-x) eps) 8/3
   ];
 
   UT$AssertEquivalent[
@@ -72,10 +66,10 @@ UT$BeginTestCase["NLO-G"];
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
-  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+  $Wb = SplittingFunctionFormFactors[ $Get[$result, "Wb"] ];
 
   UT$AssertEquivalent[
-    "W_uv^q" /. $W
+    "W_uv^q" /. $Wb
     ,
     I g^4 pqq 8/3
   ];

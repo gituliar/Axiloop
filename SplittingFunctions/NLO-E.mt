@@ -35,7 +35,7 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[
     AX$Get["NLO-E.ebs.mx"]
     ,
-    $Get[$result, "exclusive-bare-short"]
+    $Get[$result, "Wbs"]
   ];
 
   UT$AssertEquivalent[
@@ -64,7 +64,7 @@ UT$BeginTestCase["NLO-E"];
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];
 
 
-  $W = SplittingFunctionFormFactors[ $Get[$result, "exclusive-bare"] ];
+  $W = SplittingFunctionFormFactors[ $Get[$result, "Wb"] ];
 
   UT$AssertEquivalent[
     "W_0^k" /. $W
