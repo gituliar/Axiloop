@@ -22,22 +22,12 @@
 (*============================================================================*)
 
 
-<< UnitTest`
+Needs["UnitTest`"];
 
-<< Axiloop`Integrate`
+Needs["Axiloop`Integrate`"];
 
 
 UT$BeginTestCase["IntegrateLoop"];
-
-(*
-  UT$AssertEquivalent[
-    Try[IntegrateLoop[1/(l.l (l+k).(l+k) (l+p).(l+p) (l+q).(l+q)), l]]
-    ,
-    $UnevaluatedError
-    ,
-    Axiloop`Integrate`Private`IntegrateLoopGeneral::unevaluated
-  ];
-*)
 
 
   UT$AssertEquivalent[
@@ -45,6 +35,17 @@ UT$BeginTestCase["IntegrateLoop"];
     ,
     Qv[q] T1[euv] (-3 k.k - p.p + q.q) / 2
   ];
+
+  $integrand = l.k / (l.l (l+k).(l+k) (l+p).(l+p));
+  $integral1 = IntegrateLoop[$integrand, l, SimplifyNumeratorAndDenominator -> True];
+  $integral2 = IntegrateLoop[$integrand, l, SimplifyNumeratorAndDenominator -> False];
+
+  UT$AssertEquivalent[
+    $Get[$integral1, {"integrated", "long"}] /. {Qv[p]->0, Qv[q]->0}
+    ,
+    $Get[$integral2, {"integrated", "long"}] /. {p.p->0, q.q->0}
+  ];
+
 
 UT$EndTestCase[];
 

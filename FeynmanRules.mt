@@ -22,9 +22,9 @@
 (*============================================================================*)
 
 
-<< UnitTest`
+Needs["UnitTest`"];
 
-<< Axiloop`FeynmanRules`
+Needs["Axiloop`FeynmanRules`"];
 
 
 UT$BeginTestCase["FeynmanRules"];
@@ -39,7 +39,7 @@ UT$BeginTestCase["FeynmanRules"];
   UT$AssertEquivalent[
     GammaTrace[FP[p]**FV[{mu}]**FPx[k]**FV[{mu}], NumberOfDimensions -> 4 + eps]
     ,
-    - 4  (2 + eps) g^2 k.p / p.p
+    4 I (2 + eps) g^2 k.p / p.p
   ];
 
 UT$EndTestCase[];

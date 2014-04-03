@@ -22,10 +22,9 @@
 (*============================================================================*)
 
 
-<< UnitTest`
+Needs["UnitTest`"];
 
-<< Axiloop`
-<< Axiloop`PaVeReduce`
+Needs["Axiloop`"];
 
 
 UT$BeginTestCase["PaVeReduce"];
