@@ -86,7 +86,7 @@ BeginPackage["Axiloop`Integrate`", {
       {$result},
 
       $result = Collect[expr,
-        {Qv[_], B0[_],B1[_],E0[_],E1[_],E2[_],E3[_],K0[_],P0[_],P1[_],P3[_],R0[_],R1[_],R2[_],R3[_],R4[_],R5[_],S0[_],T0[_],T1[_],V1[_],V2[_]},
+        {Qv[_], B0[_],B1[_],C0[_],C1[_],D0[_],E0[_],E1[_],E2[_],E3[_],K0[_],P0[_],P1[_],P3[_],R0[_],R1[_],R2[_],R3[_],R4[_],R5[_],S0[_],T0[_],T1[_],T2[_],U0[_],V1[_],V2[_]},
         Simplify
       ];
 
@@ -94,7 +94,7 @@ BeginPackage["Axiloop`Integrate`", {
     ];
 
     ExtractFormFactors[expr_] := Block[{},
-      DeleteDuplicates[Cases[expr, B0[_]|B1[_]|K0[_]|P0[_]|P1[_]|P2[_]|P3[_]|R0[_]|R1[_]|R2[_]|R3[_]|R4[_]|R5[_]|R6[_]|S0[_]|S1[_]|S2[_]|S3[_]|V1[_]|V2[_], Infinity]]
+      DeleteDuplicates[Cases[expr, B0[_]|B1[_]|C0[_]|C1[_]|D0[_]|K0[_]|P0[_]|P1[_]|P2[_]|P3[_]|R0[_]|R1[_]|R2[_]|R3[_]|R4[_]|R5[_]|R6[_]|S0[_]|S1[_]|S2[_]|S3[_]|T2[_]|U0[_]|V1[_]|V2[_], Infinity]]
     ];
 
     $$CollectLoopIntegrals::unevaluated = "`1`";
@@ -311,6 +311,7 @@ BeginPackage["Axiloop`Integrate`", {
       integrateRules = {
         $$[{},{0},{ }] -> 0,
         $$[{},{0},{0}] -> 0,
+        $$[{},{p},{0}] -> 0,
 
         $$[{},{0,k},{ }] ->   Qv[k] T0[euv],
         $$[{},{0,p},{ }] ->   Qv[p] T0[euv],
@@ -540,7 +541,7 @@ BeginPackage["Axiloop`Integrate`", {
       W9[eps_] := ((2-x) x + 2 (1-x) Log[1-x])/(eps x) - (4 x (-2 + 3 x - 3 x^2 + x^3) + 4 (2 - 4 x + 3 x^2 - x^3) Li2[x] - 2 (1-x) x^2 Log[1-x] + (2 - 4 x + 3 x^2 - x^3) Log[1-x]^2)/(2 (1-x) x);
       W10[eps_] := -(((-1 + x) Log[1 - x])/(2 eps x)) + (4 (-2 + x) x - 4 (-1 + x) Li2[x] + 4 (-1 + x) Log[1 - x] - (-1 + x) Log[1 - x]^2)/(4 x);
 
-      Expand[ $expr ]
+      Expand[ $expr ] /. {n.p->1, k.n->x, q.n->1-x}
     ];
 
 
@@ -566,7 +567,7 @@ BeginPackage["Axiloop`Integrate`", {
     ];
 
 
-    Options[IntegrateLoop] = {Prescription -> "MPV"};
+    Options[IntegrateLoop] = {Prescription -> "MPV", SimplifyNumeratorAndDenominator -> True};
     IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
       {collected, integrated, integratedPV, simplified},
 
@@ -574,7 +575,11 @@ BeginPackage["Axiloop`Integrate`", {
 
       simplified = collected;
       simplified = $$SimplifyAlgebraic[simplified];
-      simplified = $$SimplifyNumeratorAndDenominator[simplified];
+      If[
+        OptionValue[SimplifyNumeratorAndDenominator] == True
+        , 
+        simplified = $$SimplifyNumeratorAndDenominator[simplified];
+      ];
       simplified = $$SimplifyTranslate[simplified];
       simplified = $$SimplifyOnePoint[simplified];
 
@@ -601,4 +606,4 @@ BeginPackage["Axiloop`Integrate`", {
 
   End[];
 
-EndPackage[]
+EndPackage[];
