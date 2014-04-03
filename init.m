@@ -137,16 +137,17 @@ ExpandPhaseSpace[expr_] := Block[{},
 (*---------------------------------------------------------------------------*)
 
 Options[SplittingFunction] = {IntegrateLoopPrescription -> "MPV"};
-SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Module[
+SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Block[
   {counterterm, exclusive, exclusiveBare, exclusiveBareShort, inclusive,
-   integrated, trace, Z, $result},
+   integrated, $trace, Z, $result},
 
-  trace = Expand[
-    GammaTrace[Expand[$topology], NumberOfDimensions -> 4 + 2 eps] /. $kinematicRules
-  ];
+  $trace = GammaTrace[$topology, NumberOfDimensions -> 4 + 2 eps];
+  $trace = $trace /. {n.n -> 0};
+  $trace = Expand[$trace /. $kinematicRules /. {g^_Integer (p.p | q.q) :> 0}];
+
 
   integrated = IntegrateLoop[
-    trace,
+    $trace,
     l,
     Prescription -> OptionValue[IntegrateLoopPrescription]
   ];

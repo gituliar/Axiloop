@@ -583,7 +583,7 @@ BeginPackage["Axiloop`Integrate`", {
       simplified = $$SimplifyTranslate[simplified];
       simplified = $$SimplifyOnePoint[simplified];
 
-      integrated = Expand[ IntegrateLoopGeneral[simplified, l] /. $kinematicRules ];
+      integrated = Expand[ IntegrateLoopGeneral[simplified, l] /. $kinematicRules /. n.n -> 0 ];
 
       integratedPV =  If[
         OptionValue[Prescription] == "MPV"

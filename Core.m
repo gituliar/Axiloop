@@ -89,9 +89,7 @@ WARN[label_, message_] := Module[{},
 $kinematicRules = {
 	k.p -> (p.p + k.k - q.q) / 2,
 	k.q -> (p.p - k.k - q.q) / 2,
-	p.q -> (p.p - k.k + q.q) / 2,
-
-	n.n -> 0
+	p.q -> (p.p - k.k + q.q) / 2
 };
 
 PolePart[kernel_, eta_, n_:-1] := Expand[
