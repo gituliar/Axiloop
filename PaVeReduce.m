@@ -49,16 +49,16 @@ BeginPackage["Axiloop`PaVeReduce`", {
         $lhs = $$SimplifyTranslate[$lhs];
         $lhs = IntegrateLoopGeneral[$lhs, l];
         $lhs = $PutOnShell[ $lhs ];
+        $lhs = $lhs /. {p.n -> 1, k.n -> x, q.n -> 1-x};
 
         $rhs = Simplify[rhs ff];
         $rhs = $PutOnShell[$rhs];
-        $rhs = $rhs /. {n.p -> 1, k.n -> x, n.q -> 1-x};
+        $rhs = $rhs /. {p.n -> 1, k.n -> x, q.n -> 1-x};
     
         AppendTo[$equations, $lhs == $rhs];
       ];
 
       $result = Simplify[Expand[First[Solve[$equations, vars]]]] /. {Rule[e1_,e2_] :> Rule[e1, CollectFormFactors[$$ExpandPaVe[$PutOnShell[e2]] /. {eir -> eps, euv -> eps}] ]};
-      Print[$result];
       $result = $result /. {Rule[e1_,e2_] :> Rule[e1, Collect[Normal[Series[$PutOnShell[$$ExpandMPV[e2]], {eps,0,0}]], 1/eps, Simplify]]};
       $result
     ];

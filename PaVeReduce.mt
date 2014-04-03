@@ -25,6 +25,7 @@
 Needs["UnitTest`"];
 
 Needs["Axiloop`"];
+Needs["Axiloop`PaVeReduce`"];
 
 
 UT$BeginTestCase["PaVeReduce"];
