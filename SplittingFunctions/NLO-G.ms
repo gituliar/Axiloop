@@ -16,8 +16,8 @@ UT$BeginTestCase["NLO-G"];
   pqq = (1+x^2)/(1-x);
 
   $full = aspi^2 (pqq (-20/9 - 4/3 Log[x]) - 8/3 (1-x));
-  $real = aspi^2 (pqq (-20/9 - 4/3 Log[x] + 8/3 Log[1-x] + 8/3 Log[Q^2]));
-  $virt = aspi^2 (-8/3) (pqq (Log[1-x] + Log[Q^2]) + (1-x));
+  $real = aspi^2 (pqq (-20/9 - 4/3 Log[x] + 8/3 Log[1-x] + 8/3 Log[Q2]));
+  $virt = aspi^2 (-8/3) (pqq (Log[1-x] + Log[Q2]) + (1-x));
 
 
   UT$AssertEquivalent[

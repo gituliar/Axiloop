@@ -21,7 +21,9 @@
 
 
 BeginPackage["Axiloop`Core`", {
-  "Axiloop`FeynmanRules`"}];
+  "Logging`",
+  "Axiloop`FeynmanRules`"
+  }];
 
 DEBUG::usage = "";
 INFO::usage = "";
@@ -40,6 +42,9 @@ $UnevaluatedError;
 
 PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
+
+TimerPrint::usage = ""
+TimerStart::usage = ""
 
 $kinematicRules::usage = ""
 
@@ -60,31 +65,39 @@ p::usage =
 q::usage = "Final state particle momentum; q.q = 0."
 
 
-$$debug = True;
+$$debug = False;
+$$info  = True;
 
 
 Begin["`Private`"]
 
 $$Message[level_, label_, message_] := Module[{},
-	Print[level, "::", label, " : ", message];
+	LG$Output[level, "::", label, " : ", message];
 ];
 
 DEBUG[label_, message_] := Module[{},
-	If[
-		$$debug
-		,
-		$$Message["DEBUG", label, message]
-	]
+  If[$$debug, $$Message["DEBUG", label, message] ];
 ];
 
 INFO[label_, message_] := Module[{},
-	$$Message["INFO", label, message]
+  If[$$info, $$Message["INFO", label, message] ];
 ];
 
 WARN[label_, message_] := Module[{},
-	$$Message["WARNING ", label, message]
+  $$Message["WARNING ", label, message]
 ];
 
+
+$timeStart = Null;
+
+TimerStart[message_:Null] := Block[{},
+  If[ message =!= Null, INFO[message, ""] ];
+  $timeStart = SessionTime[];
+];
+
+TimerPrint[message_] := Block[{},
+  INFO["[" <> ToString[N[Round[(SessionTime[] - $timeStart) 10]/10]] <> " sec]", message];
+];
 
 $kinematicRules = {
 	k.p -> (p.p + k.k - q.q) / 2,

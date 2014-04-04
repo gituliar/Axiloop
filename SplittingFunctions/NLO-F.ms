@@ -37,7 +37,7 @@ UT$BeginTestCase["NLO-F"];
 
   pqq = (1+x^2)/(1-x);
   
-  $real = aspi^2 ( pqq (103/9 - 4 Li2[1] + 6 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] - 34/3 Log[1-x] + 4 I1 - 4 I0 - 4 I0 Log[x] + 4 I0 Log[1-x] + (-22/3 + 8 Log[1-x] + 8 I0) Log[Q^2]) + (1-x) (-4 + 4 Log[1-x] + 4 I0));
+  $real = aspi^2 ( pqq (103/9 - 4 Li2[1] + 6 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] - 34/3 Log[1-x] + 4 I1 - 4 I0 - 4 I0 Log[x] + 4 I0 Log[1-x] + (-22/3 + 8 Log[1-x] + 8 I0) Log[Q2]) + (1-x) (-4 + 4 Log[1-x] + 4 I0));
   $full = aspi^2 ( pqq (103/9 - 4 Li2[1] - 2 Log[1-x]^2 - 4 Log[x] Log[1-x] + 11/3 Log[x] - 4 Log[1-x] + 4 I1 - 4 I0 (1 + Log[x] + Log[1-x]) ) + (1-x) (10/3 - 4 Log[1-x] - 4 I0));
   
   (*
@@ -70,7 +70,7 @@ UT$BeginTestCase["NLO-F"];
 
   UT$AssertEquivalent[
     $virt,
-    aspi^2 (22/3 - 8 I0 - 8 Log[1-x]) (pqq (Log[1-x] + Log[Q^2]) + 1-x)
+    aspi^2 (22/3 - 8 I0 - 8 Log[1-x]) (pqq (Log[1-x] + Log[Q2]) + 1-x)
   ];
 
   UT$AssertEquivalent[Simplify[Expand[$virt + $real - $full]], 0];

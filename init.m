@@ -34,7 +34,7 @@ $Cases::usage = "";
 ExpandPhaseSpace::usage = "";
 Qr::usage = "";
 
-Q::usage = "Hard process scale";
+Q2::usage = "Hard process scale";
 
 Begin["`Private`"]
 
@@ -117,11 +117,11 @@ CollectExclusiveShort[expr_] := Module[{},
 (*--------------------- FINAL-STATE MOMENTA INTEGRATION ---------------------*)
 (*---------------------------------------------------------------------------*)
 
-IntegrateFinal[kernel_, ndim_] := Module[
+IntegrateFinal[Wr_, ndim_] := Block[
 	{eps},
 
 	eps = Simplify[ndim/2 - 2];
-	Qr (1 + eps Log[1-x]) Integrate[Expand[(-k.k)^(eps) kernel], {k.k, -Q^2, 0}, Assumptions -> {Re[eps]>0}]
+	- Q2^eps / eps Qr (1 + eps Log[1-x]) (Expand[Wr k.k] /. {Qv[k] -> Qv Q2^eps / 2})
 ];
 
 ExpandPhaseSpace[expr_] := Block[{},
@@ -138,79 +138,59 @@ ExpandPhaseSpace[expr_] := Block[{},
 
 Options[SplittingFunction] = {IntegrateLoopPrescription -> "MPV"};
 SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Block[
-  {counterterm, exclusive, exclusiveBare, exclusiveBareShort, inclusive,
-   integrated, $trace, Z, $result},
+  {$G, $G1, $Wb, $Wbs, $Wn, $Wr, $Wz, $Z, $result, integrated},
 
-  $trace = GammaTrace[$topology, NumberOfDimensions -> 4 + 2 eps];
-  $trace = $trace /. {n.n -> 0};
-  $trace = Expand[$trace /. $kinematicRules /. {g^_Integer (p.p | q.q) :> 0}];
+  TimerStart["[ 0.00 sec] SplittingFunction"];
 
+  $Wn = GammaTrace[$topology, NumberOfDimensions -> 4 + 2 eps];
+  $Wn = $Wn /. {n.n -> 0};
+  $Wn = Expand[$Wn /. $kinematicRules /. {g^_Integer (p.p | q.q) :> 0}];
+  TimerPrint["$Wn"];
 
-  integrated = IntegrateLoop[
-    $trace,
-    l,
+  integrated = IntegrateLoop[ $Wn, l,
     Prescription -> OptionValue[IntegrateLoopPrescription]
   ];
+  $Wbs = If[$LO =!= Null, $$ExpandPaVe[$Get[integrated, {"integrated", "short"}]], Null];
+  $Wbs = $Wbs /. {k.n -> x, n.p -> 1, n.q -> 1-x};
+  $Wbs = $Wbs /. {p.p -> 0, q.q -> 0};
+  TimerPrint["$Wbs"];
 
-	exclusiveBareShort = If[
-		SameQ[$LO, Null]
-		,
-		Null
-		,
-		$$ExpandPaVe[$Get[integrated, {"integrated", "short"}]]
-	] /. {k.n -> x, n.p -> 1, n.q -> 1-x}
-      /. {p.p -> 0, q.q -> 0};
+  $Wb = $Get[integrated, {"integrated", "long"}];
+  $Wb = $Wb /. {k.n -> x, n.p -> 1, n.q -> 1-x};
+  $Wb = $Wb /. {2^(2 eps) -> 4^eps};
+  $Wb = $Wb /. {p.p -> 0, q.q -> 0};
+  TimerPrint["$Wb"];
+
+  $Z = If[ $LO =!= Null, Simplify[ PolePart[$Wb, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ], 0];
+  TimerPrint["$Z"];
+
+  $Wz = If[ $LO =!= Null, $Z $Get[$LO, "exclusive"], 0];
+  TimerPrint["$Wz"];
+
+  $Wr = ($Wb - $Wz / euv) /. {eir -> eps, euv -> eps};
+  $Wr = $Wr /. {p.p -> 0, Qv[p] -> 0, q.q -> 0, Qv[q] -> 0};
+  TimerPrint["$Wr"];
+
+  $G = IntegrateFinal[$Wr, 4 + 2 eps];
+  TimerPrint["$G"];
+
+  $G1 = ExpandPhaseSpace[ PolePart[$G, eps] ];
+  TimerPrint["$G1"];
 	
-	exclusiveBare = $Get[integrated, {"integrated", "long"}]
-		/. {k.n -> x, n.p -> 1, n.q -> 1-x}
-        /. {2^(2 eps) -> 4^eps}
-        /. {p.p -> 0, q.q -> 0};
-	
-    Z = If[
-      SameQ[$LO, Null]
-      ,
-      0
-      ,
-      Simplify[ PolePart[exclusiveBare, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ]
-	];
+  $result = {
+    {"Wn", $Wn},
+    {"Wr", $Wr //. {Qv[r_] :> Qv (-r.r)^eps, Qv -> I (4 Pi)^(-2)}},
+    {"G1", $G1}
+  };
 
+  If[ $LO =!= Null, AppendTo[$result,#]& /@ {
+    {"integrated", integrated},
+    {"Wb",  $Wb},
+    {"Wbs", $Wbs},
+    {"Wz",  $Wz /. {Qv -> I (4 Pi)^(-2)}}
+  } ];
 
-	counterterm = If[
-		SameQ[$LO, Null]
-		,
-		0
-		,
-		Z $Get[$LO, "exclusive"]
-	];
-
-(*
-    counterterm = PolePart[$Get[ $integrated, {"integrated", "long"}] /. {p.p->0, q.q->0}, euv];
-*)
-	
-	exclusive = (exclusiveBare - counterterm / euv)
-		/. {eir -> eps, euv -> eps}
-		/. {p.p -> 0, Qv[p] -> 0}
-        /. {q.q -> 0, Qv[q] -> 0}
-	;
-
-	inclusive = ExpandPhaseSpace[
-		PolePart[ IntegrateFinal[Expand[exclusive] /. {Qv[r_] :> Qv (-r.r)^eps}, 4 + 2 eps], eps ]
-	];
-	
-	$result = {
-		{"Wn", trace},
-		{"Wr", exclusive //. {Qv[r_] :> Qv (-r.r)^eps, Qv -> I (4 Pi)^(-2)}},
-		{"G1", inclusive}
-	};
-
-    If[ $LO =!= Null, AppendTo[$result,#]& /@ {
-      {"integrated", integrated},
-      {"Wb",  exclusiveBare},
-      {"Wbs", exclusiveBareShort},
-      {"Wz",  counterterm /. {Qv -> I (4 Pi)^(-2)}}
-    } ];
-
-    $result
+  $result
 ];
 
 $Cases[expr_, pattern_] := Plus @@ Cases[expr, e_ pattern -> e, 1];
