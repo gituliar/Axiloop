@@ -43,9 +43,6 @@ $UnevaluatedError;
 PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
 
-TimerPrint::usage = ""
-TimerStart::usage = ""
-
 $kinematicRules::usage = ""
 
 eps::usage =
@@ -87,17 +84,6 @@ WARN[label_, message_] := Module[{},
   $$Message["WARNING ", label, message]
 ];
 
-
-$timeStart = Null;
-
-TimerStart[message_:Null] := Block[{},
-  If[ message =!= Null, INFO[message, ""] ];
-  $timeStart = SessionTime[];
-];
-
-TimerPrint[message_] := Block[{},
-  INFO["[" <> ToString[N[Round[(SessionTime[] - $timeStart) 10]/10]] <> " sec]", message];
-];
 
 $kinematicRules = {
 	k.p -> (p.p + k.k - q.q) / 2,

@@ -1,9 +1,11 @@
 BeginPackage["Axiloop`", {
+  "Logging`",
+  "Timestamp`",
   "Axiloop`Core`",
   "Axiloop`FeynmanRules`",
   "Axiloop`GammaTrace`",
-  "Axiloop`Integrate`",
-  "Logging`"}];
+  "Axiloop`Integrate`"
+  }];
 
   AX$Author = "Oleksandr Gituliar <oleksandr@gituliar.org>";
   AX$Version = "Axiloop 2.3 (Mar 2014)";
@@ -140,12 +142,12 @@ Options[SplittingFunction] = {IntegrateLoopPrescription -> "MPV"};
 SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Block[
   {$G, $G1, $Wb, $Wbs, $Wn, $Wr, $Wz, $Z, $result, integrated},
 
-  TimerStart["[ 0.00 sec] SplittingFunction"];
+  TS$Start["SplittingFunction"];
 
   $Wn = GammaTrace[$topology, NumberOfDimensions -> 4 + 2 eps];
   $Wn = $Wn /. {n.n -> 0};
   $Wn = Expand[$Wn /. $kinematicRules /. {g^_Integer (p.p | q.q) :> 0}];
-  TimerPrint["$Wn"];
+  TS$Print["$Wn"];
 
   integrated = IntegrateLoop[ $Wn, l,
     Prescription -> OptionValue[IntegrateLoopPrescription]
@@ -153,29 +155,29 @@ SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Block[
   $Wbs = If[$LO =!= Null, $$ExpandPaVe[$Get[integrated, {"integrated", "short"}]], Null];
   $Wbs = $Wbs /. {k.n -> x, n.p -> 1, n.q -> 1-x};
   $Wbs = $Wbs /. {p.p -> 0, q.q -> 0};
-  TimerPrint["$Wbs"];
+  TS$Print["$Wbs"];
 
   $Wb = $Get[integrated, {"integrated", "long"}];
   $Wb = $Wb /. {k.n -> x, n.p -> 1, n.q -> 1-x};
   $Wb = $Wb /. {2^(2 eps) -> 4^eps};
   $Wb = $Wb /. {p.p -> 0, q.q -> 0};
-  TimerPrint["$Wb"];
+  TS$Print["$Wb"];
 
   $Z = If[ $LO =!= Null, Simplify[ PolePart[$Wb, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ], 0];
-  TimerPrint["$Z"];
+  TS$Print["$Z"];
 
   $Wz = If[ $LO =!= Null, $Z $Get[$LO, "exclusive"], 0];
-  TimerPrint["$Wz"];
+  TS$Print["$Wz"];
 
   $Wr = ($Wb - $Wz / euv) /. {eir -> eps, euv -> eps};
   $Wr = $Wr /. {p.p -> 0, Qv[p] -> 0, q.q -> 0, Qv[q] -> 0};
-  TimerPrint["$Wr"];
+  TS$Print["$Wr"];
 
   $G = IntegrateFinal[$Wr, 4 + 2 eps];
-  TimerPrint["$G"];
+  TS$Print["$G"];
 
   $G1 = ExpandPhaseSpace[ PolePart[$G, eps] ];
-  TimerPrint["$G1"];
+  TS$Print["$G1"];
 	
   $result = {
     {"Wn", $Wn},
