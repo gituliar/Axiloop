@@ -1,5 +1,6 @@
 BeginPackage["Axiloop`GammaTrace`", {
-  "Axiloop`Tracer`"}];
+  "Axiloop`Tracer`"
+  }];
 
   G::usage =
   "G[<vector or index>, Line -> f1] -- a gamma matrix.

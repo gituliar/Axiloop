@@ -20,11 +20,12 @@
 (*============================================================================*)
 
 
-BeginPackage["Axiloop`Integrate`", {
+BeginPackage["Axiloop`IntegrateLoop`", {
   "Axiloop`Core`",
   "Axiloop`Exception`",
-  "Axiloop`FeynmanRules`",
-  "Axiloop`Tracer`"}]
+  "Axiloop`Tracer`",
+  "Axiloop`FeynmanRules`"
+  }];
 
   $$::usage = ""
 
@@ -38,6 +39,8 @@ BeginPackage["Axiloop`Integrate`", {
   "Ultra-violet (UV) eps pole."
 
   CollectFormFactors::usage = ""
+
+  ExpandPhaseSpaceLoop::usage = "";
 
   ExtractFormFactors::usage = ""
 
@@ -82,6 +85,10 @@ BeginPackage["Axiloop`Integrate`", {
 
   Begin["`Private`"] 
 
+    ExpandPhaseSpaceLoop[expr_] := Block[{Qv},
+      expr //. {Qv -> I (4 Pi)^(-2-eps) Gamma[1-eps], Qv[r_] :> Qv (-r.r)^eps}
+    ];
+
     CollectFormFactors[expr_] := Block[
       {$result},
 
@@ -99,16 +106,18 @@ BeginPackage["Axiloop`Integrate`", {
 
     $$CollectLoopIntegrals::unevaluated = "`1`";
 
-    $$CollectLoopIntegrals[expr_, l_] := Module[
+    $$CollectLoopIntegrals[expr_, l_] := Block[
       {collectRules, result},
 
       collectRules = {
+        (* Numerator *)
         $$[{a___},{b___},{c___}] S[l, x_] :> $$[{a,x},{b},{c}]
         ,
         $$[{a___},{b___},{c___}] S[l, x_]^n_ :>
             $$[Flatten[{a,x&/@Range[n]}],{b},{c}] /; n>0
         ,
 
+        (* Feynman denominator *)
         $$[{a___},{b___},{c___}] / S[l, l] :> $$[{a},{b,0},{c}]
         ,
         $$[{a___},{b___},{c___}] / S[l+x_Symbol, l+x_Symbol] :>
@@ -118,6 +127,7 @@ BeginPackage["Axiloop`Integrate`", {
             $$[{a},{b,-x},{c}]
         ,
 
+        (* Axial denominator *)
         $$[{a___},{b___},{c___}] S[l, n]^-1 :> $$[{a},{b},{c,0}]
         ,
         $$[{a___},{b___},{c___}] S[l+d_, n]^-1 :> $$[{a},{b},{c,d}]
@@ -134,7 +144,6 @@ BeginPackage["Axiloop`Integrate`", {
         //. collectRules
         /. $$[{a___},{b___},{c___}] :> $$[Sort[{a}], Sort[{b}], Sort[{c}]
       ];
-
 
       If[
         !(FreeQ[result, Dot[l,_]] && FreeQ[result, Dot[_,l]])
@@ -305,7 +314,7 @@ BeginPackage["Axiloop`Integrate`", {
 
     IntegrateLoopGeneral::unevaluated = "`1`"
 
-    IntegrateLoopGeneral[expr_, l_] := Module[
+    IntegrateLoopGeneral[expr_, l_] := Block[
       {integrateRules, result, unevaluated},
 
       integrateRules = {
@@ -568,7 +577,7 @@ BeginPackage["Axiloop`Integrate`", {
 
 
     Options[IntegrateLoop] = {Prescription -> "MPV", SimplifyNumeratorAndDenominator -> True};
-    IntegrateLoop[expr_, l_, OptionsPattern[]] := Module[
+    IntegrateLoop[expr_, l_, OptionsPattern[]] := Block[
       {collected, integrated, integratedPV, simplified},
 
       collected = $$CollectLoopIntegrals[expr, l];

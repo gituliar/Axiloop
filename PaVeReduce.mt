@@ -24,7 +24,6 @@
 
 Needs["UnitTest`"];
 
-Needs["Axiloop`"];
 Needs["Axiloop`PaVeReduce`"];
 
 

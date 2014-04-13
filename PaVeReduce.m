@@ -23,7 +23,7 @@
 BeginPackage["Axiloop`PaVeReduce`", {
   "Axiloop`Core`",
   "Axiloop`FeynmanRules`",
-  "Axiloop`Integrate`"}];
+  "Axiloop`IntegrateLoop`"}];
 
   PaVeReduce::usage = ""
 

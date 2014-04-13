@@ -1,5 +1,7 @@
 BeginPackage["Axiloop`FeynmanRules`", {
-    "Axiloop`GammaTrace`"}];
+  "Axiloop`Core`",
+  "Axiloop`GammaTrace`"
+  }];
 
   FP::usage =
   "FP[momentum, Line -> f1] -- a fermion propagator in the light-cone gauge."
@@ -28,6 +30,12 @@ BeginPackage["Axiloop`FeynmanRules`", {
   "GV[i1,p1, i2,p2, i3,p3] -- a gluon vertex in the light-cone gauge."
   GVc::usage =
   "The complex conjugated Gluon Vertex."
+
+  PFi::usage = "";
+  PFo::usage = "";
+
+  PGi::usage = "";
+  PGo::usage = "";
 
   Ca::usage = "Color factor."
   Cf::usage = "Color factor."
@@ -67,6 +75,15 @@ BeginPackage["Axiloop`FeynmanRules`", {
 
     GV[i1_,p1_, i2_,p2_, i3_,p3_] := I g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
     GVc[argv__] := - GV[argv];
+
+
+    Options[PFi] = {Line -> f1};
+    PFi[p_, OptionsPattern[]] := G[p, Line -> OptionValue[Line]];
+    Options[PFo] = {Line -> f1};
+    PFo[p_, OptionsPattern[]] := G[n, Line -> OptionValue[Line]]/(4 p.n);
+
+    PGi[mu_,nu_,p_] := 1/(2 (1+eps)) (-{mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
+    PGo[mu_,nu_] := - {mu}.{nu};
 
   End[];
 

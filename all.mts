@@ -5,7 +5,7 @@ Needs["UnitTest`"];
 UT$TestSuite[
   "FeynmanRules.mt",
   "GammaTrace.mt",
-  "Integrate.mt",
+  "IntegrateLoop.mt",
   "PaVeReduce.mt"
 ];
 

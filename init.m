@@ -1,10 +1,30 @@
+(*
+;; Copyright (c) 2012-2014 Oleksandr Gituliar <oleksandr@gituliar.org>.
+;;
+;; This file is part of Axiloop package.
+*)
+
+(*
+;; This directory contains sources for next-to-leading (\Alpha_s^2) order
+;; one-loop splitting functions (which are also known as evolution kernels
+;; in the context of DGLAP evolution equations).
+;;
+;; Source files are designed to serve as:
+;;  * scripts;
+;;  * tests;
+;;  * sessions.
+;;
+;; for actually performing calculations and printing output
+;; for developing new features and checking consistency of the code chacnges
+*)
+
 BeginPackage["Axiloop`", {
-  "Logging`",
-  "Timestamp`",
   "Axiloop`Core`",
   "Axiloop`FeynmanRules`",
   "Axiloop`GammaTrace`",
-  "Axiloop`Integrate`"
+  "Axiloop`IntegrateLeg`",
+  "Axiloop`IntegrateLoop`",
+  "Axiloop`SplittingFunction`"
   }];
 
   AX$Author = "Oleksandr Gituliar <oleksandr@gituliar.org>";
@@ -18,43 +38,16 @@ BeginPackage["Axiloop`", {
 
 ExtractFormFactors::usage = ""
 
-IntegrateFinal::usage = "Integrate over final-state momenta."
-
-
-PFi::usage = "";
-PFo::usage = "";
-
-PGi::usage = "";
-PGo::usage = "";
-
-
-SplittingFunction::usage = ""
 SplittingFunctionFormFactors::usage = ""
 
 $Cases::usage = "";
-
-ExpandPhaseSpace::usage = "";
-Qr::usage = "";
-
-Q2::usage = "Hard process scale";
 
 Begin["`Private`"]
 
 
 (*------------------- MISCELLANEOUS ROUTINES and HELPERS --------------------*)
 
-AX$Get[filename_] := Get[filename, Path -> DirectoryName[$InputFileName]];
-
-
-
-  Options[PFi] = {Line -> f1};
-  PFi[p_, OptionsPattern[]] := G[p, Line -> OptionValue[Line]];
-  Options[PFo] = {Line -> f1};
-  PFo[p_, OptionsPattern[]] := G[n, Line -> OptionValue[Line]]/(4 p.n);
-
-  PGi[mu_,nu_,p_] := 1/(2 (1+eps)) (-{mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
-  PGo[mu_,nu_] := - {mu}.{nu};
-
+  AX$Get[filename_] := Get[filename, Path -> DirectoryName[$InputFileName]];
 
 
 AX$PolynomialReduce[expr_] := Block[
@@ -93,8 +86,6 @@ AX$CoefficientList[expr_, basis_:AX$CoefficientList$Basis] := Block[
 ];
 
 
-(* Useful modifications to standard functions *)
-
 Unprotect[Dot];
     (-x_).y_ := -x.y;
 Protect[Dot];
@@ -119,81 +110,6 @@ CollectExclusiveShort[expr_] := Module[{},
 (*--------------------- FINAL-STATE MOMENTA INTEGRATION ---------------------*)
 (*---------------------------------------------------------------------------*)
 
-IntegrateFinal[Wr_, ndim_] := Block[
-	{eps},
-
-	eps = Simplify[ndim/2 - 2];
-	- Q2^eps / eps Qr (1 + eps Log[1-x]) (Expand[Wr k.k] /. {Qv[k] -> Qv Q2^eps / 2})
-];
-
-ExpandPhaseSpace[expr_] := Block[{},
-  expr //. {
-    Qr ->   (4 Pi)^(-2+eps)/Gamma[1-eps],
-    Qv -> I (4 Pi)^(-2-eps) Gamma[1-eps],
-    Qv[r_] :> Qv (-r.r)^eps
-  }
-];
-
-(*---------------------------------------------------------------------------*)
-(*--------------------------- SPLITTING FUNCTION ----------------------------*)
-(*---------------------------------------------------------------------------*)
-
-Options[SplittingFunction] = {IntegrateLoopPrescription -> "MPV"};
-SplittingFunction[$topology_, $LO_:Null, OptionsPattern[]] := Block[
-  {$G, $G1, $Wb, $Wbs, $Wn, $Wr, $Wz, $Z, $result, integrated},
-
-  TS$Start["SplittingFunction"];
-
-  $Wn = GammaTrace[$topology, NumberOfDimensions -> 4 + 2 eps];
-  $Wn = $Wn /. {n.n -> 0};
-  $Wn = Expand[$Wn /. $kinematicRules /. {g^_Integer (p.p | q.q) :> 0}];
-  TS$Print["$Wn"];
-
-  integrated = IntegrateLoop[ $Wn, l,
-    Prescription -> OptionValue[IntegrateLoopPrescription]
-  ];
-  $Wbs = If[$LO =!= Null, $$ExpandPaVe[$Get[integrated, {"integrated", "short"}]], Null];
-  $Wbs = $Wbs /. {k.n -> x, n.p -> 1, n.q -> 1-x};
-  $Wbs = $Wbs /. {p.p -> 0, q.q -> 0};
-  TS$Print["$Wbs"];
-
-  $Wb = $Get[integrated, {"integrated", "long"}];
-  $Wb = $Wb /. {k.n -> x, n.p -> 1, n.q -> 1-x};
-  $Wb = $Wb /. {2^(2 eps) -> 4^eps};
-  $Wb = $Wb /. {p.p -> 0, q.q -> 0};
-  TS$Print["$Wb"];
-
-  $Z = If[ $LO =!= Null, Simplify[ PolePart[$Wb, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ], 0];
-  TS$Print["$Z"];
-
-  $Wz = If[ $LO =!= Null, $Z $Get[$LO, "exclusive"], 0];
-  TS$Print["$Wz"];
-
-  $Wr = ($Wb - $Wz / euv) /. {eir -> eps, euv -> eps};
-  $Wr = $Wr /. {p.p -> 0, Qv[p] -> 0, q.q -> 0, Qv[q] -> 0};
-  TS$Print["$Wr"];
-
-  $G = IntegrateFinal[$Wr, 4 + 2 eps];
-  TS$Print["$G"];
-
-  $G1 = ExpandPhaseSpace[ PolePart[$G, eps] ];
-  TS$Print["$G1"];
-	
-  $result = {
-    {"Wn", $Wn},
-    {"Wr", $Wr //. {Qv[r_] :> Qv (-r.r)^eps, Qv -> I (4 Pi)^(-2)}},
-    {"G1", $G1}
-  };
-
-  If[ $LO =!= Null, AppendTo[$result,#]& /@ {
-    {"integrated", integrated},
-    {"Wb",  $Wb},
-    {"Wbs", $Wbs},
-    {"Wz",  $Wz /. {Qv -> I (4 Pi)^(-2)}}
-  } ];
-
-  $result
-];
 
 $Cases[expr_, pattern_] := Plus @@ Cases[expr, e_ pattern -> e, 1];
 

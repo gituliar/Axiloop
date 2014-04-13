@@ -24,7 +24,7 @@
 
 Needs["UnitTest`"];
 
-Needs["Axiloop`Integrate`"];
+Needs["Axiloop`IntegrateLoop`"];
 
 
 UT$BeginTestCase["IntegrateLoop"];

@@ -22,7 +22,8 @@
 
 BeginPackage["Axiloop`Core`", {
   "Logging`",
-  "Axiloop`FeynmanRules`"
+
+  "Axiloop`Tracer`"
   }];
 
 DEBUG::usage = "";
@@ -34,11 +35,6 @@ $UnevaluatedError;
 
 $Get::usage =
 	"$Get[hash_, key_] get value by key from a hash table."
-
-PolePart::usage =
-	"PolePart[expr, x] extract coefficient in front of 1/x in expr."
-
-$UnevaluatedError;
 
 PolePart::usage =
 	"PolePart[expr, x] extract coefficient in front of 1/x in expr."

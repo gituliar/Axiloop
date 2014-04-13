@@ -6,5 +6,5 @@ UT$TestSuite[
   "LO-gg.ms",
   "LO-gq.ms",
   "LO-qg.ms",
-  "LO-qq.ms"
+  "LO-qq.mt"
 ];
