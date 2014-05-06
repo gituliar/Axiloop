@@ -1,0 +1,15 @@
+{{"Wn", (4*g^2*Nf*Tf*x)/((1 + eps)*S[k, k]) - (4*g^2*Nf*Tf*x*S[k, n])/
+    ((1 + eps)*S[k, k]*S[n, p]) - (2*g^2*Nf*Tf*x*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]) - (2*eps*g^2*Nf*Tf*x*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]) + (2*g^2*Nf*Tf*x*S[p, p])/
+    ((1 + eps)*S[k, k]^2) + (2*eps*g^2*Nf*Tf*x*S[p, p])/
+    ((1 + eps)*S[k, k]^2) - (4*g^2*Nf*Tf*x*S[k, n]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[n, p]) - (2*g^2*Nf*Tf*x*S[q, q])/
+    ((1 + eps)*S[k, k]^2) - (2*eps*g^2*Nf*Tf*x*S[q, q])/
+    ((1 + eps)*S[k, k]^2) + (4*g^2*Nf*Tf*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[n, p])}, 
+ {"Wr", (-2*g^2*Nf*Tf)/((1 + eps)*S[k, k]) - (2*eps*g^2*Nf*Tf)/
+    ((1 + eps)*S[k, k]) + (4*g^2*Nf*Tf*x)/((1 + eps)*S[k, k]) - 
+   (4*g^2*Nf*Tf*x^2)/((1 + eps)*S[k, k])}, 
+ {"G1", (g^2*Nf*Tf)/(8*Pi^2) - (g^2*Nf*Tf*x)/(4*Pi^2) + 
+   (g^2*Nf*Tf*x^2)/(4*Pi^2)}}

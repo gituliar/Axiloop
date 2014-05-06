@@ -3,8 +3,8 @@
 Needs["UnitTest`"];
 
 UT$TestSuite[
-  "LO-gg.ms",
-  "LO-gq.ms",
-  "LO-qg.ms",
+  "LO-gg.mt",
+  "LO-gq.mt",
+  "LO-qg.mt",
   "LO-qq.mt"
 ];
