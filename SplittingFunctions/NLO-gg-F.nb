@@ -1,0 +1,216 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5690,        206]
+NotebookOptionsPosition[      4983,        176]
+NotebookOutlinePosition[      5319,        191]
+CellTagsIndexPosition[      5276,        188]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<<", "Axiloop`"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6088038989791393`*^9, 3.608803902516305*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$result", "=", 
+   RowBox[{"<<", "\"\<Axiloop/SplittingFunctions/NLO-gg-F.mx\>\""}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.608803904831502*^9, 3.6088039853515463`*^9}, {
+  3.608804067282782*^9, 3.608804101618981*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"$Get", "[", 
+   RowBox[{"$result", ",", " ", "\"\<Wz\>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6088041049108543`*^9, 3.608804126161475*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["g", "4"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x", "+", 
+      SuperscriptBox["x", "2"]}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "11"}], "+", 
+     RowBox[{"12", " ", "I0"}], "+", 
+     RowBox[{"12", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}]}], ")"}]}], 
+  RowBox[{"12", " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x", 
+   " ", "\<\"k.k\"\>"}]]], "Output",
+ CellChangeTimes->{{3.6088041075899553`*^9, 3.6088041266048326`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"$Get", "[", 
+   RowBox[{"$result", ",", " ", "\"\<Wr\>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.608804146923129*^9, 3.608804148121676*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["g", "4"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x", "+", 
+       SuperscriptBox["x", "2"]}], ")"}], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "11"}], "+", 
+      RowBox[{"12", " ", "I0"}], "+", 
+      RowBox[{"12", " ", 
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}]}]}], ")"}]}], 
+   RowBox[{"12", " ", "eps", " ", 
+    SuperscriptBox["\[Pi]", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x", 
+    " ", "\<\"k.k\"\>"}]]}]], "Output",
+ CellChangeTimes->{3.6088041489275427`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"IntegrateLeg", "[", 
+   RowBox[{
+    RowBox[{"$Get", "[", 
+     RowBox[{"$result", ",", " ", "\"\<Wr\>\""}], "]"}], ",", " ", 
+    RowBox[{"4", "+", 
+     RowBox[{"2", " ", "eps"}]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.608804168307588*^9, 3.608804181028675*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["g", "4"], " ", 
+   SuperscriptBox["Q2", "eps"], " ", "Qr", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x", "+", 
+      SuperscriptBox["x", "2"]}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "11"}], "+", 
+     RowBox[{"12", " ", "I0"}], "+", 
+     RowBox[{"12", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     RowBox[{"eps", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}]}], ")"}]}], 
+  RowBox[{"12", " ", 
+   SuperscriptBox["eps", "2"], " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x"}]]], "Output",
+ CellChangeTimes->{3.608804184182457*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"$Get", "[", 
+   RowBox[{"$result", ",", " ", "\"\<G1\>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.608804136977562*^9, 3.608804138049593*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["g", "4"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x", "+", 
+      SuperscriptBox["x", "2"]}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Log", "[", "Q2", "]"}], "+", 
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "11"}], "+", 
+     RowBox[{"12", " ", "I0"}], "+", 
+     RowBox[{"12", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}]}], ")"}]}], 
+  RowBox[{"192", " ", 
+   SuperscriptBox["\[Pi]", "4"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x"}]]], "Output",
+ CellChangeTimes->{3.608804138919405*^9}]
+}, Open  ]]
+},
+WindowSize->{1596, 861},
+WindowMargins->{{Automatic, 0}, {Automatic, 18}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 138, 3, 32, "Input"],
+Cell[698, 25, 258, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[981, 35, 204, 4, 32, "Input"],
+Cell[1188, 41, 655, 21, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1880, 67, 202, 4, 32, "Input"],
+Cell[2085, 73, 678, 22, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2800, 100, 327, 8, 32, "Input"],
+Cell[3130, 110, 838, 27, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4005, 142, 202, 4, 32, "Input"],
+Cell[4210, 148, 757, 25, 52, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
