@@ -57,6 +57,9 @@ p::usage =
 
 q::usage = "Final state particle momentum; q.q = 0."
 
+Pgg::usage = "LO g->g splitting function"
+Pqq::usage = "LO q->q splitting function"
+pqq::usage = "LO q->q splitting function (without O(eps) terms)"
 
 $$debug = False;
 $$info  = True;
@@ -64,69 +67,73 @@ $$info  = True;
 
 Begin["`Private`"]
 
-$$Message[level_, label_, message_] := Module[{},
-	LG$Output[level, "::", label, " : ", message];
-];
+  Pgg = (1-x+x^2)^2/(x(1-x));
 
-DEBUG[label_, message_] := Module[{},
-  If[$$debug, $$Message["DEBUG", label, message] ];
-];
+  pqq = (1+x^2)/(1-x);
 
-INFO[label_, message_] := Module[{},
-  If[$$info, $$Message["INFO", label, message] ];
-];
+  $$Message[level_, label_, message_] := Module[{},
+  	LG$Output[level, "::", label, " : ", message];
+  ];
 
-WARN[label_, message_] := Module[{},
-  $$Message["WARNING ", label, message]
-];
+  DEBUG[label_, message_] := Module[{},
+    If[$$debug, $$Message["DEBUG", label, message] ];
+  ];
 
+  INFO[label_, message_] := Module[{},
+    If[$$info, $$Message["INFO", label, message] ];
+  ];
 
-$kinematicRules = {
-	k.p -> (p.p + k.k - q.q) / 2,
-	k.q -> (p.p - k.k - q.q) / 2,
-	p.q -> (p.p - k.k + q.q) / 2
-};
-
-PolePart[kernel_, eta_, n_:-1] := Expand[
-	Coefficient[Series[kernel, {eta, 0, n+1}], eta, n]
-];
+  WARN[label_, message_] := Module[{},
+    $$Message["WARNING ", label, message]
+  ];
 
 
-$Get[hash_, keys_, default_:Null] := Module[
-	{item, key, value},
-	
-	key = If[
-		ListQ[keys]
-		,
-		First[keys]
-		,
-		keys
-	];
+  $kinematicRules = {
+  	k.p -> (p.p + k.k - q.q) / 2,
+  	k.q -> (p.p - k.k - q.q) / 2,
+  	p.q -> (p.p - k.k + q.q) / 2
+  };
 
-	item = Select[hash, First[#] == key &, 1];
-
-	value = If[
-		item == {}
-		,
-		default
-		,
-		Last[First[item]]
-	];
-	
-	If[
-		!ListQ[keys] || Length[keys] == 1
-		,
-		value
-		,
-		$Get[value, Rest[keys]]
-	]
-];
-
-PolePart[kernel_, eta_] := Expand[
-	Coefficient[Series[kernel, {eta, 0, 1}], eta, -1]
-];
-
-End[]
+  PolePart[kernel_, eta_, n_:-1] := Expand[
+  	Coefficient[Series[kernel, {eta, 0, n+1}], eta, n]
+  ];
 
 
-EndPackage[]
+  $Get[hash_, keys_, default_:Null] := Module[
+  	{item, key, value},
+  	
+  	key = If[
+  		ListQ[keys]
+  		,
+  		First[keys]
+  		,
+  		keys
+  	];
+  
+  	item = Select[hash, First[#] == key &, 1];
+  
+  	value = If[
+  		item == {}
+  		,
+  		default
+  		,
+  		Last[First[item]]
+  	];
+  	
+  	If[
+  		!ListQ[keys] || Length[keys] == 1
+  		,
+  		value
+  		,
+  		$Get[value, Rest[keys]]
+  	]
+  ];
+  
+  PolePart[kernel_, eta_] := Expand[
+  	Coefficient[Series[kernel, {eta, 0, 1}], eta, -1]
+  ];
+
+End[];
+
+
+EndPackage[];

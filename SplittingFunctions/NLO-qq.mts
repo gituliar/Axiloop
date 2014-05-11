@@ -3,10 +3,10 @@
 Needs["UnitTest`"];
 
 UT$TestSuite[
-  "NLO-C.mt",
-  "NLO-D.ms",
-  "NLO-E.ms",
-  "NLO-F.ms",
-  "NLO-G.ms"
+  "NLO-qq-C.mt",
+  "NLO-qq-D.mt",
+  "NLO-qq-E.mt",
+  "NLO-qq-F.mt",
+  "NLO-qq-G.mt"
 ];
 

@@ -4,9 +4,9 @@ Needs["Axiloop`"];
 Needs["UnitTest`"];
 
 
-UT$BeginTestCase["NLO-C"];
+UT$BeginTestCase["NLO-qq-C"];
 
-  AX$Get["NLO-C.ms"];
+  AX$Get["NLO-qq-C.ms"];
 
 
   UT$AssertEquivalent[
