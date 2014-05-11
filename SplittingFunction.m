@@ -16,6 +16,7 @@ BeginPackage["Axiloop`SplittingFunction`", {
   }];
 
   SplittingFunction;
+  AX$CollectG1;
 
   Begin["`Private`"];
 
@@ -34,20 +35,20 @@ BeginPackage["Axiloop`SplittingFunction`", {
         Prescription -> OptionValue[IntegrateLoopPrescription]
       ];
       $Wbs = If[$LO =!= Null, $$ExpandPaVe[$Get[integrated, {"integrated", "short"}]], Null];
-      $Wbs = $Wbs /. {k.n -> x, n.p -> 1, n.q -> 1-x};
+      $Wbs = Expand[$Wbs /. {k.n -> x, n.p -> 1, n.q -> 1-x}];
       $Wbs = $Wbs /. {p.p -> 0, q.q -> 0};
       TS$Print["$Wbs"];
     
       $Wb = $Get[integrated, {"integrated", "long"}];
-      $Wb = $Wb /. {k.n -> x, n.p -> 1, n.q -> 1-x};
+      $Wb = Expand[$Wb /. {k.n -> x, n.p -> 1, n.q -> 1-x}];
       $Wb = $Wb /. {2^(2 eps) -> 4^eps};
       $Wb = $Wb /. {p.p -> 0, q.q -> 0};
       TS$Print["$Wb"];
     
-      $Z = If[ $LO =!= Null, Simplify[ PolePart[$Wb, euv] / $Get[$LO, "exclusive"] /. {Qv[_] :> Qv, eps -> 0} ], 0];
+      $Z = If[ $LO =!= Null, Simplify[ PolePart[$Wb, euv] / $Get[$LO, "Wr"] /. {Qv[_] :> Qv, eps -> 0} ], 0];
       TS$Print["$Z"];
     
-      $Wz = If[ $LO =!= Null, $Z $Get[$LO, "exclusive"], 0];
+      $Wz = If[ $LO =!= Null, $Z $Get[$LO, "Wr"], 0];
       TS$Print["$Wz"];
     
       $Wr = ($Wb - $Wz / euv) /. {eir -> eps, euv -> eps};
@@ -75,6 +76,14 @@ BeginPackage["Axiloop`SplittingFunction`", {
         {"Wz",  $Wz /. {Qv -> I (4 Pi)^(-2)}}
       } ];
     
+      $result
+    ];
+
+    AX$CollectG1[expr_, basis_] := Block[
+      {$result},
+
+      $result = Collect[expr, {I0 Log[x], I0 Log[1-x], I1, I0, Log[x]^2, Log[x] Log[1-x], Log[1-x]^2, Li2[1], Log[x], Log[1-x]}, Simplify[# /. basis]&];
+
       $result
     ];
 

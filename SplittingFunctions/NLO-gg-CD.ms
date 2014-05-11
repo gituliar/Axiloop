@@ -21,10 +21,10 @@
 (*                                                                            *)
 (*============================================================================*)
 
-<< Axiloop`
+Needs["Axiloop`"];
 
 
-$LO = AX$Get["LO-gg.result"];
+$LO = AX$Get["LO-gg.mx"];
 
 $vertex = Block[
   {n,p,q},
@@ -47,10 +47,4 @@ $topology = Expand[
 ] /. {n.n -> 0, p.p -> 0, q.q -> 0};
 
 $result = SplittingFunction[$topology $vertex, $LO];
-
-(*
-$ebsf = $Get[$result, "exclusive-bare-short"];
-$n = I g^4 / ((1-x) k.k);
-$ebsf = $n CollectFormFactors[$ebsf / $n];
-$ebsf >> "NLO-gg-CD.ebs.mx";
-*)
+$result >> "NLO-gg-CD.mx";
