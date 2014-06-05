@@ -74,6 +74,10 @@ BeginPackage["Axiloop`FeynmanRules`", {
     GPx[mu_, nu_, p_] := (- {mu}.{nu} + (p.{mu} n.{nu} + n.{mu} p.{nu}) / p.n);
 
     GV[i1_,p1_, i2_,p2_, i3_,p3_] := I g ({i1}.{i2} (p1.{i3}-p2.{i3}) + {i2}.{i3} (p2.{i1}-p3.{i1}) + {i3}.{i1} (p3.{i2}-p1.{i2}));
+(*
+    GV[i1_,p1_, i2_,p2_, i3_,p3_, i4_,p4_] := -I g^2 ( ({i1}.{i3} {i2}.{i4} - {i1}.{i4} {i2}.{i3}) + ({i1}.{i2} {i3}.{i4} - {i1}.{i4} {i2}.{i3}) + ({i1}.{i3} {i2}.{i4} - {i1}.{i2} {i3}.{i4}));
+*)
+    GV[i1_,p1_, i2_,p2_, i3_,p3_, i4_,p4_] := -I g^2 ( 2 {i1}.{i2} {i3}.{i4} - 2 {i1}.{i3} {i2}.{i4} );
     GVc[argv__] := - GV[argv];
 
 
