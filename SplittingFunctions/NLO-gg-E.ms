@@ -15,6 +15,7 @@ TS$Begin["NLO-gg-E"];
   TS$Print["$topology"];
 
   $result = SplittingFunction[$topology, $LO];
+  $result >> "NLO-gg-E.mx";
   TS$Print["$result"];
 
 TS$End[];
