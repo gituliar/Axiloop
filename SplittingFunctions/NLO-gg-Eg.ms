@@ -4,7 +4,7 @@ Needs["Axiloop`"];
 Needs["Timestamp`"];
 
 
-TS$Begin["NLO-gg-E"];
+TS$Begin["NLO-gg-Eg"];
 
   $LO = AX$Get["LO-gg.mx"];
   TS$Print["$LO"];
@@ -15,7 +15,7 @@ TS$Begin["NLO-gg-E"];
   TS$Print["$topology"];
 
   $result = SplittingFunction[$topology, $LO];
-  $result >> "NLO-gg-E.mx";
+  $result >> "NLO-gg-Eg.mx";
   TS$Print["$result"];
 
 TS$End[];
