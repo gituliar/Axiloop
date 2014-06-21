@@ -47,4 +47,4 @@ $topology = Expand[
 ] /. {n.n -> 0, p.p -> 0, q.q -> 0};
 
 $result = SplittingFunction[$topology $vertex, $LO];
-$result >> "NLO-gg-CD.mx";
+$result >> "NLO-gg-D.mx";

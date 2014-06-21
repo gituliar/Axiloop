@@ -26,9 +26,9 @@ Needs["Axiloop`"];
 Needs["UnitTest`"];
 
 
-UT$BeginTestCase["NLO-gg-CD"];
+UT$BeginTestCase["NLO-gg-D"];
 
-  AX$Get["NLO-gg-CD.ms"];
+  AX$Get["NLO-gg-D.ms"];
 
 
   UT$AssertEquivalent[
@@ -41,7 +41,7 @@ UT$BeginTestCase["NLO-gg-CD"];
   UT$AssertEquivalent[
     $Get[$result, "Wbs"]
     ,
-    AX$Get["NLO-gg-CD.ebs.mx"]
+    AX$Get["NLO-gg-D.ebs.mx"]
   ];
 
 
