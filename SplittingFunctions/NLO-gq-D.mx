@@ -1,0 +1,2605 @@
+{{"Wn", (((-5*I)/2)*g^4*x)/((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x)/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (((3*I)/2)*g^4*x)/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((7*I)*g^4*x*S[k, l])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*eps*g^4*x*S[k, l])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((8*I)*g^4*x*S[k, l]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((8*I)*eps*g^4*x*S[k, l]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, l]*S[k, n])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((10*I)*g^4*x*S[k, l]*S[k, n])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((12*I)*g^4*x*S[k, l]^2*S[k, n])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[l, n])/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*eps*g^4*x*S[l, n])/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, l]*S[l, n])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[k, l]*S[l, n])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((8*I)*eps*g^4*x*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, l]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[k, l]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((9*I)*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[l, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*eps*g^4*x*S[l, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, n]*S[l, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[k, n]*S[l, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, n])/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((3*I)*g^4*x*S[k, n])/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((10*I)*g^4*x*S[k, l]*S[k, n])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, n]^2)/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[l, n])/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, l]*S[l, n])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[k, l]*S[l, n])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[l, n]^2)/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x*S[l, n]^2)/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((8*I)*g^4*x*S[k, l]*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((8*I)*eps*g^4*x*S[k, l]*S[k, n]*S[l, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((4*I)*g^4*x*S[k, n]^2*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*g^4*x*S[k, n]^2*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((12*I)*g^4*x*S[k, l]*S[k, n]^2*S[l, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[l, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*eps*g^4*x*S[l, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, n]*S[l, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*eps*g^4*x*S[k, n]*S[l, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, n]^2*S[l, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) + ((3*I)*g^4*x*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((3*I)*eps*g^4*x*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[n, p])/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[n, p])/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((7*I)*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((6*I)*g^4*x*S[k, l]^2*S[n, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*g^4*x*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*eps*g^4*x*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, l]*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*eps*g^4*x*S[k, l]*S[l, p]*S[n, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*g^4*x*S[n, p]^2)/((1 + eps)*S[k, k]*S[k, n]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*eps*g^4*x*S[n, p]^2)/((1 + eps)*S[k, k]*S[k, n]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*g^4*x*S[k, l]*S[n, p]^2)/((1 + eps)*S[k, k]*S[k, n]*
+     S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[k, l]*S[n, p]^2)/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     S[l, n]*(S[l, l] + 2*S[l, p] + S[p, p])) + ((7*I)*g^4*x*S[k, n])/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, n])/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, l]^2*S[k, n])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (((11*I)/2)*g^4*x*S[l, n])/((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + 
+      S[l, l])*(S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*eps*g^4*x*S[l, n])/((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (((3*I)/2)*g^4*x*S[l, n])/((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + 
+      S[l, l])*(S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((3*I)*g^4*x*S[k, l]*S[l, n])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, n]^2*S[l, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, n]^2*S[l, p])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*g^4*x*S[k, l]*S[k, n]^2*S[l, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, n]^2)/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*g^4*x*S[k, n]*S[l, n])/((1 + eps)*S[k, k]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, n])/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, n])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, n]^2*S[l, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*g^4*x*S[k, l]*S[k, n]^2*S[l, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (((7*I)/2)*g^4*x*S[n, p])/
+    ((1 + eps)*S[k, k]*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (((3*I)/2)*g^4*x*S[n, p])/
+    ((1 + eps)*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, l]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, l]^2*S[n, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, l]*S[k, n]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[n, p])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*g^4*x*S[k, l]^2*S[k, n]*S[n, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((3*I)*g^4*x*S[l, n]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((3*I)*eps*g^4*x*S[l, n]*S[n, p])/((1 + eps)*S[k, k]*S[k, n]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[l, n]*S[n, p])/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*eps*g^4*x*S[l, n]*S[n, p])/((1 + eps)*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, l]*S[l, n]*S[n, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*eps*g^4*x*S[k, l]*S[l, n]*S[n, p])/((1 + eps)*S[k, k]*S[k, n]*
+     S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, n]*S[l, p]*S[n, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[k, n]*S[l, p]*S[n, p])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, p]*S[n, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[n, p]^2)/
+    ((1 + eps)*S[k, k]*S[k, n]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*eps*g^4*x*S[n, p]^2)/((1 + eps)*S[k, k]*S[k, n]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[n, p]^2)/
+    ((1 + eps)*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*eps*g^4*x*S[n, p]^2)/((1 + eps)*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, l]*S[n, p]^2)/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*eps*g^4*x*S[k, l]*S[n, p]^2)/((1 + eps)*S[k, k]*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, l]*S[n, p]^2)/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[k, l]*S[n, p]^2)/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, l]^2*S[n, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (((7*I)/2)*g^4*x*S[p, p])/((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + 
+      S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*eps*g^4*x*S[p, p])/((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + 
+      S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (((7*I)/2)*g^4*x*S[p, p])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*eps*g^4*x*S[p, p])/((1 + eps)*S[k, k]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((6*I)*g^4*x*S[k, l]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((3*I)*g^4*x*S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((2*I)*eps*g^4*x*S[k, n]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((10*I)*g^4*x*S[k, l]*S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*g^4*x*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*eps*g^4*x*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*g^4*x*S[k, n]*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((4*I)*eps*g^4*x*S[k, n]*S[l, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, n]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((6*I)*g^4*x*S[k, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((10*I)*g^4*x*S[k, l]*S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((4*I)*g^4*x*S[k, n]^2*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (((3*I)/2)*g^4*x*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, l]*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*eps*g^4*x*S[k, l]*S[l, n]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - (I*g^4*x*S[l, n]^2*S[p, p])/((1 + eps)*S[k, k]*S[k, n]*
+     S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x*S[l, n]^2*S[p, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[k, n]*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((6*I)*g^4*x*S[k, n]^2*S[l, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[l, n]*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((2*I)*eps*g^4*x*S[l, n]*S[l, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*eps*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, l]*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*eps*g^4*x*S[k, l]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((2*I)*g^4*x*S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (((5*I)/2)*g^4*x*S[l, n]*S[p, p])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[l, n]^2*S[p, p])/((1 + eps)*S[k, k]*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*eps*g^4*x*S[l, n]^2*S[p, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[k, n]*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, n]^2*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, n]^2*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*g^4*x*S[k, n]*S[l, n]*S[p, p])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, n]*S[l, n]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, n]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((I/2)*g^4*x*S[l, n]^2*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, n]^2*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[k, n]*S[l, n]*S[l, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((I/2)*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (((3*I)/2)*g^4*x*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[k, n]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[l, n]*S[n, p]*S[p, p])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*eps*g^4*x*S[l, n]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((3*I)*g^4*x*S[k, n]*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (((3*I)/2)*g^4*x*S[l, n]*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, n]*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((I/2)*g^4*x*S[l, n]*S[p, p]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, n]*S[p, p]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((I/2)*g^4*x*S[l, n]^2*S[p, p]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (((7*I)/2)*g^4*x*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (((7*I)/2)*g^4*x*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*eps*g^4*x*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((6*I)*g^4*x*S[k, l]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((3*I)*g^4*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((10*I)*g^4*x*S[k, l]*S[k, n]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((2*I)*g^4*x*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*eps*g^4*x*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*g^4*x*S[k, n]*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((4*I)*eps*g^4*x*S[k, n]*S[l, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*g^4*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((10*I)*g^4*x*S[k, l]*S[k, n]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((4*I)*g^4*x*S[k, n]^2*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (((3*I)/2)*g^4*x*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, l]*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*eps*g^4*x*S[k, l]*S[l, n]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + (I*g^4*x*S[l, n]^2*S[q, q])/((1 + eps)*S[k, k]*S[k, n]*
+     S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*eps*g^4*x*S[l, n]^2*S[q, q])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[k, n]*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + ((6*I)*g^4*x*S[k, n]^2*S[l, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     S[n, p]*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[l, n]*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*eps*g^4*x*S[l, n]*S[l, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((4*I)*g^4*x*S[k, l]*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((4*I)*eps*g^4*x*S[k, l]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) - ((2*I)*g^4*x*S[k, n]*S[q, q])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (((5*I)/2)*g^4*x*S[l, n]*S[q, q])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*eps*g^4*x*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[l, n]^2*S[q, q])/((1 + eps)*S[k, k]*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*eps*g^4*x*S[l, n]^2*S[q, q])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*g^4*x*S[k, n]*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, n]^2*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[k, n]^2*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((4*I)*g^4*x*S[k, n]*S[l, n]*S[q, q])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((2*I)*g^4*x*S[k, n]*S[l, n]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[l, n]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((I/2)*g^4*x*S[l, n]^2*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, n]^2*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[k, n]*S[l, n]*S[l, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((I/2)*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*eps*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*(S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (((3*I)/2)*g^4*x*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[k, n]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[k, l]*S[k, n]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[l, n]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[l, n]*S[n, p]*S[q, q])/
+    ((1 + eps)*S[k, k]*S[k, n]*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   (I*eps*g^4*x*S[l, n]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]*S[k, n]*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*g^4*x*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + ((4*I)*eps*g^4*x*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((6*I)*g^4*x*S[k, n]*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((3*I)*g^4*x*S[l, n]*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - ((2*I)*g^4*x*S[k, n]*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   (I*g^4*x*S[l, n]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((2*I)*g^4*x*S[k, n]*S[l, n]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[l, n]^2*S[p, p]*S[q, q])/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*g^4*x*S[q, q]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((2*I)*eps*g^4*x*S[q, q]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((3*I)*g^4*x*S[k, n]*S[q, q]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, l] + 2*S[l, p] + 
+      S[p, p])) + (((3*I)/2)*g^4*x*S[l, n]*S[q, q]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, l] + 2*S[l, p] + S[p, p])) + (I*g^4*x*S[k, n]*S[q, q]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) + 
+   ((I/2)*g^4*x*S[l, n]*S[q, q]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p])) - (I*g^4*x*S[k, n]*S[l, n]*S[q, q]^2)/
+    ((1 + eps)*S[k, k]^2*S[l, l]*(S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*
+     (S[l, n] + S[n, p])*(S[l, l] + 2*S[l, p] + S[p, p])) - 
+   ((I/2)*g^4*x*S[l, n]^2*S[q, q]^2)/((1 + eps)*S[k, k]^2*S[l, l]*
+     (S[k, k] + 2*S[k, l] + S[l, l])*S[n, p]*(S[l, n] + S[n, p])*
+     (S[l, l] + 2*S[l, p] + S[p, p]))}, 
+ {"Wr", (g^2*(-3 + 8*I0 + 2*Log[1 - x] + 2*Log[x])*
+     ((-2*g^2*Nf*Tf)/((1 + eps)*S[k, k]) - (2*eps*g^2*Nf*Tf)/
+       ((1 + eps)*S[k, k]) + (4*g^2*Nf*Tf*x)/((1 + eps)*S[k, k]) - 
+      (4*g^2*Nf*Tf*x^2)/((1 + eps)*S[k, k])))/(32*eps*Nf*Pi^2*Tf) + 
+   (g^4*(-S[k, k])^eps)/(16*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (3*g^4*(-S[k, k])^eps)/(16*eps*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps*g^4*(-S[k, k])^eps)/(2*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps^2*g^4*(-S[k, k])^eps)/(4*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*I0*(-S[k, k])^eps)/(4*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*I0*(-S[k, k])^eps)/(8*eps*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps*g^4*I0*(-S[k, k])^eps)/(8*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (3*g^4*I0*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) + 
+   (3*g^4*I0*(-S[k, k])^eps)/(8*eps*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*I1*(-S[k, k])^eps)/(4*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps*g^4*I1*(-S[k, k])^eps)/(2*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps^2*g^4*I1*(-S[k, k])^eps)/(4*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*I1*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) + 
+   (eps*g^4*I1*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x*(-S[k, k])^eps)/(16*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*x*(-S[k, k])^eps)/(16*eps*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (eps*g^4*x*(-S[k, k])^eps)/(8*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (13*g^4*x*(-S[k, k])^eps)/(16*(1 + eps)*Pi^2*S[k, k]) + 
+   (5*g^4*x*(-S[k, k])^eps)/(16*eps*(1 + eps)*Pi^2*S[k, k]) + 
+   (3*eps*g^4*x*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*I0*x*(-S[k, k])^eps)/(eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (3*g^4*I1*x*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) + 
+   (7*g^4*x^2*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (3*g^4*x^2*(-S[k, k])^eps)/(8*eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*x^2*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*I0*x^2*(-S[k, k])^eps)/(eps*(1 + eps)*Pi^2*S[k, k]) + 
+   (3*g^4*I1*x^2*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*Li2[1]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*Li2[1]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x*Li2[1]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x^2*Li2[1]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*Li2[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*Li2[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x*Li2[1 - x]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x^2*Li2[1 - x]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*Log[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*Log[1 - x]*(-S[k, k])^eps)/(16*eps*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (eps*g^4*Log[1 - x]*(-S[k, k])^eps)/(16*(1 + eps)^2*Pi^2*S[k, k]) + 
+   (g^4*Log[1 - x]*(-S[k, k])^eps)/(16*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*Log[1 - x]*(-S[k, k])^eps)/(16*eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*I0*Log[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (eps*g^4*I0*Log[1 - x]*(-S[k, k])^eps)/(4*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (eps^2*g^4*I0*Log[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (g^4*I0*Log[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*I0*Log[1 - x]*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x*Log[1 - x]*(-S[k, k])^eps)/(4*eps*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*I0*x*Log[1 - x]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x^2*Log[1 - x]*(-S[k, k])^eps)/(4*eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*I0*x^2*Log[1 - x]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*Log[1 - x]^2*(-S[k, k])^eps)/(32*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (eps*g^4*Log[1 - x]^2*(-S[k, k])^eps)/(16*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (eps^2*g^4*Log[1 - x]^2*(-S[k, k])^eps)/(32*(1 + eps)^2*Pi^2*S[k, k]) - 
+   (g^4*Log[1 - x]^2*(-S[k, k])^eps)/(32*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*Log[1 - x]^2*(-S[k, k])^eps)/(32*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x*Log[1 - x]^2*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x^2*Log[1 - x]^2*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*Log[x]*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*Log[x]*(-S[k, k])^eps)/(8*eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*I0*Log[x]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*I0*Log[x]*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x*Log[x]*(-S[k, k])^eps)/(4*eps*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*I0*x*Log[x]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x^2*Log[x]*(-S[k, k])^eps)/(4*eps*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*I0*x^2*Log[x]*(-S[k, k])^eps)/(2*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*Log[x]^2*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) - 
+   (eps*g^4*Log[x]^2*(-S[k, k])^eps)/(8*(1 + eps)*Pi^2*S[k, k]) + 
+   (g^4*x*Log[x]^2*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k]) - 
+   (g^4*x^2*Log[x]^2*(-S[k, k])^eps)/(4*(1 + eps)*Pi^2*S[k, k])}, 
+ {"G1", (-7*g^4)/(512*Pi^4) - (3*g^4*I1)/(128*Pi^4) + (9*g^4*x)/(512*Pi^4) + 
+   (g^4*I0*x)/(32*Pi^4) + (3*g^4*I1*x)/(64*Pi^4) - (g^4*x^2)/(64*Pi^4) - 
+   (g^4*I0*x^2)/(32*Pi^4) - (3*g^4*I1*x^2)/(64*Pi^4) + 
+   (g^4*Li2[1])/(128*Pi^4) - (g^4*x*Li2[1])/(64*Pi^4) + 
+   (g^4*x^2*Li2[1])/(64*Pi^4) + (g^4*Li2[1 - x])/(256*Pi^4) - 
+   (g^4*x*Li2[1 - x])/(128*Pi^4) + (g^4*x^2*Li2[1 - x])/(128*Pi^4) - 
+   (3*g^4*Log[1 - x])/(512*Pi^4) + (3*g^4*I0*Log[1 - x])/(128*Pi^4) + 
+   (5*g^4*x*Log[1 - x])/(256*Pi^4) - (3*g^4*I0*x*Log[1 - x])/(64*Pi^4) - 
+   (5*g^4*x^2*Log[1 - x])/(256*Pi^4) + (3*g^4*I0*x^2*Log[1 - x])/(64*Pi^4) + 
+   (3*g^4*Log[1 - x]^2)/(512*Pi^4) - (3*g^4*x*Log[1 - x]^2)/(256*Pi^4) + 
+   (3*g^4*x^2*Log[1 - x]^2)/(256*Pi^4) + (g^4*I0*Log[x])/(128*Pi^4) + 
+   (g^4*x*Log[x])/(128*Pi^4) - (g^4*I0*x*Log[x])/(64*Pi^4) - 
+   (g^4*x^2*Log[x])/(128*Pi^4) + (g^4*I0*x^2*Log[x])/(64*Pi^4) + 
+   (g^4*Log[1 - x]*Log[x])/(256*Pi^4) - (g^4*x*Log[1 - x]*Log[x])/
+    (128*Pi^4) + (g^4*x^2*Log[1 - x]*Log[x])/(128*Pi^4) + 
+   (g^4*Log[x]^2)/(256*Pi^4) - (g^4*x*Log[x]^2)/(128*Pi^4) + 
+   (g^4*x^2*Log[x]^2)/(128*Pi^4)}, {"integrated", 
+  {{"collected", (((-5*I)/2)*g^4*x*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*x*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[k, n]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]*S[n, p]) + 
+     ((3*I)*g^4*x*S[n, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     ((3*I)*eps*g^4*x*S[n, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]*
+       S[k, n]) - (((7*I)/2)*g^4*x*S[p, p]*$$[{}, {k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*S[p, p]*$$[{}, {k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*S[k, n]*S[p, p]*
+       $$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (((7*I)/2)*g^4*x*S[q, q]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[k, n]*S[q, q]*$$[{}, {k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((4*I)*g^4*x*S[k, n]^2*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]*
+       S[n, p]) + ((2*I)*g^4*x*S[n, p]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]) - ((2*I)*eps*g^4*x*S[n, p]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]) - ((2*I)*g^4*x*S[n, p]^2*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*eps*g^4*x*S[n, p]^2*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     ((3*I)*g^4*x*S[k, n]*S[p, p]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*S[k, n]*S[p, p]*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x*S[k, n]^2*S[p, p]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + ((2*I)*g^4*x*S[n, p]*S[p, p]*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*S[n, p]*S[p, p]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*S[k, n]*S[q, q]*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[k, n]*S[q, q]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*S[k, n]^2*S[q, q]*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[n, p]*S[q, q]*$$[{}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*S[n, p]*S[q, q]*
+       $$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((7*I)*g^4*x*S[k, n]*$$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x*S[k, n]^2*$$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]*
+       S[n, p]) - (((7*I)/2)*g^4*x*S[n, p]*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]) + (I*g^4*x*S[n, p]^2*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) + (I*eps*g^4*x*S[n, p]^2*
+       $$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     ((2*I)*g^4*x*S[k, n]*S[p, p]*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x*S[k, n]^2*S[p, p]*
+       $$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((I/2)*g^4*x*S[n, p]*S[p, p]*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*S[n, p]*S[p, p]*
+       $$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[k, n]*S[q, q]*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*S[k, n]^2*S[q, q]*
+       $$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((I/2)*g^4*x*S[n, p]*S[q, q]*$$[{}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*S[n, p]*S[q, q]*
+       $$[{}, {k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x*S[k, n]*S[n, p]*S[p, p]*$$[{}, {k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) - (I*g^4*x*S[k, n]*S[n, p]*S[q, q]*
+       $$[{}, {k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     (((3*I)/2)*g^4*x*$$[{}, {0, k, p}, {}])/(1 + eps) + 
+     ((3*I)*g^4*x*S[k, n]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[n, p]) - 
+     (((7*I)/2)*g^4*x*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*x*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((6*I)*g^4*x*S[k, n]*S[p, p]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) + (I*g^4*x*S[n, p]*S[p, p]*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     (I*eps*g^4*x*S[n, p]*S[p, p]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*g^4*x*S[p, p]^2*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[p, p]^2*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*S[k, n]*S[p, p]^2*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (((7*I)/2)*g^4*x*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((6*I)*g^4*x*S[k, n]*S[q, q]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - (I*g^4*x*S[n, p]*S[q, q]*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     (I*eps*g^4*x*S[n, p]*S[q, q]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]) + ((4*I)*g^4*x*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*eps*g^4*x*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((6*I)*g^4*x*S[k, n]*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[q, q]^2*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[q, q]^2*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*S[k, n]*S[q, q]^2*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (I*g^4*x*S[k, n]*$$[{}, {0, k, p}, {p}])/(1 + eps) - 
+     (((3*I)/2)*g^4*x*S[n, p]*$$[{}, {0, k, p}, {p}])/(1 + eps) + 
+     (I*g^4*x*S[n, p]^2*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, n]) + 
+     (I*eps*g^4*x*S[n, p]^2*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, n]) + 
+     ((2*I)*g^4*x*S[k, n]*S[p, p]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) - (((3*I)/2)*g^4*x*S[n, p]*S[p, p]*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[k, n]*S[p, p]^2*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*S[k, n]*S[q, q]*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     (((3*I)/2)*g^4*x*S[n, p]*S[q, q]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) - ((2*I)*g^4*x*S[k, n]*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x*S[k, n]*S[q, q]^2*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x*S[k, n]*$$[{k}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + (I*g^4*x*S[n, p]*$$[{k}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*S[n, p]*$$[{k}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + (I*g^4*x*S[n, p]*$$[{k}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*S[n, p]*$$[{k}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*S[k, n]*S[n, p]*
+       $$[{k}, {k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[n, p]^2*$$[{k}, {k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     ((7*I)*g^4*x*$$[{k}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*eps*g^4*x*$$[{k}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((10*I)*g^4*x*S[k, n]*$$[{k}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[n, p]) - ((6*I)*g^4*x*S[p, p]*$$[{k}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((10*I)*g^4*x*S[k, n]*S[p, p]*
+       $$[{k}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((6*I)*g^4*x*S[q, q]*$$[{k}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((10*I)*g^4*x*S[k, n]*S[q, q]*$$[{k}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((10*I)*g^4*x*S[k, n]*$$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((7*I)*g^4*x*S[n, p]*$$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*S[n, p]^2*$$[{k}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*eps*g^4*x*S[n, p]^2*
+       $$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     ((10*I)*g^4*x*S[k, n]*S[p, p]*$$[{k}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*S[n, p]*S[p, p]*
+       $$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*eps*g^4*x*S[n, p]*S[p, p]*$$[{k}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((10*I)*g^4*x*S[k, n]*S[q, q]*
+       $$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x*S[n, p]*S[q, q]*$$[{k}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*eps*g^4*x*S[n, p]*S[q, q]*
+       $$[{k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[n, p]*$$[{k}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[n, p]^2*$$[{k}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) + ((2*I)*eps*g^4*x*S[n, p]^2*
+       $$[{k}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     ((2*I)*g^4*x*S[k, n]*S[n, p]*$$[{k}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]) - (I*g^4*x*S[n, p]^2*$$[{k}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]) + ((2*I)*g^4*x*S[k, n]*S[n, p]*S[p, p]*
+       $$[{k}, {0, k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[k, n]*S[n, p]*S[q, q]*$$[{k}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) + (((11*I)/2)*g^4*x*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]) + (I*eps*g^4*x*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]) - ((4*I)*g^4*x*S[k, n]*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - ((3*I)*g^4*x*S[n, p]*
+       $$[{n}, {k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     ((3*I)*eps*g^4*x*S[n, p]*$$[{n}, {k, p}, {p}])/((1 + eps)*S[k, k]*
+       S[k, n]) + (((5*I)/2)*g^4*x*S[p, p]*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*S[p, p]*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x*S[k, n]*S[p, p]*
+       $$[{n}, {k, p}, {p}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     (((5*I)/2)*g^4*x*S[q, q]*$$[{n}, {k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{n}, {k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x*S[k, n]*S[q, q]*$$[{n}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + (I*g^4*x*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, n]) + (I*eps*g^4*x*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, n]) + ((2*I)*eps*g^4*x*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[n, p]) + (((3*I)/2)*g^4*x*S[p, p]*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) + ((2*I)*eps*g^4*x*S[p, p]*
+       $$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[n, p]) + 
+     (((3*I)/2)*g^4*x*S[p, p]^2*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - (((3*I)/2)*g^4*x*S[q, q]*
+       $$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[n, p]) - 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - ((3*I)*g^4*x*S[p, p]*S[q, q]*
+       $$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (((3*I)/2)*g^4*x*S[q, q]^2*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (((3*I)/2)*g^4*x*$$[{n}, {0, k, p}, {p}])/(1 + eps) - 
+     (I*g^4*x*S[k, n]*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[n, p]) - 
+     (I*g^4*x*S[n, p]*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, n]) - 
+     (I*eps*g^4*x*S[n, p]*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, n]) + 
+     ((2*I)*g^4*x*S[p, p]*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*S[k, n]*S[p, p]*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - (I*g^4*x*S[n, p]*S[p, p]*
+       $$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     (I*eps*g^4*x*S[n, p]*S[p, p]*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) + ((I/2)*g^4*x*S[p, p]^2*
+       $$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[k, n]*S[p, p]^2*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[q, q]*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[k, n]*S[q, q]*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[n, p]) + (I*g^4*x*S[n, p]*S[q, q]*
+       $$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     (I*eps*g^4*x*S[n, p]*S[q, q]*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - (I*g^4*x*S[p, p]*S[q, q]*
+       $$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*S[k, n]*S[p, p]*S[q, q]*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((I/2)*g^4*x*S[q, q]^2*$$[{n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[k, n]*S[q, q]^2*$$[{n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - (I*g^4*x*S[k, n]*$$[{p}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*S[k, n]*$$[{p}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*S[k, n]^2*$$[{p}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - (I*g^4*x*S[k, n]*$$[{p}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*S[k, n]*$$[{p}, {k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*S[k, n]^2*$$[{p}, {k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) + (I*g^4*x*S[k, n]*S[n, p]*
+       $$[{p}, {k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((8*I)*eps*g^4*x*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((6*I)*g^4*x*S[k, n]*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[n, p]) + ((4*I)*eps*g^4*x*S[k, n]*$$[{p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) + ((4*I)*g^4*x*S[n, p]*
+       $$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     ((4*I)*eps*g^4*x*S[n, p]*$$[{p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*g^4*x*S[p, p]*
+       $$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[p, p]*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[k, n]*S[p, p]*$$[{p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((2*I)*g^4*x*S[q, q]*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x*S[k, n]*S[q, q]*$$[{p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((9*I)*g^4*x*S[k, n]*$$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((6*I)*g^4*x*S[k, n]^2*$$[{p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - ((6*I)*g^4*x*S[n, p]*
+       $$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((6*I)*eps*g^4*x*S[n, p]*$$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((4*I)*g^4*x*S[k, n]*S[p, p]*$$[{p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*eps*g^4*x*S[k, n]*S[p, p]*
+       $$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((6*I)*g^4*x*S[k, n]^2*S[p, p]*$$[{p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - ((4*I)*g^4*x*S[k, n]*S[q, q]*
+       $$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*eps*g^4*x*S[k, n]*S[q, q]*$$[{p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((6*I)*g^4*x*S[k, n]^2*S[q, q]*
+       $$[{p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     (I*g^4*x*S[k, n]*$$[{p}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[k, n]^2*$$[{p}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - (I*g^4*x*S[k, n]*S[p, p]*
+       $$[{p}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*S[k, n]^2*S[p, p]*$$[{p}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + (I*g^4*x*S[k, n]*S[q, q]*
+       $$[{p}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[k, n]^2*S[q, q]*$$[{p}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[k, n]^2*$$[{p}, {0, k, p}, {0, p}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[k, n]*S[n, p]*$$[{p}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]) - ((2*I)*g^4*x*S[k, n]^2*S[p, p]*
+       $$[{p}, {0, k, p}, {0, p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*S[k, n]^2*S[q, q]*$$[{p}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) - ((8*I)*g^4*x*$$[{k, k}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((8*I)*eps*g^4*x*$$[{k, k}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((12*I)*g^4*x*S[k, n]*$$[{k, k}, {0, k, p}, 
+        {0}])/((1 + eps)*S[k, k]^2) + 
+     ((6*I)*g^4*x*S[n, p]*$$[{k, k}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x*S[k, n]*$$[{k, k}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*S[n, p]*$$[{k, k}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x*S[k, n]*S[n, p]*$$[{k, k}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*S[n, p]^2*$$[{k, k}, {0, k, p}, 
+        {0, p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*$$[{k, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]) + 
+     ((2*I)*eps*g^4*x*$$[{k, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[k, n]) + ((4*I)*g^4*x*$$[{k, n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) + 
+     ((4*I)*eps*g^4*x*$$[{k, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[n, p]) + ((4*I)*g^4*x*S[p, p]*$$[{k, n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + ((4*I)*eps*g^4*x*S[p, p]*
+       $$[{k, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((4*I)*g^4*x*S[q, q]*$$[{k, n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - ((4*I)*eps*g^4*x*S[q, q]*
+       $$[{k, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((3*I)*g^4*x*$$[{k, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*S[k, n]*$$[{k, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - ((2*I)*g^4*x*S[n, p]*
+       $$[{k, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[k, n]) - 
+     ((2*I)*eps*g^4*x*S[n, p]*$$[{k, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*g^4*x*S[k, n]*S[p, p]*
+       $$[{k, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((2*I)*g^4*x*S[k, n]*S[q, q]*$$[{k, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + ((4*I)*g^4*x*$$[{k, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*eps*g^4*x*$$[{k, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((8*I)*g^4*x*S[k, n]*$$[{k, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + ((8*I)*eps*g^4*x*S[k, n]*
+       $$[{k, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[k, n]*$$[{k, p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((12*I)*g^4*x*S[k, n]^2*$$[{k, p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((4*I)*g^4*x*S[n, p]*$$[{k, p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*eps*g^4*x*S[n, p]*$$[{k, p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*S[k, n]*$$[{k, p}, {0, k, p}, 
+        {p}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x*S[k, n]^2*$$[{k, p}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((4*I)*g^4*x*S[k, n]^2*$$[{k, p}, {0, k, p}, {0, p}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*S[k, n]*S[n, p]*
+       $$[{k, p}, {0, k, p}, {0, p}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, n]*S[n, p]) - 
+     (I*eps*g^4*x*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, n]*S[n, p]) - 
+     (I*g^4*x*S[p, p]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]*
+       S[n, p]) - (I*eps*g^4*x*S[p, p]*$$[{n, n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]*S[n, p]) + 
+     (I*g^4*x*S[q, q]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]*S[k, n]*
+       S[n, p]) + (I*eps*g^4*x*S[q, q]*$$[{n, n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]*S[n, p]) + 
+     (I*g^4*x*S[p, p]*$$[{n, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*
+       S[k, n]) + (I*eps*g^4*x*S[p, p]*$$[{n, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - ((I/2)*g^4*x*S[p, p]*
+       $$[{n, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[n, p]) - 
+     ((I/2)*g^4*x*S[p, p]^2*$$[{n, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     (I*g^4*x*S[q, q]*$$[{n, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*
+       S[k, n]) - (I*eps*g^4*x*S[q, q]*$$[{n, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]*S[k, n]) + ((I/2)*g^4*x*S[q, q]*
+       $$[{n, n}, {0, k, p}, {p}])/((1 + eps)*S[k, k]*S[n, p]) + 
+     (I*g^4*x*S[p, p]*S[q, q]*$$[{n, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((I/2)*g^4*x*S[q, q]^2*$$[{n, n}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - ((4*I)*g^4*x*$$[{n, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[k, n]) - 
+     ((4*I)*eps*g^4*x*$$[{n, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[k, n]) - ((4*I)*g^4*x*$$[{n, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]*S[n, p]) - 
+     ((4*I)*eps*g^4*x*$$[{n, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]*
+       S[n, p]) + ((2*I)*g^4*x*S[p, p]*$$[{n, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) + ((2*I)*eps*g^4*x*S[p, p]*
+       $$[{n, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((2*I)*g^4*x*S[q, q]*$$[{n, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - ((2*I)*eps*g^4*x*S[q, q]*
+       $$[{n, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     (I*g^4*x*S[k, n]*S[p, p]*$$[{n, p}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - (I*g^4*x*S[k, n]*S[q, q]*
+       $$[{n, p}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+     ((4*I)*g^4*x*S[k, n]*$$[{p, p}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2*S[n, p]) - ((4*I)*eps*g^4*x*S[k, n]*
+       $$[{p, p}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+     ((4*I)*g^4*x*S[k, n]*$$[{p, p}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*eps*g^4*x*S[k, n]*$$[{p, p}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x*S[k, n]^2*$$[{p, p}, {0, k, p}, 
+        {0}])/((1 + eps)*S[k, k]^2*S[n, p])}, 
+   {"simplified", ((2*I)*g^4*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*eps*g^4*x*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*g^4*x^2*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x^2*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     (I*g^4*x*S[p, p]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x*S[p, p]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^2*S[p, p]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x^2*S[p, p]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x*S[q, q]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x*S[q, q]*$$[{}, {0, k}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*g^4*x*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*eps*g^4*x*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]) + 
+     ((5*I)*g^4*x^2*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x^3*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x^2*S[p, p]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x^2*S[p, p]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*g^4*x^3*S[p, p]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x^2*S[q, q]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x^2*S[q, q]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^3*S[q, q]*$$[{}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((4*I)*g^4*x^2*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x*S[p, p]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x*S[p, p]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x^2*S[p, p]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x^2*S[p, p]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*g^4*x*S[q, q]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^2*S[q, q]*$$[{}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*g^4*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*eps*g^4*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((5*I)*g^4*x*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x^2*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[k, p]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^2*S[k, p]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*g^4*x*S[p, p]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*eps*g^4*x*S[p, p]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((5*I)*g^4*x^2*S[p, p]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[q, q]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^2*S[q, q]*$$[{}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) + 
+     ((6*I)*g^4*x*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*x*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) - 
+     ((10*I)*g^4*x^2*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) + 
+     ((6*I)*g^4*x^3*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*S[k, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^2*S[k, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^3*S[k, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*g^4*x*S[p, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*eps*g^4*x*S[p, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((7*I)*g^4*x^2*S[p, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x^2*S[p, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((6*I)*g^4*x^3*S[p, p]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*g^4*x*S[q, q]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*eps*g^4*x*S[q, q]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((6*I)*g^4*x^2*S[q, q]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((6*I)*g^4*x^3*S[q, q]*$$[{}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((5*I)*g^4*x*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((4*I)*eps*g^4*x*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*g^4*x^2*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*x^2*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((4*I)*g^4*x*S[p, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*S[p, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((5*I)*g^4*x^2*S[p, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x^2*S[p, p]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*g^4*x*S[q, q]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x*S[q, q]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((6*I)*g^4*x^2*S[q, q]*$$[{}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((3*I)*g^4*x*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*x*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*g^4*x^2*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     (I*g^4*x*S[p, p]*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x*S[p, p]*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^2*S[p, p]*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x^2*S[p, p]*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^3*S[p, p]*$$[{}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^2*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x^3*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x^2*S[k, p]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^3*S[k, p]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^2*S[p, p]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x^3*S[p, p]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x^2*S[q, q]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x^3*S[q, q]*$$[{}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x^2*$$[{}, {0, k, p}, {}])/(1 + eps) - 
+     ((3*I)*g^4*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*eps*g^4*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((5*I)*g^4*x*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((3*I)*eps*g^4*x*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((5*I)*g^4*x^2*S[p, p]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*x*S[p, p]^2*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*x^2*S[p, p]^2*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x^2*S[p, p]^2*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*eps*g^4*x*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x^2*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[q, q]^2*$$[{}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[q, q]^2*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*S[q, q]^2*$$[{}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + (I*g^4*$$[{}, {0, k, p}, {0}])/(1 + eps) + 
+     (I*eps*g^4*$$[{}, {0, k, p}, {0}])/(1 + eps) - 
+     ((2*I)*g^4*x*$$[{}, {0, k, p}, {0}])/(1 + eps) + 
+     ((2*I)*g^4*x^2*$$[{}, {0, k, p}, {0}])/(1 + eps) - 
+     (I*g^4*x^2*S[p, p]*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((6*I)*g^4*x^3*S[p, p]*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     (I*g^4*x^2*S[p, p]^2*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x^2*S[p, p]^2*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*g^4*x^3*S[p, p]^2*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*S[q, q]*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x^2*S[q, q]*$$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x^2*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x^2*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^3*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*S[p, p]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*S[p, p]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) - ((4*I)*g^4*x*S[p, p]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) + ((4*I)*g^4*x^2*S[p, p]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]) - (I*g^4*x*S[p, p]^2*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x^2*S[p, p]^2*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x^3*S[p, p]^2*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*S[q, q]*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*S[q, q]*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     ((4*I)*g^4*x*S[q, q]*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) - 
+     ((4*I)*g^4*x^2*S[q, q]*$$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - ((5*I)*g^4*x^2*S[p, p]*S[q, q]*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x^3*S[p, p]*S[q, q]*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) - (I*g^4*x*S[q, q]^2*$$[{}, {0, k, p}, {p}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*S[q, q]^2*
+       $$[{}, {0, k, p}, {p}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*$$[{k}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*$$[{k}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^2*$$[{k}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*eps*g^4*x^2*$$[{k}, {0, k}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*$$[{k}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*$$[{k}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^3*$$[{k}, {0, k}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x*$$[{k}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*eps*g^4*x*$$[{k}, {0, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x*$$[{k}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((8*I)*g^4*x^2*$$[{k}, {0, p}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*$$[{k}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^2*$$[{k}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^3*$$[{k}, {0, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x*$$[{k}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*$$[{k}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^2*$$[{k}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*eps*g^4*x^2*$$[{k}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*g^4*x^2*$$[{k}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((4*I)*g^4*x^3*$$[{k}, {k, p}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x^2*$$[{k}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) + 
+     ((4*I)*g^4*x^3*$$[{k}, {p, q}, {0}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*g^4*x*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]) - 
+     ((2*I)*eps*g^4*x*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[p, p]*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x*S[p, p]*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*x*S[q, q]*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*eps*g^4*x*S[q, q]*$$[{n}, {0, k}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*g^4*x*S[p, p]*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((2*I)*eps*g^4*x*S[p, p]*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*S[q, q]*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*eps*g^4*x*S[q, q]*$$[{n}, {0, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*g^4*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]) - 
+     ((3*I)*g^4*x*S[p, p]*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((3*I)*eps*g^4*x*S[p, p]*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*g^4*x*S[q, q]*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     ((3*I)*eps*g^4*x*S[q, q]*$$[{n}, {k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     ((2*I)*g^4*x*$$[{n}, {0, k, p}, {}])/(1 + eps) + 
+     ((3*I)*g^4*S[p, p]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((3*I)*eps*g^4*S[p, p]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[p, p]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     ((2*I)*eps*g^4*x*S[p, p]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*x*S[p, p]^2*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) - 
+     (I*g^4*S[q, q]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*S[q, q]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*x*S[q, q]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*g^4*x*S[p, p]*S[q, q]*$$[{n}, {0, k, p}, {}])/((1 + eps)*S[k, k]^2) + 
+     (I*eps*g^4*x*S[p, p]*S[q, q]*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + (I*g^4*x*S[q, q]^2*$$[{n}, {0, k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^2*$$[{p}, {0, k}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x^2*$$[{p}, {0, k}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*$$[{p}, {0, k}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x^2*$$[{p}, {0, k}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^3*$$[{p}, {0, k}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^2*$$[{p}, {0, q}, {0}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x^2*$$[{p}, {0, q}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*$$[{p}, {0, q}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*$$[{p}, {k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x^2*$$[{p}, {k, p}, {}])/
+      ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^2*$$[{p}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x^3*$$[{p}, {k, p}, {0}])/
+      ((1 + eps)*S[k, k]^2) - (I*g^4*$$[{n, n}, {0, k, p}, {}])/(1 + eps) - 
+     (I*eps*g^4*$$[{n, n}, {0, k, p}, {}])/(1 + eps) - 
+     (I*g^4*S[p, p]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) - 
+     (I*eps*g^4*S[p, p]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*g^4*S[q, q]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k]) + 
+     (I*eps*g^4*S[q, q]*$$[{n, n}, {0, k, p}, {}])/((1 + eps)*S[k, k])}, 
+   {"integrated", {{"short", ((-2*I)*g^4*x^2*Qv[k]*R0[eir])/
+        ((1 + eps)*S[k, k]) + ((3*I)*g^4*x*P0[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + ((3*I)*eps*g^4*x*P0[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - ((5*I)*g^4*x^2*P0[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + ((4*I)*g^4*x^3*P0[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*g^4*x*P1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*eps*g^4*x*P1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + (I*g^4*x^2*P1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + (I*eps*g^4*x^2*P1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + ((3*I)*g^4*x^3*P1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - (I*g^4*x*P3[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - (I*eps*g^4*x*P3[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) + ((2*I)*g^4*x^3*P3[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[k, n]) - ((2*I)*g^4*x*Qv[k]*R2[eir]*S[k, n])/
+        ((1 + eps)*S[k, k]) - (I*g^4*Qv[k]*R4[eir]*S[k, n]^2)/
+        ((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[k]*R4[eir]*S[k, n]^2)/
+        ((1 + eps)*S[k, k]) - (I*g^4*x^2*E1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((2*I)*g^4*x^3*E1[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[n, p]) - ((2*I)*g^4*x^2*E2[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((4*I)*g^4*x^3*E2[euv]*Qv[k])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((3*I)*g^4*B0[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((3*I)*eps*g^4*B0[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) - ((6*I)*g^4*x*B0[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((6*I)*g^4*x^2*B0[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((2*I)*g^4*x*B1[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) - ((4*I)*g^4*x^2*B1[euv]*Qv[p])/
+        ((1 + eps)*S[k, k]*S[n, p]) - (I*g^4*x^2*E3[euv]*Qv[k]*S[k, n])/
+        ((1 + eps)*S[k, k]*S[n, p]) + ((2*I)*g^4*x^3*E3[euv]*Qv[k]*S[k, n])/
+        ((1 + eps)*S[k, k]*S[n, p]) - ((2*I)*g^4*x*Qv[k]*R1[eir]*S[n, p])/
+        ((1 + eps)*S[k, k]) + (I*g^4*x^2*P3[euv]*Qv[k]*S[n, p])/
+        ((1 + eps)*S[k, k]*S[k, n]^2) + (I*eps*g^4*x^2*P3[euv]*Qv[k]*S[n, p])/
+        ((1 + eps)*S[k, k]*S[k, n]^2) - (I*g^4*x^3*P3[euv]*Qv[k]*S[n, p])/
+        ((1 + eps)*S[k, k]*S[k, n]^2) - ((2*I)*g^4*Qv[k]*R5[eir]*S[k, n]*
+         S[n, p])/((1 + eps)*S[k, k]) - ((2*I)*eps*g^4*Qv[k]*R5[eir]*S[k, n]*
+         S[n, p])/((1 + eps)*S[k, k]) - (I*g^4*Qv[k]*R3[eir]*S[n, p]^2)/
+        ((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[k]*R3[eir]*S[n, p]^2)/
+        ((1 + eps)*S[k, k]) + ((2*I)*g^4*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + ((2*I)*eps*g^4*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - ((6*I)*g^4*x*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - ((2*I)*eps*g^4*x*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + ((8*I)*g^4*x^2*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - ((4*I)*g^4*x^3*C0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - (I*eps*g^4*x*C1[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - (I*g^4*x^2*C1[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + (I*eps*g^4*x^2*C1[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + (I*g^4*x^3*C1[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + (I*g^4*K0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + (I*eps*g^4*K0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - ((3*I)*g^4*x*K0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - (I*eps*g^4*x*K0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) + ((3*I)*g^4*x^2*K0[euv]*Qv[q])/
+        ((1 + eps)*S[k, k]*S[n, q]) - ((3*I)*g^4*Qv[k]*R0[eir]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((3*I)*eps*g^4*Qv[k]*R0[eir]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((5*I)*g^4*x*Qv[k]*R0[eir]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*eps*g^4*x*Qv[k]*R0[eir]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((5*I)*g^4*x^2*Qv[k]*R0[eir]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*P0[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) - (I*eps*g^4*x^2*P0[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) + ((3*I)*g^4*x^3*P0[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) + (I*g^4*x^2*P1[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) + (I*eps*g^4*x^2*P1[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) - (I*g^4*x^3*P1[euv]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) + ((3*I)*g^4*Qv[k]*R2[eir]*S[k, n]*
+         S[p, p])/((1 + eps)*S[k, k]^2) + ((3*I)*eps*g^4*Qv[k]*R2[eir]*
+         S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       (I*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*Qv[k]*R4[eir]*S[k, n]^2*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*Qv[k]*R4[eir]*S[k, n]^2*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*B3[euv]*Qv[p]*S[k, n]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[n, p]^2) - ((4*I)*g^4*x^2*B3[euv]*Qv[p]*
+         S[k, n]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, p]^2) - 
+       (I*g^4*x^2*E1[euv]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+       ((2*I)*g^4*x^3*E1[euv]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((4*I)*g^4*x*B0[euv]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((3*I)*eps*g^4*x*B0[euv]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2*
+         S[n, p]) + ((7*I)*g^4*x^2*B0[euv]*Qv[p]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) + ((2*I)*g^4*x*B1[euv]*Qv[p]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) - ((4*I)*g^4*x^2*B1[euv]*Qv[p]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) + ((3*I)*g^4*Qv[k]*R1[eir]*S[n, p]*
+         S[p, p])/((1 + eps)*S[k, k]^2) + ((3*I)*eps*g^4*Qv[k]*R1[eir]*
+         S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       (I*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*Qv[k]*R5[eir]*S[k, n]*S[n, p]*
+         S[p, p])/((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*Qv[k]*R5[eir]*
+         S[k, n]*S[n, p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*g^4*Qv[k]*R3[eir]*S[n, p]^2*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*Qv[k]*R3[eir]*S[n, p]^2*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((3*I)*g^4*x*C0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((4*I)*eps*g^4*x*C0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*
+         S[n, q]) + ((5*I)*g^4*x^2*C0[euv]*Qv[q]*S[p, p])/
+        ((1 + eps)*S[k, k]^2*S[n, q]) + ((2*I)*eps*g^4*x^2*C0[euv]*Qv[q]*
+         S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((4*I)*g^4*x^3*C0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       (I*eps*g^4*x*C1[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       (I*g^4*x^2*C1[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*eps*g^4*x^2*C1[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*g^4*x^3*C1[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       (I*g^4*x*K0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       (I*eps*g^4*x*K0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*g^4*x^2*K0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*eps*g^4*x^2*K0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*g^4*x^3*K0[euv]*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*eps*g^4*x*Qv[k]*R0[eir]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       (I*g^4*x^2*Qv[k]*R0[eir]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x^2*Qv[k]*R0[eir]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       (I*g^4*Qv[k]*R0[eir]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       (I*eps*g^4*Qv[k]*R0[eir]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((2*I)*g^4*x*Qv[k]*R0[eir]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[k]*R0[eir]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*x^2*P0[euv]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2*S[k, n]) + 
+       ((2*I)*eps*g^4*x^2*P0[euv]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2*
+         S[k, n]) - ((4*I)*g^4*x^3*P0[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) - (I*g^4*x^2*P1[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) - (I*eps*g^4*x^2*P1[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) + (I*g^4*x^3*P1[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[k, n]) - (I*g^4*Qv[k]*R2[eir]*S[k, n]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*Qv[k]*R2[eir]*S[k, n]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*Qv[k]*R4[eir]*S[k, n]^2*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*Qv[k]*R4[eir]*S[k, n]^2*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*E1[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) - ((2*I)*g^4*x^3*E1[euv]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) + ((3*I)*g^4*x*B0[euv]*Qv[p]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) + ((2*I)*eps*g^4*x*B0[euv]*Qv[p]*
+         S[q, q])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((6*I)*g^4*x^2*B0[euv]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((2*I)*g^4*x*B1[euv]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+       ((4*I)*g^4*x^2*B1[euv]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       (I*g^4*Qv[k]*R1[eir]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*Qv[k]*R1[eir]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       (I*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*Qv[k]*R5[eir]*S[k, n]*S[n, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*Qv[k]*R5[eir]*S[k, n]*S[n, p]*
+         S[q, q])/((1 + eps)*S[k, k]^2) + (I*g^4*Qv[k]*R3[eir]*S[n, p]^2*
+         S[q, q])/((1 + eps)*S[k, k]^2) + (I*eps*g^4*Qv[k]*R3[eir]*S[n, p]^2*
+         S[q, q])/((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*C3[euv]*Qv[q]*S[k, n]*
+         S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]^2) + 
+       ((2*I)*g^4*x^2*C3[euv]*Qv[q]*S[k, n]*S[q, q])/((1 + eps)*S[k, k]^2*
+         S[n, q]^2) - ((2*I)*g^4*x^3*C3[euv]*Qv[q]*S[k, n]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, q]^2) - (I*g^4*x^2*C3[euv]*Qv[q]*S[n, p]*
+         S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]^2) - 
+       (I*eps*g^4*x^2*C3[euv]*Qv[q]*S[n, p]*S[q, q])/((1 + eps)*S[k, k]^2*
+         S[n, q]^2) + (I*g^4*x^3*C3[euv]*Qv[q]*S[n, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, q]^2) + ((3*I)*g^4*x*C0[euv]*Qv[q]*S[q, q])/
+        ((1 + eps)*S[k, k]^2*S[n, q]) + ((4*I)*eps*g^4*x*C0[euv]*Qv[q]*
+         S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((4*I)*g^4*x^2*C0[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       ((4*I)*g^4*x^3*C0[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*eps*g^4*x*C1[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((3*I)*g^4*x^2*C1[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       (I*eps*g^4*x^2*C1[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       ((3*I)*g^4*x^3*C1[euv]*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       (I*g^4*x*Qv[k]*R0[eir]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       ((3*I)*eps*g^4*x*Qv[k]*R0[eir]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - ((4*I)*g^4*x^2*Qv[k]*R0[eir]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - (I*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) + (I*eps*g^4*x*Qv[k]*R2[eir]*S[k, n]*
+         S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       (I*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + (I*eps*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) - (I*g^4*x*Qv[k]*R0[eir]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) - ((2*I)*eps*g^4*x*Qv[k]*R0[eir]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) + ((2*I)*g^4*x^2*Qv[k]*R0[eir]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) + (I*g^4*x*Qv[k]*R2[eir]*S[k, n]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) + (I*g^4*x*Qv[k]*R1[eir]*S[n, p]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) - (I*g^4*Qv[k]*S0[eir])/((1 + eps)*S[k, k]*
+         S[n, p]) - (I*eps*g^4*Qv[k]*S0[eir])/((1 + eps)*S[k, k]*S[n, p]) + 
+       ((2*I)*g^4*x*Qv[k]*S0[eir])/((1 + eps)*S[k, k]*S[n, p]) - 
+       ((2*I)*g^4*x^2*Qv[k]*S0[eir])/((1 + eps)*S[k, k]*S[n, p]) + 
+       (I*g^4*x^2*Qv[k]*S[p, p]*S0[eir])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((6*I)*g^4*x^3*Qv[k]*S[p, p]*S0[eir])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+       (I*g^4*x^2*Qv[k]*S[p, p]^2*S0[eir])/((1 + eps)*S[k, k]^3*S[n, p]) + 
+       (I*eps*g^4*x^2*Qv[k]*S[p, p]^2*S0[eir])/((1 + eps)*S[k, k]^3*
+         S[n, p]) - ((3*I)*g^4*x^3*Qv[k]*S[p, p]^2*S0[eir])/
+        ((1 + eps)*S[k, k]^3*S[n, p]) - ((2*I)*g^4*x*Qv[k]*S[q, q]*S0[eir])/
+        ((1 + eps)*S[k, k]^2*S[n, p]) - ((2*I)*eps*g^4*x*Qv[k]*S[q, q]*
+         S0[eir])/((1 + eps)*S[k, k]^2*S[n, p]) + 
+       ((4*I)*g^4*x^2*Qv[k]*S[q, q]*S0[eir])/((1 + eps)*S[k, k]^2*S[n, p]) - 
+       ((2*I)*g^4*x^2*Qv[k]*S[p, p]*S[q, q]*S0[eir])/((1 + eps)*S[k, k]^3*
+         S[n, p]) - ((2*I)*eps*g^4*x^2*Qv[k]*S[p, p]*S[q, q]*S0[eir])/
+        ((1 + eps)*S[k, k]^3*S[n, p]) + ((4*I)*g^4*x^3*Qv[k]*S[p, p]*S[q, q]*
+         S0[eir])/((1 + eps)*S[k, k]^3*S[n, p]) + ((2*I)*g^4*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*g^4*x*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) - ((4*I)*eps*g^4*x*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*g^4*x^2*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*x^2*Qv[k]*T0[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) - 
+       (I*eps*g^4*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) + 
+       ((4*I)*g^4*x^2*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) - 
+       (I*g^4*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[q]*T0[euv])/
+        ((1 + eps)*S[k, k]) + ((5*I)*g^4*x*Qv[q]*T0[euv])/
+        ((1 + eps)*S[k, k]) + ((4*I)*eps*g^4*x*Qv[q]*T0[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*g^4*x^2*Qv[q]*T0[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*eps*g^4*x^2*Qv[q]*T0[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*x*Qv[k]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*Qv[k]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*Qv[k]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x^2*Qv[k]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x*Qv[p]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*Qv[p]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*Qv[p]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x^2*Qv[p]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*Qv[q]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*Qv[q]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((5*I)*g^4*x^2*Qv[q]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x^2*Qv[q]*S[p, p]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x*Qv[k]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*Qv[k]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*Qv[p]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((4*I)*g^4*x^2*Qv[p]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((3*I)*g^4*x*Qv[q]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*Qv[q]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) + ((6*I)*g^4*x^2*Qv[q]*S[q, q]*T0[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*Qv[k]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*eps*g^4*x*Qv[k]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*g^4*x^2*Qv[k]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*x^2*Qv[k]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*g^4*x*Qv[p]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*x*Qv[p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*g^4*x*Qv[q]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*x*Qv[q]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((5*I)*g^4*x^2*Qv[q]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((5*I)*eps*g^4*x^2*Qv[q]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*g^4*Qv[k]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*Qv[k]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*g^4*x*Qv[k]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) + ((2*I)*eps*g^4*x*Qv[k]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*Qv[q]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[q]*S[k, n]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*Qv[p]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[p]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*g^4*x*Qv[p]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*eps*g^4*x*Qv[p]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*Qv[q]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[q]*S[n, p]*T1[euv])/
+        ((1 + eps)*S[k, k]) + (I*g^4*x^2*Qv[k]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x^2*Qv[k]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*Qv[p]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*Qv[p]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x*Qv[q]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*Qv[q]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*Qv[q]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x^2*Qv[q]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x*Qv[k]*S[k, n]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x*Qv[k]*S[k, n]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*Qv[q]*S[k, n]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*eps*g^4*x*Qv[q]*S[k, n]*S[p, p]*
+         T1[euv])/((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*Qv[p]*S[n, p]*S[p, p]*
+         T1[euv])/((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*Qv[p]*S[n, p]*
+         S[p, p]*T1[euv])/((1 + eps)*S[k, k]^2) + 
+       ((3*I)*g^4*x*Qv[q]*S[n, p]*S[p, p]*T1[euv])/((1 + eps)*S[k, k]^2) + 
+       ((3*I)*eps*g^4*x*Qv[q]*S[n, p]*S[p, p]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*Qv[k]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x^2*Qv[k]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*Qv[p]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*Qv[p]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x*Qv[q]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*Qv[q]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*Qv[q]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*eps*g^4*x^2*Qv[q]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x*Qv[k]*S[k, n]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*Qv[k]*S[k, n]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - ((3*I)*g^4*x*Qv[q]*S[k, n]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) - ((3*I)*eps*g^4*x*Qv[q]*S[k, n]*S[q, q]*
+         T1[euv])/((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*Qv[p]*S[n, p]*S[q, q]*
+         T1[euv])/((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*Qv[p]*S[n, p]*
+         S[q, q]*T1[euv])/((1 + eps)*S[k, k]^2) - 
+       ((3*I)*g^4*x*Qv[q]*S[n, p]*S[q, q]*T1[euv])/((1 + eps)*S[k, k]^2) - 
+       ((3*I)*eps*g^4*x*Qv[q]*S[n, p]*S[q, q]*T1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*Qv[q]*V1[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*g^4*x^3*Qv[q]*V1[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*x^2*Qv[q]*S[p, p]*V1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*Qv[q]*S[p, p]*V1[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*Qv[q]*S[q, q]*V1[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*Qv[q]*S[q, q]*V1[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*Qv[q]*V2[euv])/
+        ((1 + eps)*S[k, k]) - ((2*I)*g^4*x^3*Qv[q]*V2[euv])/
+        ((1 + eps)*S[k, k]) - (I*g^4*x^2*Qv[q]*S[p, p]*V2[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*Qv[q]*S[p, p]*V2[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*Qv[q]*S[q, q]*V2[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^3*Qv[q]*S[q, q]*V2[euv])/
+        ((1 + eps)*S[k, k]^2) + (I*g^4*x^2*Qv[q]*S[k, n]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^3*Qv[q]*S[k, n]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) - (I*g^4*x^2*Qv[q]*S[n, p]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*Qv[q]*S[n, p]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*Qv[k]*S[k, n]*S[p, p]*W0[eir])/
+        ((1 + eps)*S[k, k]^2*S[n, q]) + ((2*I)*eps*g^4*Qv[k]*S[k, n]*S[p, p]*
+         W0[eir])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((4*I)*g^4*x*Qv[k]*S[k, n]*S[p, p]*W0[eir])/((1 + eps)*S[k, k]^2*
+         S[n, q]) + ((4*I)*g^4*x^2*Qv[k]*S[k, n]*S[p, p]*W0[eir])/
+        ((1 + eps)*S[k, k]^2*S[n, q]) - (I*g^4*x*Qv[k]*S[k, n]*S[p, p]^2*
+         W0[eir])/((1 + eps)*S[k, k]^3*S[n, q]) + 
+       ((3*I)*g^4*x^2*Qv[k]*S[k, n]*S[p, p]^2*W0[eir])/((1 + eps)*S[k, k]^3*
+         S[n, q]) - ((2*I)*g^4*x^3*Qv[k]*S[k, n]*S[p, p]^2*W0[eir])/
+        ((1 + eps)*S[k, k]^3*S[n, q]) - ((2*I)*g^4*Qv[k]*S[k, n]*S[q, q]*
+         W0[eir])/((1 + eps)*S[k, k]^2*S[n, q]) - 
+       ((2*I)*eps*g^4*Qv[k]*S[k, n]*S[q, q]*W0[eir])/((1 + eps)*S[k, k]^2*
+         S[n, q]) + ((4*I)*g^4*x*Qv[k]*S[k, n]*S[q, q]*W0[eir])/
+        ((1 + eps)*S[k, k]^2*S[n, q]) - ((4*I)*g^4*x^2*Qv[k]*S[k, n]*S[q, q]*
+         W0[eir])/((1 + eps)*S[k, k]^2*S[n, q]) + 
+       ((2*I)*g^4*x*Qv[k]*S[k, n]*S[p, p]*S[q, q]*W0[eir])/
+        ((1 + eps)*S[k, k]^3*S[n, q]) - ((5*I)*g^4*x^2*Qv[k]*S[k, n]*S[p, p]*
+         S[q, q]*W0[eir])/((1 + eps)*S[k, k]^3*S[n, q]) + 
+       ((2*I)*g^4*x^3*Qv[k]*S[k, n]*S[p, p]*S[q, q]*W0[eir])/
+        ((1 + eps)*S[k, k]^3*S[n, q]) - (I*g^4*x*Qv[k]*S[k, n]*S[q, q]^2*
+         W0[eir])/((1 + eps)*S[k, k]^3*S[n, q]) + 
+       ((2*I)*g^4*x^2*Qv[k]*S[k, n]*S[q, q]^2*W0[eir])/((1 + eps)*S[k, k]^3*
+         S[n, q])}, {"long", ((-6*I)*g^4*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((3*I)*g^4*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - ((10*I)*eps*g^4*Qv[k])/
+        ((1 + eps)^2*S[k, k]) + ((5*I)*eps*g^4*Qv[k])/(eir*(1 + eps)^2*
+         S[k, k]) - ((4*I)*eps^2*g^4*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((2*I)*eps^2*g^4*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       ((2*I)*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       ((4*I)*eps*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       ((2*I)*eps^2*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       ((3*I)*g^4*I0*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       ((3*I)*eps*g^4*I0*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       ((3*I)*g^4*I0*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+       ((3*I)*eps*g^4*I0*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+       ((4*I)*g^4*I1*Qv[k])/((1 + eps)^2*S[k, k]) - ((8*I)*eps*g^4*I1*Qv[k])/
+        ((1 + eps)^2*S[k, k]) - ((4*I)*eps^2*g^4*I1*Qv[k])/
+        ((1 + eps)^2*S[k, k]) - ((8*I)*g^4*I1*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((8*I)*eps*g^4*I1*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*x*Qv[k])/((1 + eps)^2*S[k, k]) - (I*g^4*x*Qv[k])/
+        (eir*(1 + eps)^2*S[k, k]) + ((2*I)*eps*g^4*x*Qv[k])/
+        ((1 + eps)^2*S[k, k]) - (I*eps*g^4*x*Qv[k])/(eir*(1 + eps)^2*
+         S[k, k]) + ((10*I)*g^4*x*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((4*I)*g^4*x*Qv[k])/(eir*(1 + eps)*S[k, k]) - ((6*I)*eps*g^4*x*Qv[k])/
+        ((1 + eps)*S[k, k]) - (I*g^4*x*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+       ((3*I)*eps*g^4*x*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+       ((10*I)*g^4*I0*x*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+       ((6*I)*g^4*I0*x*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+       ((24*I)*g^4*I1*x*Qv[k])/((1 + eps)*S[k, k]) - ((12*I)*g^4*x^2*Qv[k])/
+        ((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*x^2*Qv[k])/
+        (eir*(1 + eps)*S[k, k]) + ((4*I)*eps*g^4*x^2*Qv[k])/
+        ((1 + eps)*S[k, k]) - ((I/2)*eps*g^4*x^2*Qv[k])/
+        (eir*(1 + eps)*S[k, k]) + (((9*I)/2)*g^4*x^2*Qv[k])/
+        ((1 + eps)*euv*S[k, k]) - (((3*I)/2)*eps*g^4*x^2*Qv[k])/
+        ((1 + eps)*euv*S[k, k]) - ((10*I)*g^4*I0*x^2*Qv[k])/
+        (eir*(1 + eps)*S[k, k]) - ((6*I)*g^4*I0*x^2*Qv[k])/
+        ((1 + eps)*euv*S[k, k]) - ((24*I)*g^4*I1*x^2*Qv[k])/
+        ((1 + eps)*S[k, k]) + ((4*I)*g^4*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((4*I)*eps*g^4*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((8*I)*g^4*x*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((8*I)*g^4*x^2*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*eps*g^4*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((4*I)*g^4*x*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((4*I)*g^4*x^2*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+       (I*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       ((2*I)*eps*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       (I*eps^2*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+       (I*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       (I*eps*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((4*I)*eps*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((2*I)*eps^2*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((2*I)*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*eps*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((4*I)*g^4*x*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       ((8*I)*g^4*I0*x*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((4*I)*g^4*x^2*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+       ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((I/2)*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       (I*eps*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((I/2)*eps^2*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+       ((I/2)*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((I/2)*eps*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((2*I)*g^4*x*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*x^2*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+       (I*g^4*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+       (I*eps*g^4*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       ((3*I)*g^4*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+       ((3*I)*eps*g^4*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+       ((4*I)*g^4*I0*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((4*I)*eps*g^4*I0*Log[x]*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((2*I)*g^4*x*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+       ((6*I)*g^4*x*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+       ((8*I)*g^4*I0*x*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*x^2*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+       ((6*I)*g^4*x^2*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+       ((8*I)*g^4*I0*x^2*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*g^4*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((2*I)*eps*g^4*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((4*I)*g^4*x*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+       ((4*I)*g^4*x^2*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+       ((3*I)*g^4*Qv[p])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*Qv[p])/
+        ((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*Qv[p])/((1 + eps)*euv*S[k, k]) + 
+       (((3*I)/2)*eps*g^4*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+       ((3*I)*g^4*I0*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+       ((3*I)*eps*g^4*I0*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+       ((3*I)*g^4*I1*Qv[p])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*I1*Qv[p])/
+        ((1 + eps)*S[k, k]) + ((4*I)*g^4*x*Qv[p])/((1 + eps)*S[k, k]) - 
+       ((2*I)*g^4*x*Qv[p])/((1 + eps)*euv*S[k, k]) + ((6*I)*g^4*I0*x*Qv[p])/
+        ((1 + eps)*euv*S[k, k]) + ((6*I)*g^4*I1*x*Qv[p])/
+        ((1 + eps)*S[k, k]) - ((6*I)*g^4*I0*x^2*Qv[p])/
+        ((1 + eps)*euv*S[k, k]) - ((6*I)*g^4*I1*x^2*Qv[p])/
+        ((1 + eps)*S[k, k]) + ((3*I)*g^4*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) + 
+       ((3*I)*eps*g^4*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) - 
+       ((6*I)*g^4*x*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) + 
+       ((6*I)*g^4*x^2*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) - 
+       ((3*I)*g^4*Qv[q])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*Qv[q])/
+        ((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*Qv[q])/((1 + eps)*euv*S[k, k]) + 
+       (((3*I)/2)*eps*g^4*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+       ((2*I)*g^4*I0*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*I0*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((2*I)*g^4*I1*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*I1*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((6*I)*g^4*x*Qv[q])/((1 + eps)*S[k, k]) + ((4*I)*eps*g^4*x*Qv[q])/
+        ((1 + eps)*S[k, k]) - ((3*I)*g^4*x*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+       ((2*I)*eps*g^4*x*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+       ((2*I)*eps*g^4*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (I*eps*g^4*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((6*I)*g^4*I0*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*I0*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((6*I)*g^4*I1*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*I1*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       (I*g^4*x^2*Qv[q])/((1 + eps)*S[k, k]) + (I*eps*g^4*x^2*Qv[q])/
+        ((1 + eps)*S[k, k]) + ((I/2)*g^4*x^2*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+       ((I/2)*eps*g^4*x^2*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+       ((2*I)*g^4*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (I*g^4*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       (I*eps*g^4*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((8*I)*g^4*I0*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((8*I)*g^4*I1*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*g^4*x^3*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       (I*g^4*x^3*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((4*I)*g^4*I0*x^3*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((4*I)*g^4*I1*x^3*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*g^4*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((6*I)*g^4*x*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*x*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((8*I)*g^4*x^2*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((4*I)*g^4*x^3*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*g^4*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((6*I)*g^4*x*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*x*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((6*I)*g^4*x^2*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*g^4*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((2*I)*g^4*I0*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*I0*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((6*I)*g^4*x*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((2*I)*eps*g^4*x*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((6*I)*g^4*I0*x*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*eps*g^4*I0*x*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((8*I)*g^4*x^2*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((4*I)*g^4*x^3*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((4*I)*g^4*I0*x^3*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (I*g^4*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (I*eps*g^4*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((3*I)*g^4*x*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       (I*eps*g^4*x*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((4*I)*g^4*x^2*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (I*g^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       (I*eps*g^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((3*I)*g^4*x*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       (I*eps*g^4*x*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+       (I*g^4*x^2*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+       ((3*I)*g^4*x^2*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+       ((3*I)*g^4*x^3*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+       ((2*I)*g^4*x^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+       ((I/2)*g^4*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       ((I/2)*eps*g^4*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       (((3*I)/2)*g^4*x*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((I/2)*eps*g^4*x*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+       (((3*I)/2)*g^4*x^2*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+       ((6*I)*g^4*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((3*I)*g^4*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((10*I)*eps*g^4*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((5*I)*eps*g^4*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((4*I)*eps^2*g^4*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*eps^2*g^4*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((12*I)*g^4*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*g^4*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((12*I)*eps*g^4*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*eps*g^4*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((2*I)*g^4*I0*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((4*I)*eps*g^4*I0*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((2*I)*eps^2*g^4*I0*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((12*I)*g^4*I0*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((12*I)*eps*g^4*I0*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*I1*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) - 
+       ((8*I)*eps*g^4*I1*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) - 
+       ((4*I)*eps^2*g^4*I1*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) - 
+       ((24*I)*g^4*I1*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((24*I)*eps*g^4*I1*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) - 
+       (I*g^4*x*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) - 
+       (I*eps*g^4*x*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*g^4*x*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*g^4*x*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       (I*eps*g^4*x*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((8*I)*g^4*I0*x*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*I0*x*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       (I*g^4*I0*x*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       (I*eps*g^4*I0*x*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((17*I)*g^4*I1*x*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((5*I)*eps*g^4*I1*x*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*g^4*I0*x*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((6*I)*eps*g^4*I0*x*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((10*I)*g^4*I1*x*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((10*I)*eps*g^4*I1*x*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*x^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (((3*I)/2)*g^4*x^2*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((7*I)*eps*g^4*x^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (((5*I)/2)*eps*g^4*x^2*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*x^2*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((13*I)*g^4*I0*x^2*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((3*I)*g^4*I0*x^2*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((22*I)*g^4*I1*x^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((12*I)*g^4*I0*x^2*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((20*I)*g^4*I1*x^2*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((18*I)*g^4*I0*x^3*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((30*I)*g^4*I1*x^3*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((12*I)*g^4*I0*x^3*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((20*I)*g^4*I1*x^3*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*g^4*x*Li2[1]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*x*Li2[1]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((10*I)*g^4*x*Li2[1]*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((10*I)*eps*g^4*x*Li2[1]*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + ((2*I)*g^4*x^2*Li2[1]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((20*I)*g^4*x^2*Li2[1]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((6*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((20*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((4*I)*g^4*x*Li2[1 - x]*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*x*Li2[1 - x]*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((2*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((8*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((12*I)*g^4*x^3*Li2[1 - x]*Qv[k]*
+         S[p, p])/((1 + eps)*S[k, k]^2) - ((8*I)*g^4*x^3*Li2[1 - x]*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Li2[x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Li2[x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*g^4*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((2*I)*eps*g^4*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       (I*eps^2*g^4*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)^2*S[k, k]^2) - 
+       ((6*I)*g^4*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((6*I)*eps*g^4*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*I0*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((4*I)*eps*g^4*I0*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*eps^2*g^4*I0*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)^2*S[k, k]^2) + ((12*I)*g^4*I0*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((12*I)*eps*g^4*I0*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*Log[1 - x]*Qv[k]*S[p, p])/
+        (eir*(1 + eps)*S[k, k]^2) + (I*eps*g^4*x*Log[1 - x]*Qv[k]*S[p, p])/
+        (eir*(1 + eps)*S[k, k]^2) - (I*g^4*x*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*euv*S[k, k]^2) - ((8*I)*g^4*I0*x*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*I0*x*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) + ((6*I)*g^4*x*Log[1 - x]*Qv[k]*S[p, p])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^2) + ((6*I)*eps*g^4*x*Log[1 - x]*Qv[k]*
+         S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*I0*x*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((4*I)*eps*g^4*I0*x*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((6*I)*g^4*x^2*Log[1 - x]*Qv[k]*
+         S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       ((12*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((12*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) + ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((6*I)*g^4*x^3*Log[1 - x]*Qv[k]*
+         S[p, p])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((12*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((12*I)*g^4*x^3*Log[1 - x]*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) - ((8*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((I/2)*g^4*Log[1 - x]^2*Qv[k]*
+         S[p, p])/((1 + eps)^2*S[k, k]^2) + (I*eps*g^4*Log[1 - x]^2*Qv[k]*
+         S[p, p])/((1 + eps)^2*S[k, k]^2) + ((I/2)*eps^2*g^4*Log[1 - x]^2*
+         Qv[k]*S[p, p])/((1 + eps)^2*S[k, k]^2) + 
+       ((3*I)*g^4*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((3*I)*eps*g^4*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (((3*I)/2)*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((I/2)*eps*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       (I*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       (I*eps*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((4*I)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((3*I)*g^4*x^3*Log[1 - x]^2*Qv[k]*
+         S[p, p])/((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       (I*g^4*x*Log[x]*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       (I*eps*g^4*x*Log[x]*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       (I*g^4*I0*x*Log[x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*I0*x*Log[x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x*Log[x]*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*x*Log[x]*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) + ((6*I)*g^4*I0*x*Log[x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((6*I)*eps*g^4*I0*x*Log[x]*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*g^4*x^2*Log[x]*Qv[k]*S[p, p])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((3*I)*g^4*x^2*Log[x]*Qv[k]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((8*I)*g^4*x^2*Log[x]*Qv[k]*S[p, p])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) - ((12*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((6*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p])/
+        (eir*(1 + eps)*S[k, k]^2) + ((6*I)*g^4*I0*x^3*Log[x]*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((8*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^2) + ((12*I)*g^4*I0*x^3*Log[x]*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x*Log[1 - x]*Log[x]*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((2*I)*eps*g^4*x*Log[1 - x]*Log[x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((4*I)*g^4*x^2*Log[1 - x]*Log[x]*
+         Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*x^3*Log[1 - x]*Log[x]*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((I/2)*g^4*x*Log[x]^2*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((I/2)*eps*g^4*x*Log[x]^2*Qv[k]*S[p, p])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*Log[x]^2*Qv[k]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((2*I)*eps*g^4*x*Log[x]^2*Qv[k]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       (I*g^4*x^2*Log[x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Log[x]^2*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*x*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       (I*eps*g^4*x*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((3*I)*eps*g^4*I0*x*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*I1*x*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((3*I)*eps*g^4*I1*x*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((12*I)*g^4*x^2*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*x^2*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*g^4*x^2*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x^2*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       ((9*I)*g^4*I0*x^2*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       ((9*I)*g^4*I1*x^2*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((16*I)*g^4*x^3*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((8*I)*g^4*x^3*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x^3*Qv[p]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*I1*x^3*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x*Li2[1]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((3*I)*eps*g^4*x*Li2[1]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((9*I)*g^4*x^2*Li2[1]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x^3*Li2[1]*Qv[p]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((10*I)*g^4*x*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*eps*g^4*x*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2) - 
+       ((5*I)*g^4*x*Qv[q]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       ((3*I)*eps*g^4*x*Qv[q]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*eps*g^4*x*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*I0*x*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*I0*x*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*I1*x*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*I1*x*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((8*I)*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       (I*eps*g^4*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((5*I)*g^4*I0*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*I0*x^2*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) - ((5*I)*g^4*I1*x^2*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((2*I)*eps*g^4*I1*x^2*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((2*I)*g^4*x^3*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + (I*g^4*x^3*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) + ((4*I)*g^4*I0*x^3*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) + ((4*I)*g^4*I1*x^3*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((3*I)*g^4*x*Li2[1]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((4*I)*eps*g^4*x*Li2[1]*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((5*I)*g^4*x^2*Li2[1]*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x^2*Li2[1]*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((4*I)*g^4*x^3*Li2[1]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((2*I)*g^4*x*Li2[1 - x]*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Li2[1 - x]*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((2*I)*g^4*x^2*Li2[1 - x]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((2*I)*eps*g^4*x^2*Li2[1 - x]*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x^3*Li2[1 - x]*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + ((3*I)*g^4*x*Log[1 - x]*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) + ((4*I)*eps*g^4*x*Log[1 - x]*Qv[q]*
+         S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((3*I)*g^4*I0*x*Log[1 - x]*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((4*I)*eps*g^4*I0*x*Log[1 - x]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((5*I)*g^4*x^2*Log[1 - x]*Qv[q]*
+         S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x^2*Log[1 - x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) + ((5*I)*g^4*I0*x^2*Log[1 - x]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((2*I)*eps*g^4*I0*x^2*Log[1 - x]*
+         Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*x^3*Log[1 - x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) - ((4*I)*g^4*I0*x^3*Log[1 - x]*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - (((3*I)/2)*g^4*x*Log[1 - x]^2*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x*Log[1 - x]^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + (((5*I)/2)*g^4*x^2*Log[1 - x]^2*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + (I*eps*g^4*x^2*Log[1 - x]^2*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + (I*g^4*x*Log[x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) + (I*eps*g^4*x*Log[x]*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) - (I*g^4*x^2*Log[x]*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       (I*g^4*x^2*Log[x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       (I*eps*g^4*x^2*Log[x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) + ((3*I)*g^4*x^3*Log[x]*Qv[q]*S[p, p])/
+        ((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       (I*g^4*x^3*Log[x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x^4*Log[x]*Qv[q]*S[p, p])/((1 + eps)*euv*(1 - x)^2*
+         S[k, k]^2) + ((I/2)*g^4*x*Log[x]^2*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((I/2)*eps*g^4*x*Log[x]^2*Qv[q]*
+         S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((I/2)*g^4*x^2*Log[x]^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((I/2)*eps*g^4*x^2*Log[x]^2*Qv[q]*S[p, p])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((I/2)*g^4*x^3*Log[x]^2*Qv[q]*S[p, p])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((4*I)*eps*g^4*x*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) - ((2*I)*eps*g^4*x*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) - ((2*I)*eps*g^4*x^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) + (I*eps*g^4*x^2*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) + ((5*I)*g^4*I0*x^2*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) + (I*eps*g^4*I0*x^2*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) + ((9*I)*g^4*I1*x^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) + (I*eps*g^4*I1*x^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) - ((3*I)*g^4*I0*x^2*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((5*I)*g^4*I1*x^2*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((9*I)*g^4*I0*x^3*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((15*I)*g^4*I1*x^3*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       ((9*I)*g^4*I0*x^3*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((15*I)*g^4*I1*x^3*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((6*I)*g^4*I0*x^4*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((10*I)*g^4*I1*x^4*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       (I*g^4*x^2*Li2[1]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x^2*Li2[1]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       ((5*I)*g^4*x^2*Li2[1]*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((3*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       ((15*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((10*I)*g^4*x^4*Li2[1]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((2*I)*g^4*x^2*Li2[1 - x]*Qv[k]*
+         S[p, p]^2)/((1 + eps)*S[k, k]^3) - ((2*I)*eps*g^4*x^2*Li2[1 - x]*
+         Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       ((2*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((6*I)*g^4*x^3*Li2[1 - x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) - ((6*I)*g^4*x^3*Li2[1 - x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((4*I)*g^4*x^4*Li2[1 - x]*Qv[k]*
+         S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((2*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((4*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       ((3*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((3*I)*g^4*x^3*Log[1 - x]*Qv[k]*
+         S[p, p]^2)/(eir*(1 + eps)*S[k, k]^3) + 
+       ((6*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) + 
+       ((9*I)*g^4*x^3*Log[1 - x]*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) - ((6*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((6*I)*g^4*x^4*Log[1 - x]*Qv[k]*
+         S[p, p]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((4*I)*g^4*I0*x^4*Log[1 - x]*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) - (I*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) - ((I/2)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + (((3*I)/2)*g^4*x^3*Log[1 - x]^2*Qv[k]*
+         S[p, p]^2)/((1 + eps)*S[k, k]^3) + (((3*I)/2)*g^4*x^3*Log[1 - x]^2*
+         Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       (I*g^4*x^4*Log[1 - x]^2*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) - (I*g^4*x^2*Log[x]*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) - (I*eps*g^4*x^2*Log[x]*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*S[k, k]^3) - (I*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) - (I*eps*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*S[k, k]^3) + ((2*I)*g^4*x^2*Log[x]*Qv[k]*S[p, p]^2)/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) - ((3*I)*g^4*I0*x^2*Log[x]*Qv[k]*
+         S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((3*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*S[k, k]^3) + 
+       ((3*I)*g^4*I0*x^3*Log[x]*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       ((6*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p]^2)/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) + ((9*I)*g^4*I0*x^3*Log[x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((4*I)*g^4*x^4*Log[x]*Qv[k]*
+         S[p, p]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((6*I)*g^4*I0*x^4*Log[x]*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + (I*g^4*x^2*Log[1 - x]*Log[x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((3*I)*g^4*x^3*Log[1 - x]*Log[x]*
+         Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((2*I)*g^4*x^4*Log[1 - x]*Log[x]*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((I/2)*g^4*x^2*Log[x]^2*Qv[k]*
+         S[p, p]^2)/((1 + eps)*S[k, k]^3) - ((I/2)*eps*g^4*x^2*Log[x]^2*Qv[k]*
+         S[p, p]^2)/((1 + eps)*S[k, k]^3) + (I*g^4*x^2*Log[x]^2*Qv[k]*
+         S[p, p]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       (((3*I)/2)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p]^2)/((1 + eps)*S[k, k]^3) - 
+       ((3*I)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*x^4*Log[x]^2*Qv[k]*S[p, p]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((6*I)*g^4*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - ((3*I)*g^4*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((10*I)*eps*g^4*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - ((5*I)*eps*g^4*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((4*I)*eps^2*g^4*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - ((2*I)*eps^2*g^4*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((4*I)*g^4*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) + ((4*I)*eps*g^4*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) + ((2*I)*g^4*I0*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((4*I)*eps*g^4*I0*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((2*I)*eps^2*g^4*I0*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) + ((4*I)*g^4*I0*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) + ((4*I)*eps*g^4*I0*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) + ((4*I)*g^4*I1*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) + ((8*I)*eps*g^4*I1*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) + ((4*I)*eps^2*g^4*I1*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) + ((8*I)*g^4*I1*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((8*I)*eps*g^4*I1*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) + (I*g^4*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) - ((2*I)*eps*g^4*x*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) + (I*eps*g^4*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)^2*S[k, k]^2) - ((6*I)*g^4*x*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*x*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + (I*eps*g^4*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) - ((12*I)*g^4*I0*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) - ((2*I)*eps*g^4*I0*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) - ((2*I)*g^4*I0*x*Qv[k]*S[q, q])/
+        ((1 + eps)*euv*S[k, k]^2) - ((2*I)*eps*g^4*I0*x*Qv[k]*S[q, q])/
+        ((1 + eps)*euv*S[k, k]^2) - ((24*I)*g^4*I1*x*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((4*I)*eps*g^4*I1*x*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((6*I)*g^4*I0*x*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^2) - ((6*I)*eps*g^4*I0*x*Qv[k]*
+         S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((10*I)*g^4*I1*x*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((10*I)*eps*g^4*I1*x*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*x^2*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((I/2)*g^4*x^2*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) - 
+       (I*eps*g^4*x^2*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((I/2)*eps*g^4*x^2*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) - 
+       (I*g^4*x^2*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((12*I)*g^4*I0*x^2*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x^2*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((24*I)*g^4*I1*x^2*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((12*I)*g^4*I0*x^2*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((20*I)*g^4*I1*x^2*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((12*I)*g^4*I0*x^3*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((20*I)*g^4*I1*x^3*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*x*Li2[1]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*x*Li2[1]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((10*I)*g^4*x*Li2[1]*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((10*I)*eps*g^4*x*Li2[1]*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((8*I)*g^4*x^2*Li2[1]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((20*I)*g^4*x^2*Li2[1]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((20*I)*g^4*x^3*Li2[1]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((4*I)*g^4*x*Li2[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) + ((4*I)*eps*g^4*x*Li2[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) + ((4*I)*g^4*x*Li2[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*x*Li2[1 - x]*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((8*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((8*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((8*I)*g^4*x^3*Li2[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x*Li2[x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Li2[x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       (I*g^4*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*eps*g^4*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)^2*S[k, k]^2) + 
+       (I*eps^2*g^4*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)^2*S[k, k]^2) + 
+       ((2*I)*g^4*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((2*I)*g^4*I0*Log[1 - x]*Qv[k]*S[q, q])/((1 + eps)^2*S[k, k]^2) - 
+       ((4*I)*eps*g^4*I0*Log[1 - x]*Qv[k]*S[q, q])/((1 + eps)^2*S[k, k]^2) - 
+       ((2*I)*eps^2*g^4*I0*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - ((4*I)*g^4*I0*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((4*I)*eps*g^4*I0*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) - ((5*I)*g^4*x*Log[1 - x]*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^2) + (I*g^4*x*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*euv*S[k, k]^2) + ((10*I)*g^4*I0*x*Log[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) - ((6*I)*g^4*x*Log[1 - x]*Qv[k]*
+         S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((6*I)*eps*g^4*x*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) + ((4*I)*g^4*I0*x*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((4*I)*eps*g^4*I0*x*Log[1 - x]*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((2*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((12*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) - ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((12*I)*g^4*x^3*Log[1 - x]*Qv[k]*
+         S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((8*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - ((I/2)*g^4*Log[1 - x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - (I*eps*g^4*Log[1 - x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)^2*S[k, k]^2) - ((I/2)*eps^2*g^4*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)^2*S[k, k]^2) - (I*g^4*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) - (I*eps*g^4*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*S[k, k]^2) - (I*g^4*x*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*eps*g^4*x*Log[1 - x]^2*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - (I*g^4*x^2*Log[1 - x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) - 
+       ((2*I)*g^4*x*Log[x]*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x*Log[x]*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x*Log[x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*I0*x*Log[x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*x*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) - ((6*I)*g^4*I0*x*Log[x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((6*I)*eps*g^4*I0*x*Log[x]*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Log[x]*Qv[k]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((8*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((8*I)*g^4*x^2*Log[x]*Qv[k]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^2) + ((12*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((8*I)*g^4*x^3*Log[x]*Qv[k]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^2) - ((12*I)*g^4*I0*x^3*Log[x]*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Log[1 - x]*Log[x]*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + ((2*I)*eps*g^4*x*Log[1 - x]*Log[x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) - ((4*I)*g^4*x^2*Log[1 - x]*Log[x]*
+         Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*x^3*Log[1 - x]*Log[x]*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((2*I)*g^4*x*Log[x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*eps*g^4*x*Log[x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)*S[k, k]^2) + ((2*I)*g^4*x*Log[x]^2*Qv[k]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((2*I)*eps*g^4*x*Log[x]^2*Qv[k]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Log[x]^2*Qv[k]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Log[x]^2*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*x^3*Log[x]^2*Qv[k]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((2*I)*g^4*x*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       (I*g^4*x*Qv[p]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((3*I)*g^4*I0*x*Qv[p]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((2*I)*eps*g^4*I0*x*Qv[p]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((3*I)*g^4*I1*x*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*I1*x*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((6*I)*g^4*I0*x^2*Qv[p]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((6*I)*g^4*I1*x^2*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((3*I)*g^4*x*Li2[1]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Li2[1]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((6*I)*g^4*x^2*Li2[1]*Qv[p]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((8*I)*g^4*x*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*x*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2) + 
+       ((4*I)*g^4*x*Qv[q]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x*Qv[q]*S[q, q])/((1 + eps)*euv*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       (I*eps*g^4*x*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((3*I)*g^4*I0*x*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*I0*x*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((3*I)*g^4*I1*x*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*I1*x*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((8*I)*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*eps*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((2*I)*eps*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*S[k, k]^2) + 
+       ((4*I)*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       (I*g^4*I0*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*S[k, k]^2) + 
+       (I*g^4*I1*x^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) - 
+       ((6*I)*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*eps*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       (I*eps*g^4*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x^2*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*I1*x^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((12*I)*g^4*x^3*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) - 
+       ((3*I)*g^4*I0*x^3*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       ((3*I)*g^4*I1*x^3*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       ((6*I)*g^4*x^3*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((3*I)*g^4*x^3*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*I0*x^3*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) - 
+       ((4*I)*g^4*I1*x^3*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((8*I)*g^4*x^4*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       ((2*I)*g^4*I0*x^4*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*S[k, k]^2) + 
+       ((2*I)*g^4*I1*x^4*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       ((3*I)*g^4*x*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*x*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       (I*g^4*x^2*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) - 
+       ((4*I)*g^4*x^2*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((3*I)*g^4*x^3*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       ((4*I)*g^4*x^3*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((2*I)*g^4*x^4*Li2[1]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) - 
+       ((3*I)*g^4*x*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)*
+         S[k, k]^2) - ((4*I)*eps*g^4*x*Log[1 - x]*Qv[q]*S[q, q])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) + ((3*I)*g^4*I0*x*Log[1 - x]*Qv[q]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) + 
+       ((4*I)*eps*g^4*I0*x*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + (I*g^4*x^2*Log[1 - x]*Qv[q]*S[q, q])/
+        ((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       (I*g^4*I0*x^2*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*
+         S[k, k]^2) + ((4*I)*g^4*x^2*Log[1 - x]*Qv[q]*S[q, q])/
+        ((1 + eps)*euv*(1 - x)*S[k, k]^2) - ((4*I)*g^4*I0*x^2*Log[1 - x]*
+         Qv[q]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((3*I)*g^4*x^3*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*
+         S[k, k]^2) + ((3*I)*g^4*I0*x^3*Log[1 - x]*Qv[q]*S[q, q])/
+        ((1 + eps)*(1 - x)^2*S[k, k]^2) - ((4*I)*g^4*x^3*Log[1 - x]*Qv[q]*
+         S[q, q])/((1 + eps)*euv*(1 - x)*S[k, k]^2) + 
+       ((4*I)*g^4*I0*x^3*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) + ((2*I)*g^4*x^4*Log[1 - x]*Qv[q]*S[q, q])/
+        ((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       ((2*I)*g^4*I0*x^4*Log[1 - x]*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*
+         S[k, k]^2) + (((3*I)/2)*g^4*x*Log[1 - x]^2*Qv[q]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + ((2*I)*eps*g^4*x*Log[1 - x]^2*Qv[q]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^2) - 
+       ((I/2)*g^4*x^2*Log[1 - x]^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)^2*
+         S[k, k]^2) - ((2*I)*g^4*x^2*Log[1 - x]^2*Qv[q]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^2) + (((3*I)/2)*g^4*x^3*Log[1 - x]^2*Qv[q]*
+         S[q, q])/((1 + eps)*(1 - x)^2*S[k, k]^2) + 
+       ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[q]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^2) - (I*g^4*x^4*Log[1 - x]^2*Qv[q]*S[q, q])/
+        ((1 + eps)*(1 - x)^2*S[k, k]^2) + (I*g^4*x^2*Log[x]*Qv[q]*S[q, q])/
+        ((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       (I*g^4*x^3*Log[x]*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*S[k, k]^2) - 
+       ((2*I)*g^4*x^4*Log[x]*Qv[q]*S[q, q])/((1 + eps)*euv*(1 - x)^2*
+         S[k, k]^2) + ((4*I)*g^4*x*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - ((2*I)*g^4*x*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) - ((4*I)*eps*g^4*x*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((2*I)*eps*g^4*x*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) + ((4*I)*g^4*I0*x*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) + ((4*I)*eps*g^4*I0*x*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((8*I)*g^4*I1*x*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       ((8*I)*eps*g^4*I1*x*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       ((2*I)*g^4*x^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       (I*g^4*x^2*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((2*I)*eps*g^4*x^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x^2*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*S[k, k]^3) - 
+       ((14*I)*g^4*I0*x^2*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*S[k, k]^3) - 
+       ((6*I)*eps*g^4*I0*x^2*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*
+         S[k, k]^3) - ((26*I)*g^4*I1*x^2*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - ((10*I)*eps*g^4*I1*x^2*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((6*I)*g^4*I0*x^2*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) + ((10*I)*g^4*I1*x^2*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((12*I)*g^4*I0*x^3*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((20*I)*g^4*I1*x^3*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       ((15*I)*g^4*I0*x^3*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) - ((25*I)*g^4*I1*x^3*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((6*I)*g^4*I0*x^4*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((10*I)*g^4*I1*x^4*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*x^2*Li2[1]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((2*I)*eps*g^4*x^2*Li2[1]*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) - ((10*I)*g^4*x^2*Li2[1]*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((4*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       ((25*I)*g^4*x^3*Li2[1]*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) - ((10*I)*g^4*x^4*Li2[1]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((4*I)*g^4*x^2*Li2[1 - x]*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       ((4*I)*eps*g^4*x^2*Li2[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - ((4*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((8*I)*g^4*x^3*Li2[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((10*I)*g^4*x^3*Li2[1 - x]*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((4*I)*g^4*x^4*Li2[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((2*I)*g^4*x*Log[1 - x]*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((2*I)*eps*g^4*x*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) - ((4*I)*g^4*I0*x*Log[1 - x]*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) - ((4*I)*eps*g^4*I0*x*Log[1 - x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       ((6*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) - ((2*I)*eps*g^4*x^2*Log[1 - x]*Qv[k]*
+         S[p, p]*S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((12*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((4*I)*eps*g^4*I0*x^2*Log[1 - x]*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       ((6*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) - ((4*I)*g^4*I0*x^2*Log[1 - x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((4*I)*g^4*x^3*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) - ((8*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       ((15*I)*g^4*x^3*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) + ((10*I)*g^4*I0*x^3*Log[1 - x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((6*I)*g^4*x^4*Log[1 - x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) - ((4*I)*g^4*I0*x^4*Log[1 - x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       (I*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       (I*eps*g^4*x*Log[1 - x]^2*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((3*I)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) + (I*eps*g^4*x^2*Log[1 - x]^2*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       (I*g^4*x^2*Log[1 - x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) - ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) - (((5*I)/2)*g^4*x^3*Log[1 - x]^2*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       (I*g^4*x^4*Log[1 - x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*x^2*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*S[k, k]^3) + ((2*I)*eps*g^4*x^2*Log[x]*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*S[k, k]^3) + 
+       ((2*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((2*I)*eps*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*S[k, k]^3) - ((4*I)*g^4*x^2*Log[x]*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((6*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((4*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p]*
+         S[q, q])/(eir*(1 + eps)*S[k, k]^3) - 
+       ((4*I)*g^4*I0*x^3*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((10*I)*g^4*x^3*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        (eir*(1 + eps)*(1 - x)*S[k, k]^3) - ((15*I)*g^4*I0*x^3*Log[x]*Qv[k]*
+         S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((4*I)*g^4*x^4*Log[x]*Qv[k]*S[p, p]*S[q, q])/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) + ((6*I)*g^4*I0*x^4*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((2*I)*g^4*x^2*Log[1 - x]*Log[x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((5*I)*g^4*x^3*Log[1 - x]*Log[x]*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((2*I)*g^4*x^4*Log[1 - x]*Log[x]*
+         Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       (I*g^4*x^2*Log[x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) + 
+       (I*eps*g^4*x^2*Log[x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*S[k, k]^3) - 
+       ((2*I)*g^4*x^2*Log[x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) - ((2*I)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p]*S[q, q])/
+        ((1 + eps)*S[k, k]^3) + ((5*I)*g^4*x^3*Log[x]^2*Qv[k]*S[p, p]*
+         S[q, q])/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((2*I)*g^4*x^4*Log[x]^2*Qv[k]*S[p, p]*S[q, q])/((1 + eps)*(1 - x)*
+         S[k, k]^3) - ((4*I)*g^4*x*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) + 
+       ((2*I)*g^4*x*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((4*I)*g^4*I0*x*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((4*I)*eps*g^4*I0*x*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((8*I)*g^4*I1*x*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) - 
+       ((8*I)*eps*g^4*I1*x*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) + 
+       ((2*I)*g^4*x^2*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) - 
+       (I*g^4*x^2*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) + 
+       ((4*I)*g^4*I0*x^2*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) + 
+       ((8*I)*g^4*I1*x^2*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) - 
+       ((3*I)*g^4*I0*x^2*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((5*I)*g^4*I1*x^2*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((6*I)*g^4*I0*x^3*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((10*I)*g^4*I1*x^3*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((5*I)*g^4*x^2*Li2[1]*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((10*I)*g^4*x^3*Li2[1]*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*x^2*Li2[1 - x]*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((4*I)*g^4*x^3*Li2[1 - x]*Qv[k]*
+         S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((2*I)*g^4*x*Log[1 - x]*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((2*I)*eps*g^4*x*Log[1 - x]*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*
+         S[k, k]^3) + ((4*I)*g^4*I0*x*Log[1 - x]*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) + ((4*I)*eps*g^4*I0*x*Log[1 - x]*Qv[k]*
+         S[q, q]^2)/((1 + eps)*S[k, k]^3) + ((2*I)*g^4*x^2*Log[1 - x]*Qv[k]*
+         S[q, q]^2)/(eir*(1 + eps)*S[k, k]^3) - 
+       ((4*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[q, q]^2)/((1 + eps)*S[k, k]^3) - 
+       ((3*I)*g^4*x^2*Log[1 - x]*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) + ((2*I)*g^4*I0*x^2*Log[1 - x]*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + ((6*I)*g^4*x^3*Log[1 - x]*Qv[k]*
+         S[q, q]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((4*I)*g^4*I0*x^3*Log[1 - x]*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + (I*g^4*x*Log[1 - x]^2*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) + (I*eps*g^4*x*Log[1 - x]^2*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) - (I*g^4*x^2*Log[1 - x]^2*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*S[k, k]^3) - ((I/2)*g^4*x^2*Log[1 - x]^2*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) + (I*g^4*x^3*Log[1 - x]^2*Qv[k]*
+         S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((2*I)*g^4*x^2*Log[x]*Qv[k]*S[q, q]^2)/(eir*(1 + eps)*(1 - x)*
+         S[k, k]^3) - ((3*I)*g^4*I0*x^2*Log[x]*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((4*I)*g^4*x^3*Log[x]*Qv[k]*
+         S[q, q]^2)/(eir*(1 + eps)*(1 - x)*S[k, k]^3) + 
+       ((6*I)*g^4*I0*x^3*Log[x]*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) + (I*g^4*x^2*Log[1 - x]*Log[x]*Qv[k]*S[q, q]^2)/
+        ((1 + eps)*(1 - x)*S[k, k]^3) - ((2*I)*g^4*x^3*Log[1 - x]*Log[x]*
+         Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) + 
+       (I*g^4*x^2*Log[x]^2*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*S[k, k]^3) - 
+       ((2*I)*g^4*x^3*Log[x]^2*Qv[k]*S[q, q]^2)/((1 + eps)*(1 - x)*
+         S[k, k]^3) - (I*g^4*x^2*Qv[q]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) + ((3*I)*g^4*x^3*Qv[q]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2) - ((2*I)*g^4*x^4*Qv[q]*S[q, q]*V3[euv])/
+        ((1 + eps)*S[k, k]^2)}}}}}, 
+ {"Wb", ((-6*I)*g^4*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((3*I)*g^4*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((10*I)*eps*g^4*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((5*I)*eps*g^4*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((4*I)*eps^2*g^4*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((2*I)*eps^2*g^4*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((2*I)*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((4*I)*eps*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((2*I)*eps^2*g^4*I0*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((3*I)*g^4*I0*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((3*I)*eps*g^4*I0*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((3*I)*g^4*I0*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((3*I)*eps*g^4*I0*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((4*I)*g^4*I1*Qv[k])/((1 + eps)^2*S[k, k]) - ((8*I)*eps*g^4*I1*Qv[k])/
+    ((1 + eps)^2*S[k, k]) - ((4*I)*eps^2*g^4*I1*Qv[k])/
+    ((1 + eps)^2*S[k, k]) - ((8*I)*g^4*I1*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((8*I)*eps*g^4*I1*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x*Qv[k])/((1 + eps)^2*S[k, k]) - 
+   (I*g^4*x*Qv[k])/(eir*(1 + eps)^2*S[k, k]) + ((2*I)*eps*g^4*x*Qv[k])/
+    ((1 + eps)^2*S[k, k]) - (I*eps*g^4*x*Qv[k])/(eir*(1 + eps)^2*S[k, k]) + 
+   ((10*I)*g^4*x*Qv[k])/((1 + eps)*S[k, k]) - ((4*I)*g^4*x*Qv[k])/
+    (eir*(1 + eps)*S[k, k]) - ((6*I)*eps*g^4*x*Qv[k])/((1 + eps)*S[k, k]) - 
+   (I*g^4*x*Qv[k])/((1 + eps)*euv*S[k, k]) + ((3*I)*eps*g^4*x*Qv[k])/
+    ((1 + eps)*euv*S[k, k]) + ((10*I)*g^4*I0*x*Qv[k])/
+    (eir*(1 + eps)*S[k, k]) + ((6*I)*g^4*I0*x*Qv[k])/
+    ((1 + eps)*euv*S[k, k]) + ((24*I)*g^4*I1*x*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((12*I)*g^4*x^2*Qv[k])/((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*x^2*Qv[k])/
+    (eir*(1 + eps)*S[k, k]) + ((4*I)*eps*g^4*x^2*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((I/2)*eps*g^4*x^2*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+   (((9*I)/2)*g^4*x^2*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   (((3*I)/2)*eps*g^4*x^2*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((10*I)*g^4*I0*x^2*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((6*I)*g^4*I0*x^2*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((24*I)*g^4*I1*x^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*eps*g^4*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((8*I)*g^4*x*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((8*I)*g^4*x^2*Li2[1]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*eps*g^4*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((4*I)*g^4*x*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*x^2*Li2[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+   (I*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   ((2*I)*eps*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   (I*eps^2*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)^2*S[k, k]) - 
+   (I*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   (I*eps*g^4*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((4*I)*eps*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((2*I)*eps^2*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((2*I)*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*eps*g^4*I0*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*x*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((8*I)*g^4*I0*x*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((4*I)*g^4*x^2*Log[1 - x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+   ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((I/2)*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   (I*eps*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((I/2)*eps^2*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)^2*S[k, k]) + 
+   ((I/2)*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((I/2)*eps*g^4*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x^2*Log[1 - x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   (I*g^4*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+   (I*eps*g^4*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((3*I)*g^4*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((3*I)*eps*g^4*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+   ((4*I)*g^4*I0*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*eps*g^4*I0*Log[x]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) + 
+   ((6*I)*g^4*x*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) - 
+   ((8*I)*g^4*I0*x*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x^2*Log[x]*Qv[k])/(eir*(1 + eps)*S[k, k]) - 
+   ((6*I)*g^4*x^2*Log[x]*Qv[k])/((1 + eps)*euv*S[k, k]) + 
+   ((8*I)*g^4*I0*x^2*Log[x]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*eps*g^4*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((4*I)*g^4*x*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*x^2*Log[x]^2*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((3*I)*g^4*Qv[p])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*Qv[p])/
+    ((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*Qv[p])/((1 + eps)*euv*S[k, k]) + 
+   (((3*I)/2)*eps*g^4*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+   ((3*I)*g^4*I0*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+   ((3*I)*eps*g^4*I0*Qv[p])/((1 + eps)*euv*S[k, k]) - 
+   ((3*I)*g^4*I1*Qv[p])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*I1*Qv[p])/
+    ((1 + eps)*S[k, k]) + ((4*I)*g^4*x*Qv[p])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x*Qv[p])/((1 + eps)*euv*S[k, k]) + 
+   ((6*I)*g^4*I0*x*Qv[p])/((1 + eps)*euv*S[k, k]) + 
+   ((6*I)*g^4*I1*x*Qv[p])/((1 + eps)*S[k, k]) - ((6*I)*g^4*I0*x^2*Qv[p])/
+    ((1 + eps)*euv*S[k, k]) - ((6*I)*g^4*I1*x^2*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((3*I)*g^4*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((3*I)*eps*g^4*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) - 
+   ((6*I)*g^4*x*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((6*I)*g^4*x^2*Li2[1]*Qv[p])/((1 + eps)*S[k, k]) - 
+   ((3*I)*g^4*Qv[q])/((1 + eps)*S[k, k]) - ((3*I)*eps*g^4*Qv[q])/
+    ((1 + eps)*S[k, k]) + (((3*I)/2)*g^4*Qv[q])/((1 + eps)*euv*S[k, k]) + 
+   (((3*I)/2)*eps*g^4*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+   ((2*I)*g^4*I0*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*I0*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((2*I)*g^4*I1*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*I1*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((6*I)*g^4*x*Qv[q])/((1 + eps)*S[k, k]) + ((4*I)*eps*g^4*x*Qv[q])/
+    ((1 + eps)*S[k, k]) - ((3*I)*g^4*x*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+   ((2*I)*eps*g^4*x*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+   ((2*I)*eps*g^4*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*eps*g^4*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((6*I)*g^4*I0*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*I0*x*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((6*I)*g^4*I1*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*I1*x*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*g^4*x^2*Qv[q])/((1 + eps)*S[k, k]) + (I*eps*g^4*x^2*Qv[q])/
+    ((1 + eps)*S[k, k]) + ((I/2)*g^4*x^2*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+   ((I/2)*eps*g^4*x^2*Qv[q])/((1 + eps)*euv*S[k, k]) - 
+   ((2*I)*g^4*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*g^4*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   (I*eps*g^4*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((8*I)*g^4*I0*x^2*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((8*I)*g^4*I1*x^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*g^4*x^3*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*g^4*x^3*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((4*I)*g^4*I0*x^3*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((4*I)*g^4*I1*x^3*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*g^4*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((6*I)*g^4*x*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*x*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((8*I)*g^4*x^2*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((4*I)*g^4*x^3*Li2[1]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*g^4*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((6*I)*g^4*x*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*x*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((6*I)*g^4*x^2*Li2[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*g^4*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((2*I)*g^4*I0*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*I0*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((6*I)*g^4*x*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*x*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((6*I)*g^4*I0*x*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*I0*x*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((8*I)*g^4*x^2*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   ((8*I)*g^4*I0*x^2*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((4*I)*g^4*x^3*Log[1 - x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((4*I)*g^4*I0*x^3*Log[1 - x]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*g^4*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*eps*g^4*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((3*I)*g^4*x*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*eps*g^4*x*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((4*I)*g^4*x^2*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*g^4*x^3*Log[1 - x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*g^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   (I*eps*g^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((3*I)*g^4*x*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   (I*eps*g^4*x*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) + 
+   (I*g^4*x^2*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+   ((3*I)*g^4*x^2*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)*S[k, k]) - 
+   ((3*I)*g^4*x^3*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+   ((2*I)*g^4*x^4*Log[x]*Qv[q])/((1 + eps)*euv*(1 - x)^2*S[k, k]) + 
+   ((I/2)*g^4*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((I/2)*eps*g^4*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (((3*I)/2)*g^4*x*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((I/2)*eps*g^4*x*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (((3*I)/2)*g^4*x^2*Log[x]^2*Qv[q])/((1 + eps)*(1 - x)*S[k, k])}, 
+ {"Wbs", ((-I)*g^4*x^2*E1[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x^3*E1[euv]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x^2*E2[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*x^3*E2[euv]*Qv[k])/((1 + eps)*S[k, k]) - 
+   (I*g^4*x^3*E3[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x^4*E3[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((3*I)*g^4*P0[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((3*I)*eps*g^4*P0[euv]*Qv[k])/((1 + eps)*S[k, k]) - 
+   ((6*I)*g^4*x*P0[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((6*I)*g^4*x^2*P0[euv]*Qv[k])/((1 + eps)*S[k, k]) + 
+   ((3*I)*g^4*B0[euv]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((3*I)*eps*g^4*B0[euv]*Qv[p])/((1 + eps)*S[k, k]) - 
+   ((6*I)*g^4*x*B0[euv]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((6*I)*g^4*x^2*B0[euv]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*x*B1[euv]*Qv[p])/((1 + eps)*S[k, k]) - 
+   ((4*I)*g^4*x^2*B1[euv]*Qv[p])/((1 + eps)*S[k, k]) + 
+   ((2*I)*g^4*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((2*I)*eps*g^4*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((6*I)*g^4*x*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((2*I)*eps*g^4*x*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((8*I)*g^4*x^2*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((4*I)*g^4*x^3*C0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*eps*g^4*x*C1[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*g^4*x^2*C1[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*eps*g^4*x^2*C1[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*g^4*x^3*C1[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*g^4*K0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   (I*eps*g^4*K0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   ((3*I)*g^4*x*K0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*eps*g^4*x*K0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) + 
+   ((3*I)*g^4*x^2*K0[euv]*Qv[q])/((1 + eps)*(1 - x)*S[k, k]) - 
+   (I*g^4*Qv[k]*R0[eir])/((1 + eps)^2*S[k, k]) - 
+   ((2*I)*eps*g^4*Qv[k]*R0[eir])/((1 + eps)^2*S[k, k]) - 
+   (I*eps^2*g^4*Qv[k]*R0[eir])/((1 + eps)^2*S[k, k]) + 
+   ((2*I)*g^4*x*Qv[k]*R0[eir])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x^2*Qv[k]*R0[eir])/((1 + eps)*S[k, k]) - 
+   (I*g^4*Qv[k]*S0[eir])/((1 + eps)*S[k, k]) - (I*eps*g^4*Qv[k]*S0[eir])/
+    ((1 + eps)*S[k, k]) + ((2*I)*g^4*x*Qv[k]*S0[eir])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x^2*Qv[k]*S0[eir])/((1 + eps)*S[k, k]) - 
+   ((3*I)*g^4*Qv[k]*T0[eir])/((1 + eps)^2*S[k, k]) - 
+   ((5*I)*eps*g^4*Qv[k]*T0[eir])/((1 + eps)^2*S[k, k]) - 
+   ((2*I)*eps^2*g^4*Qv[k]*T0[eir])/((1 + eps)^2*S[k, k]) + 
+   (I*g^4*x*Qv[k]*T0[eir])/((1 + eps)^2*S[k, k]) + 
+   (I*eps*g^4*x*Qv[k]*T0[eir])/((1 + eps)^2*S[k, k]) + 
+   ((4*I)*g^4*x*Qv[k]*T0[eir])/((1 + eps)*S[k, k]) - 
+   (((3*I)/2)*g^4*x^2*Qv[k]*T0[eir])/((1 + eps)*S[k, k]) + 
+   ((I/2)*eps*g^4*x^2*Qv[k]*T0[eir])/((1 + eps)*S[k, k]) + 
+   (I*g^4*x*Qv[k]*T0[euv])/((1 + eps)*S[k, k]) - 
+   ((3*I)*eps*g^4*x*Qv[k]*T0[euv])/((1 + eps)*S[k, k]) - 
+   (((9*I)/2)*g^4*x^2*Qv[k]*T0[euv])/((1 + eps)*S[k, k]) + 
+   (((3*I)/2)*eps*g^4*x^2*Qv[k]*T0[euv])/((1 + eps)*S[k, k]) - 
+   (((3*I)/2)*g^4*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) - 
+   (((3*I)/2)*eps*g^4*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) + 
+   ((4*I)*g^4*x^2*Qv[p]*T0[euv])/((1 + eps)*S[k, k]) - 
+   (((3*I)/2)*g^4*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) - 
+   (((3*I)/2)*eps*g^4*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) + 
+   ((3*I)*g^4*x*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) + 
+   ((2*I)*eps*g^4*x*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) - 
+   ((I/2)*g^4*x^2*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) + 
+   ((I/2)*eps*g^4*x^2*Qv[q]*T0[euv])/((1 + eps)*S[k, k]) + 
+   (I*g^4*x^2*Qv[q]*V1[euv])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x^3*Qv[q]*V1[euv])/((1 + eps)*S[k, k]) + 
+   (I*g^4*x^2*Qv[q]*V2[euv])/((1 + eps)*S[k, k]) - 
+   ((2*I)*g^4*x^3*Qv[q]*V2[euv])/((1 + eps)*S[k, k])}, 
+ {"Wz", -(g^2*(-3 + 8*I0 + 2*Log[1 - x] + 2*Log[x])*
+     ((-2*g^2*Nf*Tf)/((1 + eps)*S[k, k]) - (2*eps*g^2*Nf*Tf)/
+       ((1 + eps)*S[k, k]) + (4*g^2*Nf*Tf*x)/((1 + eps)*S[k, k]) - 
+      (4*g^2*Nf*Tf*x^2)/((1 + eps)*S[k, k])))/(32*Nf*Pi^2*Tf)}}
