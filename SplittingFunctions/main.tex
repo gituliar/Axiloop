@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[charter, uppercase=upright, greeklowercase=upright]{mathdesign}
+
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{axodraw}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+\usepackage{subcaption}
+
+\DeclareMathOperator{\Order}{\mathcal{O}}
+\DeclareMathOperator{\Pgg}{\mathnormal{P_{gg}}}
+\DeclareMathOperator{\Pgq}{\mathnormal{P_{gq}}}
+\DeclareMathOperator{\Pqg}{\mathnormal{P_{qg}}}
+\DeclareMathOperator{\Pqq}{\mathnormal{P_{qq}}}
+\DeclareMathOperator{\x}{\mathbf{x}}
+
+
+\begin{document}
+
+\title{One-Loop Diagrams for NLO Splitting Functions}
+\author{Oleksandr~Gituliar \\ \texttt{\small <oleksandr@gituliar.org>}}
+\maketitle
+
+\begin{figure}[ht]
+  \centering
+
+  \subcaptionbox*{NLO-qq-C}{\input{NLO-qq-C.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qq-D}{\input{NLO-qq-D.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qq-E}{\input{NLO-qq-E.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qq-F}{\input{NLO-qq-F.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qq-G}{\input{NLO-qq-G.tex}}
+
+  \caption{Diagrams for $q\to q$ contributions}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+
+  \subcaptionbox*{NLO-gq-C}{\input{NLO-gq-C.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gq-D}{\input{NLO-gq-D.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gq-E}{\input{NLO-gq-E.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gq-FG}{\input{NLO-gq-FG.tex}}
+
+  \caption{Diagrams for $g\to q$ contributions}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+
+  \subcaptionbox*{NLO-qg-C}{\input{NLO-qg-C.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qg-D}{\input{NLO-qg-D.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qg-Ef}{\input{NLO-qg-Ef.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qg-Eg}{\input{NLO-qg-Eg.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-qg-FG}{\input{NLO-qg-FG.tex}}
+
+  \caption{Diagrams for $q\to g$ contributions}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+
+  \subcaptionbox*{NLO-gg-C}{\input{NLO-gg-C.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-D}{\input{NLO-gg-D.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-Ef}{\input{NLO-gg-Ef.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-Eg}{\input{NLO-gg-Eg.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-F}{\input{NLO-gg-F.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-G}{\input{NLO-gg-G.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-S1}{\input{NLO-gg-S1.tex}}
+  \hspace{4mm}
+  \subcaptionbox*{NLO-gg-S2}{\input{NLO-gg-S2.tex}}
+
+  \caption{Diagrams for $g\to g$ contributions}
+\end{figure}
+
+\end{document}
