@@ -4,17 +4,18 @@ Needs["Axiloop`"];
 Needs["Timestamp`"];
 
 
-TS$Begin["NLO-qg-CD"];
+TS$Begin["NLO-qg-C"];
 
   $LO = AX$Get["LO-qg.mx"];
   TS$Print["$LO"];
 
-  $vertex = Expand[ FPx[p-k]**FV[mu]**FP[l+p]**FV[i1]  GP[i1,i2,l] GP[mu,i4,l+k] GV[i2,l, i3,k, i4,-l-k] ];
+  $vertex = Expand[ FV[i2]**FP[l+k]**FV[i3]**FP[-l]**FV[i1] GP[i1,i2,l+p] ];
   TS$Print["$vertex"];
-  $topology = x Expand[ PFi[p]**FVc[nu]**$vertex GPc[i3,i5,k] PGo[i5,i6] GP[i6,nu,k] ];
+  $topology = x Expand[ PFi[p]**FVc[i6]**FPx[p-k]**$vertex GP[i3,i4,k] PGo[i4,i5] GPc[i5,i6,k] ];
   TS$Print["$topology"];
 
   $result = SplittingFunction[$topology, $LO];
+  $result >> "NLO-qg-C.mx";
   TS$Print["$result"];
 
 TS$End[];
