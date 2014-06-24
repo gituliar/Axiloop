@@ -26,19 +26,9 @@ Needs["Axiloop`"];
 
 $LO = AX$Get["LO-gg.mx"];
 
-$vertex = Block[
-  {n,p,q},
-
-  Unprotect[S];
-    S[n,n] = 0;
-    S /: g^n_Integer S[p,p] := 0;
-    S /: g^n_Integer S[q,q] := 0;
-  Protect[S];
-
-  Expand[
+$vertex = Expand[
     GV[i1, -p, i2, p - l, i3, l] GP[i3, i4, l] GV[i4, -l, i6, k, i5, l - k]
     GP[i2, i12, p - l] GV[i12, l - p, i10, k - l, mu, q] GP[i5, i10, l - k]
-  ]
 ];
 
 $topology = Expand[ 
