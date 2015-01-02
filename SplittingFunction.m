@@ -17,6 +17,7 @@ BeginPackage["Axiloop`SplittingFunction`", {
 
   SplittingFunction;
   AX$CollectG1;
+  $Pgg; $Pgq; $Pqg; $Pqq;
 
   Begin["`Private`"];
 
@@ -79,10 +80,78 @@ BeginPackage["Axiloop`SplittingFunction`", {
       $result
     ];
 
-    AX$CollectG1[expr_, basis_] := Block[
-      {$result},
+    AX$CollectG1[expr_, case_] := Block[
+      {$Pgq, $bases, $basis, $expr, $i, $result, $term},
 
-      $result = Collect[expr, {I0 Log[x], I0 Log[1-x], I1, I0, Log[x]^2, Log[x] Log[1-x], Log[1-x]^2, Li2[1], Log[x], Log[1-x]}, Simplify[# /. basis]&];
+      Switch[
+        case
+        ,
+        "gq"
+        ,
+        $bases = {
+          $Pgq Log[1-x]^2,
+          $Pgq Log[x]^2,
+          $Pgq Log[x] Log[1-x],
+          $Pgq I0 Log[x],
+          $Pgq I0 Log[1-x],
+          $Pgq Log[x],
+          $Pgq Log[1-x],
+          $Pgq Li2[1-x],
+          $Pgq Li2[1],
+          $Pgq I0,
+          $Pgq I1,
+          Log[x]^2,
+          Log[x],
+          Log[1-x],
+          I0
+        };
+        $rule = $Pgq -> 1-2x+2x^2;
+        ,
+        "qg"
+        ,
+        $bases = {
+          $Pqg Log[1-x]^2,
+          $Pqg Log[x]^2,
+          $Pqg Log[x] Log[1-x],
+          $Pqg I0 Log[x],
+          $Pqg I0 Log[1-x],
+(*
+          $Pqg Log[x],
+*)
+          $Pqg Log[1-x],
+          $Pqg Li2[1-x],
+          $Pqg Li2[1],
+(*
+          $Pqg I0,
+*)
+          $Pqg I1,
+          x Log[x]^2,
+          Log[x]^2,
+          x Log[x],
+          1/x Log[x],
+          Log[x],
+          x Log[1-x],
+          Log[1-x],
+          x I0,
+          1/x I0,
+          I0,
+          x,
+          1/x
+        };
+        $rule = $Pqg -> (2-2x+x^2)/x;
+      ];
+      $result = {};
+
+      $expr = Expand[expr];
+      For[$i=1, $i<=Length[$bases], $i++,
+        $basis = $bases[[$i]];
+        $term = Simplify[Coefficient[$expr, $basis /. $rule]];
+        $expr = Expand[$expr - ($term $basis /. $rule)];
+
+        AppendTo[$result, {$basis, $term}];
+      ];
+
+      AppendTo[$result, {"rest", $expr}];
 
       $result
     ];

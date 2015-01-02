@@ -1,0 +1,932 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23988,        923]
+NotebookOptionsPosition[     22079,        849]
+NotebookOutlinePosition[     22414,        864]
+CellTagsIndexPosition[     22371,        861]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", "\"\<~/src/Axiloop/SplittingFunctions\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Axiloop`SplittingFunction`"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["NLO", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "=", "1"}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Case \[OpenCurlyDoubleQuote]gq\[CloseCurlyDoubleQuote] (Vogelsang Table \
+2)", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{"-", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["D", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NLOgqD", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"$Get", "[", 
+     RowBox[{
+      RowBox[{"Get", "[", "\"\<NLO-gq-D.mx\>\"", "]"}], ",", "\"\<G1\>\""}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOgqD", ",", "\"\<gq\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], 
+     RowBox[{"-", "6"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "24"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "4"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "10"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq"}], "16"},
+    {
+     RowBox[{"I1", " ", "$Pgq"}], "24"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], 
+     RowBox[{"-", "4"}]},
+    {"I0", 
+     RowBox[{"-", "16"}]},
+    {"\<\"rest\"\>", 
+     RowBox[{"14", "-", 
+      RowBox[{"18", " ", "x"}], "+", 
+      RowBox[{"16", " ", 
+       SuperscriptBox["x", "2"]}]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["E", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NLOgqE", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"$Get", "[", 
+     RowBox[{
+      RowBox[{"Get", "[", "\"\<NLO-gq-E.mx\>\"", "]"}], ",", "\"\<G1\>\""}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOgqE", ",", "\"\<gq\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], "0"},
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "8"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "6"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"I0", " ", "$Pgq"}], "8"},
+    {
+     RowBox[{"I1", " ", "$Pgq"}], "8"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], "0"},
+    {"I0", 
+     RowBox[{"-", "8"}]},
+    {"\<\"rest\"\>", 
+     RowBox[{"14", "-", 
+      RowBox[{"16", " ", "x"}], "+", 
+      RowBox[{"16", " ", 
+       SuperscriptBox["x", "2"]}]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["FG", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NLOgqFG", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"$Get", "[", 
+     RowBox[{
+      RowBox[{"Get", "[", "\"\<NLO-gq-FG.mx\>\"", "]"}], ",", "\"\<G1\>\""}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOgqFG", ",", "\"\<gq\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], 
+     RowBox[{"-", "16"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     RowBox[{"I0", " ", "$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "16"}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"28", "-", 
+      RowBox[{"16", " ", 
+       RowBox[{"Log", "[", "Q2", "]"}]}]}]},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pgq", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], "0"},
+    {
+     RowBox[{"I0", " ", "$Pgq"}], 
+     RowBox[{
+      RowBox[{"-", "16"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"Log", "[", "Q2", "]"}]}], ")"}]}]},
+    {
+     RowBox[{"I1", " ", "$Pgq"}], "0"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], "0"},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], 
+     RowBox[{"-", "16"}]},
+    {"I0", 
+     RowBox[{"-", "16"}]},
+    {"\<\"rest\"\>", 
+     RowBox[{
+      RowBox[{"24", " ", "x"}], "-", 
+      RowBox[{"24", " ", 
+       SuperscriptBox["x", "2"]}], "+", 
+      RowBox[{"12", " ", 
+       RowBox[{"Log", "[", "Q2", "]"}]}], "-", 
+      RowBox[{"24", " ", "x", " ", 
+       RowBox[{"Log", "[", "Q2", "]"}]}], "+", 
+      RowBox[{"24", " ", 
+       SuperscriptBox["x", "2"], " ", 
+       RowBox[{"Log", "[", "Q2", "]"}]}]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Case \[OpenCurlyDoubleQuote]qg\[CloseCurlyDoubleQuote] (Vogelsang Table \
+3)", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{"1", "/", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["C", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{"2", "/", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NLOqgC", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"(", 
+     RowBox[{"$Get", "[", 
+      RowBox[{
+       RowBox[{"Get", "[", "\"\<NLO-qg-C.mx\>\"", "]"}], ",", "\"\<G1\>\""}], 
+      "]"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOqgC", ",", "\"\<qg\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], "1"},
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "4"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "4"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "8"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "8"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "5"}]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], "12"},
+    {
+     RowBox[{"I1", " ", "$Pqg"}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"x", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     FractionBox[
+      RowBox[{"Log", "[", "x", "]"}], "x"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", 
+      FractionBox["4", "x"]}]},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], 
+     FractionBox["4", "x"]},
+    {
+     RowBox[{"I0", " ", "x"}], 
+     RowBox[{"-", "8"}]},
+    {
+     FractionBox["I0", "x"], "0"},
+    {"I0", "0"},
+    {"x", 
+     RowBox[{"-", "3"}]},
+    {
+     FractionBox["1", "x"], 
+     RowBox[{"-", "12"}]},
+    {"\<\"rest\"\>", "12"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["D", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{"2", "/", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NLOqgD", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"(", 
+     RowBox[{"$Get", "[", 
+      RowBox[{
+       RowBox[{"Get", "[", "\"\<NLO-qg-D.mx\>\"", "]"}], ",", "\"\<G1\>\""}], 
+      "]"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOqgD", ",", "\"\<qg\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], "1"},
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "4"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "4"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "8"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "8"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "1"}]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], "12"},
+    {
+     RowBox[{"I1", " ", "$Pqg"}], 
+     RowBox[{"-", "8"}]},
+    {
+     RowBox[{"x", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "4"},
+    {
+     FractionBox[
+      RowBox[{"Log", "[", "x", "]"}], "x"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     FractionBox["4", "x"]},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], 
+     RowBox[{"-", 
+      FractionBox["4", "x"]}]},
+    {
+     RowBox[{"I0", " ", "x"}], "8"},
+    {
+     FractionBox["I0", "x"], "0"},
+    {"I0", "0"},
+    {"x", 
+     RowBox[{"-", "9"}]},
+    {
+     FractionBox["1", "x"], 
+     RowBox[{"-", "12"}]},
+    {"\<\"rest\"\>", "12"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ef (Cf Tf)", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "2"}], "/", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NLOqgEf", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"(", 
+     RowBox[{"$Get", "[", 
+      RowBox[{
+       RowBox[{"Get", "[", "\"\<NLO-qg-Ef.mx\>\"", "]"}], ",", "\"\<G1\>\""}],
+       "]"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOqgEf", ",", "\"\<qg\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", 
+      FractionBox["4", "3"]}]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], "0"},
+    {
+     RowBox[{"I1", " ", "$Pqg"}], "0"},
+    {
+     RowBox[{"x", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], "0"},
+    {
+     FractionBox[
+      RowBox[{"Log", "[", "x", "]"}], "x"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], "0"},
+    {
+     RowBox[{"I0", " ", "x"}], "0"},
+    {
+     FractionBox["I0", "x"], "0"},
+    {"I0", "0"},
+    {"x", 
+     RowBox[{"-", 
+      FractionBox["32", "9"]}]},
+    {
+     FractionBox["1", "x"], 
+     RowBox[{"-", 
+      FractionBox["40", "9"]}]},
+    {"\<\"rest\"\>", 
+     FractionBox["40", "9"]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eg (\:0421f Nc)", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$N", "=", 
+   RowBox[{
+    RowBox[{"1", "/", "4"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"4", "\[Pi]"}], ")"}], "4"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NLOqgEg", "=", 
+   RowBox[{"$N", " ", 
+    RowBox[{"(", 
+     RowBox[{"$Get", "[", 
+      RowBox[{
+       RowBox[{"Get", "[", "\"\<NLO-qg-Eg.mx\>\"", "]"}], ",", "\"\<G1\>\""}],
+       "]"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AX$CollectG1", "[", 
+   RowBox[{"NLOqgEg", ",", "\"\<qg\>\""}], "]"}], "//", 
+  "TableForm"}]}], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "-", "x"}], "]"}], "2"]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], 
+     RowBox[{"-", "2"}]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}], " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"I0", " ", "$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], 
+     FractionBox["11", "3"]},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"$Pqg", " ", 
+      RowBox[{"Li2", "[", "1", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     RowBox[{"I1", " ", "$Pqg"}], "4"},
+    {
+     RowBox[{"x", " ", 
+      SuperscriptBox[
+       RowBox[{"Log", "[", "x", "]"}], "2"]}], "0"},
+    {
+     SuperscriptBox[
+      RowBox[{"Log", "[", "x", "]"}], "2"], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", "x", "]"}]}], 
+     RowBox[{"-", "4"}]},
+    {
+     FractionBox[
+      RowBox[{"Log", "[", "x", "]"}], "x"], "0"},
+    {
+     RowBox[{"Log", "[", "x", "]"}], "0"},
+    {
+     RowBox[{"x", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "0"},
+    {
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "x"}], "]"}], "0"},
+    {
+     RowBox[{"I0", " ", "x"}], 
+     RowBox[{"-", "4"}]},
+    {
+     FractionBox["I0", "x"], "0"},
+    {"I0", "0"},
+    {"x", 
+     FractionBox["100", "9"]},
+    {
+     FractionBox["1", "x"], 
+     FractionBox["134", "9"]},
+    {"\<\"rest\"\>", 
+     RowBox[{"-", 
+      FractionBox["134", "9"]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1676, 1011},
+WindowMargins->{{0, Automatic}, {Automatic, 18}},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 201, 5, 55, "Input"],
+Cell[CellGroupData[{
+Cell[784, 29, 22, 0, 64, "Section"],
+Cell[809, 31, 67, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[901, 37, 98, 1, 44, "Subsection"],
+Cell[1002, 40, 185, 7, 34, "Input"],
+Cell[CellGroupData[{
+Cell[1212, 51, 26, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[1263, 55, 364, 11, 55, "Input"],
+Cell[1630, 68, 2153, 77, 313, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3832, 151, 26, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[3883, 155, 364, 11, 55, "Input"],
+Cell[4250, 168, 2085, 74, 313, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6384, 248, 27, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[6436, 252, 367, 11, 55, "Input"],
+Cell[6806, 265, 2542, 87, 314, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9409, 359, 98, 1, 44, "Subsection"],
+Cell[9510, 362, 190, 7, 34, "Input"],
+Cell[CellGroupData[{
+Cell[9725, 373, 26, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[9776, 377, 584, 19, 79, "Input"],
+Cell[10363, 398, 2389, 88, 458, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12801, 492, 26, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[12852, 496, 584, 19, 79, "Input"],
+Cell[13439, 517, 2347, 86, 458, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15835, 609, 35, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[15895, 613, 608, 20, 79, "Input"],
+Cell[16506, 635, 2355, 86, 470, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18910, 727, 40, 0, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[18975, 731, 587, 19, 79, "Input"],
+Cell[19565, 752, 2462, 91, 470, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
