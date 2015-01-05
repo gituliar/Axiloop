@@ -9,7 +9,10 @@ TS$Begin["NLO-gq-C"];
   $LO = AX$Get["LO-gq.mx"];
   TS$Print["$LO"];
 
+  $vertex = Expand[ FV[i2]**FP[l+p]**FV[i1]**FP[l]**FV[i3] GP[i2,i3,l+q] ];
+(*
   $vertex = Expand[ FV[i2]**FP[-l]**FV[i1]**FP[l+p]**FV[i3] GP[i2,i3,l+k] ];
+*)
   $topology = x Expand[ PGi[i1,i4,p] $vertex**FPx[q]**FV[i4]**FP[k]**PFo[k]**FP[k] ];
   TS$Print["$topology"];
 
