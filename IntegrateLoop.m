@@ -29,6 +29,7 @@ BeginPackage["AX$IntegrateLoop`", {
 
   AX$Loop::usage = "Loop integral";
   AX$LoopCollect;
+  AX$LoopLorentzBasis;
   AX$LoopReduceLorentz::usage = "Reduce Lorentz structure in terms of Lorentz vector invariants and scalar form factors.";
 
   Begin["`Private`"] 
@@ -95,22 +96,29 @@ BeginPackage["AX$IntegrateLoop`", {
       $vectors
     ];
 
-    $AX$LoopReduceLorentz[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
-      {$basis, $i, $indexes, $result, $vectors},
 
-      $indexes = Select[{a}, AX$IndexQ];
-      If[
-        Length[$indexes] == 0
-        , 
-        Return[integral]
-      ];
+    AX$LoopLorentzBasis[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
+      {$basis, $indices, $vectors},
 
-      $result = 0;
+      $indices = Select[{a}, AX$IndexQ];
+      If[Length[$indices] == 0, Return[{}];];
 
       $vectors = AX$LoopConstantVectors[integral];
-      $basis = Permutations[$vectors, {Length[$indexes]}];
-      $basis = Inner[AX$S, #, $indexes, List]& /@ $basis;
 
+      $basis = Permutations[$vectors, {Length[$indices]}];
+      $basis = Inner[AX$S, #, $indices, List]& /@ $basis;
+
+      $basis
+    ];
+
+
+    $AX$LoopReduceLorentz[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
+      {$basis, $i, $result},
+
+      $basis = AX$LoopLorentzBasis[integral];
+      If[$basis == {}, Return[integral];];
+
+      $result = 0;
       For[ $i=1, $i<=Length[$basis], $i++,
         $b = $basis[[$i]];
         $v = Times@@$b;
