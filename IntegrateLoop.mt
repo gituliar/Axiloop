@@ -35,10 +35,11 @@ $loops = {
   AX$LoopCollect[AX$S[l,mu]/(AX$S[l+k] AX$S[l+p]), l]
   ,
   AX$LoopCollect[AX$S[l,mu] AX$S[l,k]/(AX$S[l+k] AX$S[l+p] AX$S[l,n]), l, n]
+  ,
+  AX$LoopCollect[AX$S[l,mu] AX$S[l,nu]/(AX$S[l+k] AX$S[l+p]), l]
 };
 
 UT$BeginTestCase["AX$LoopCollect"];
-
   UT$AssertEquivalent[
     $loops[[1]]
     ,
@@ -56,12 +57,10 @@ UT$BeginTestCase["AX$LoopCollect"];
     ,
     AX$Loop[l,n,Null, {k,mu},{k,p},{0},{}]
   ];
-
 UT$EndTestCase[];
 
 
 UT$BeginTestCase["AX$LoopLorentzBasis"];
-
   UT$AssertSame[
     AX$LoopLorentzBasis[$loops[[1]]]
     ,
@@ -78,5 +77,11 @@ UT$BeginTestCase["AX$LoopLorentzBasis"];
     AX$LoopLorentzBasis[$loops[[3]]]
     ,
     {{AX$S[k,mu]}, {AX$S[p,mu]}, {AX$S[n,mu]}}
+  ];
+
+  UT$AssertSame[
+    AX$LoopLorentzBasis[$loops[[4]]]
+    ,
+    {{AX$S[k,mu],AX$S[k,nu]}, {AX$S[k,mu],AX$S[p,nu]}, {AX$S[p,mu],AX$S[k,nu]}, {AX$S[p,mu],AX$S[p,nu]}}
   ];
 UT$EndTestCase[];

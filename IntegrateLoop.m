@@ -105,7 +105,7 @@ BeginPackage["AX$IntegrateLoop`", {
 
       $vectors = AX$LoopConstantVectors[integral];
 
-      $basis = Permutations[$vectors, {Length[$indices]}];
+      $basis = Tuples[$vectors, {Length[$indices]}];
       $basis = Inner[AX$S, #, $indices, List]& /@ $basis;
 
       $basis
