@@ -1,8 +1,6 @@
-#!/usr/bin/math -script
-
 (*============================================================================*)
 (*                                                                            *)
-(*  Copyright (C) 2014 Oleksandr Gituliar.                                    *)
+(*  Copyright (C) 2015 Oleksandr Gituliar.                                    *)
 (*                                                                            *)
 (*  This file is part of Axiloop.                                             *)
 (*                                                                            *)
@@ -21,20 +19,63 @@
 (*                                                                            *)
 (*============================================================================*)
 
-Needs["Axiloop`"];
 
+BeginPackage["AX$Vectors`"];
 
-$LO = AX$Get["LO-gg.mx"];
+  AX$indices;
+  AX$vectors;
 
-$vertex = Expand[
-    GV[i1, -p, i2, p - l, i3, l] GP[i3, i4, l] GV[i4, -l, i6, k, i5, l - k]
-    GP[i2, i12, p - l] GV[i12, l - p, i10, k - l, mu, q] GP[i5, i10, l - k]
-];
+  AX$ContractIndices;
+  AX$DeclareIndex;
+  AX$DeclareVector;
+  AX$IndexQ;
+  AX$S::usage = "A scalar product of indices and/or vectors.";
+  AX$VectorQ;
 
-$topology = Expand[ 
-  x (1 - eps) GPx[i1, i11, p] GP[i6, i7, k] ({i7}.{i8}) GP[i8, i9, k]
-  GV[i9, -k, nu, -q, i11, p] GPx[mu, nu, q]
-] /. {n.n -> 0, p.p -> 0, q.q -> 0};
+  Begin["`Private`"]
 
-$result = SplittingFunction[$topology $vertex, $LO];
-$result >> "NLO-gg-D.mx";
+    AX$ContractIndices[expr_, indices___] := Module[
+      {$i, $index, $indices, $result, $rules},
+
+      $indices = {indices};
+      $result = expr;
+
+      For[$i=1, $i<=Length[$indices], $i++,
+        $index = $indices[[$i]];
+        $rules = {AX$S[a_,$index] AX$S[b_,$index] :> AX$S[a,b]};
+        $result = $result /. $rules;
+      ];
+
+      $result
+    ];
+
+    AX$DeclareIndex[indices__] := Module[{},
+      If[
+        Head[AX$indices] =!= List
+        ,
+        AX$indices = {};
+      ];
+
+      AX$indices = Join[AX$indices, {indices}] // DeleteDuplicates;
+    ];
+
+    AX$DeclareVector[vectors__] := Module[{},
+      If[
+        Head[AX$vectors] =!= List
+        ,
+        AX$vectors = {};
+      ];
+
+      AX$vectors = Join[AX$vectors, {vectors}] // DeleteDuplicates;
+    ];
+
+    AX$IndexQ[index_] := MemberQ[AX$indices, index];
+
+    SetAttribute[AX$S, Orderless];
+    AX$S[x_] := AX$S[x,x];
+
+    AX$VectorQ[vector_] := MemberQ[AX$vectors, vector];
+
+  End[];
+
+EndPackage[];

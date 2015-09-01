@@ -1,8 +1,0 @@
-{{"Wn", (2*Cf*g^2*x)/S[k, k] + (2*Cf*eps*g^2*x)/S[k, k] - 
-   (2*Cf*g^2*x*S[n, p])/(S[k, k]*S[k, n]) - (2*Cf*eps*g^2*x*S[n, p])/
-    (S[k, k]*S[k, n]) - (4*Cf*g^2*x*S[n, p])/(S[k, k]*(-S[k, n] + S[n, p])) + 
-   (2*Cf*g^2*x*S[p, p])/S[k, k]^2 + (2*Cf*eps*g^2*x*S[p, p])/S[k, k]^2 - 
-   (2*Cf*g^2*x*S[q, q])/S[k, k]^2 - (2*Cf*eps*g^2*x*S[q, q])/S[k, k]^2}, 
- {"Wr", (-2*Cf*g^2)/S[k, k] - (2*Cf*eps*g^2)/S[k, k] + (2*Cf*g^2*x)/S[k, k] + 
-   (2*Cf*eps*g^2*x)/S[k, k] - (4*Cf*g^2*x)/((1 - x)*S[k, k])}, 
- {"G1", -(Cf*g^2)/(8*Pi^2*(-1 + x)) - (Cf*g^2*x^2)/(8*Pi^2*(-1 + x))}}
