@@ -25,10 +25,10 @@ BeginPackage["AX$IntegrateLoop`", {
   "AX$Vectors`"
   }];
 
-  AX$FormFactor;
-
+  AX$FormFactor::usage = "Form factor of the vector loop integral";
   AX$Loop::usage = "Loop integral";
-  AX$LoopCollect;
+
+  AX$LoopFormFactors::usage = "Return form factors of the loop in terms of loops with no indices. This operation is effectively equivalent to the Passarino-Veltman reduction.";
   AX$LoopFromExpression;
   AX$LoopLorentzBasis;
   AX$LoopReduceLorentz::usage = "Reduce Lorentz structure in terms of Lorentz vector invariants and scalar form factors.";
@@ -36,9 +36,6 @@ BeginPackage["AX$IntegrateLoop`", {
 
   Begin["`Private`"] 
 
-    AX$LoopCollect::unevaluated = "`1`";
-
-    AX$LoopCollect[expr_, l_, n1_:Null, n2_:Null] := Module[
     AX$LoopFromExpression::unevaluated = "`1`";
 
     AX$LoopFromExpression[expr_, l_, n1_:Null, n2_:Null] := Module[
@@ -94,6 +91,31 @@ BeginPackage["AX$IntegrateLoop`", {
       $result = $result /. AX$Loop[def__,{a___},{b___},{c___},{d___}] :> AX$Loop[def,Sort[{a}],Sort[{b}],Sort[{c}],Sort[{d}]];
 
       $result
+    ];
+
+    AX$LoopFormFactors[loop:AX$Loop[l_,n1_,n2_,__]] := Module[
+      {$basis, $lhs, $result, $rhs, $system, $unknowns},
+
+      $lhs = AX$LoopToExpression[loop];
+      $rhs = AX$LoopReduceLorentz[loop];
+
+      $basis = Times[#]& /@ AX$LoopLorentzBasis[loop];
+      $system = (AX$LoopFromExpression[AX$ContractIndices[$lhs #], l, n1, n2] == AX$ContractIndices[Expand[$rhs #]])& /@ $basis;
+
+      $unknowns = Cases[$rhs, _AX$FormFactor, Infinity];
+
+      $result = Solve[$system, $unknowns];
+      $result = If[
+        Length[$result] === 1
+        ,
+        $result[[1]]
+        ,
+        Null
+      ];
+
+      AX$LoopFormFactors /: AX$LoopFormFactors[loop] = $result;
+
+      $result 
     ];
 
 
