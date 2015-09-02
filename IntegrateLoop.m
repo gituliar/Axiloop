@@ -31,6 +31,7 @@ BeginPackage["AX$IntegrateLoop`", {
   AX$LoopCollect;
   AX$LoopLorentzBasis;
   AX$LoopReduceLorentz::usage = "Reduce Lorentz structure in terms of Lorentz vector invariants and scalar form factors.";
+  AX$LoopToExpression;
 
   Begin["`Private`"] 
 
@@ -135,6 +136,27 @@ BeginPackage["AX$IntegrateLoop`", {
 
       $rules = (# -> $AX$LoopReduceLorentz[#])& /@ $integrals;
       $result = expr /. $rules;
+
+      $result
+    ];
+
+
+    AX$LoopToExpression[expr_] := Module[
+      {$result, $rules},
+
+      $rules = {
+        AX$Loop[l_,n1_,n2_,{a1_,a2___},{b___},{c___},{d___}] :> AX$Loop[l,n1,n2,{a2},{b},{c},{d}] AX$S[l,a1]
+        ,
+        AX$Loop[l_,n1_,n2_,{a___},{b1_,b2___},{c___},{d___}] :> AX$Loop[l,n1,n2,{a},{b2},{c},{d}] / AX$S[l+b1,l+b1]
+        ,
+        AX$Loop[l_,n1_,n2_,{a___},{b___},{c1_,c2___},{d___}] :> AX$Loop[l,n1,n2,{a},{b},{c2},{d}] / AX$S[l+c1,n1]
+        ,
+        AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d1_,d2___}] :> AX$Loop[l,n1,n2,{a},{b},{c},{d2}] / AX$S[l+d1,n2]
+        ,
+        AX$Loop[def__,{},{},{},{}] :> 1
+      };
+
+      $result = expr //. $rules;
 
       $result
     ];
