@@ -38,11 +38,16 @@ BeginPackage["AX$Vectors`"];
       {$i, $index, $indices, $result, $rules},
 
       $indices = {indices};
+      If[$indices == {}, $indices = AX$indices];
       $result = expr;
 
       For[$i=1, $i<=Length[$indices], $i++,
         $index = $indices[[$i]];
-        $rules = {AX$S[a_,$index] AX$S[b_,$index] :> AX$S[a,b]};
+        $rules = {
+          AX$S[a_,$index] AX$S[b_,$index] :> AX$S[a,b]
+          ,
+          AX$S[a_,$index]^2 :> AX$S[a,a]
+        };
         $result = $result /. $rules;
       ];
 
