@@ -88,25 +88,25 @@ BeginPackage["AX$IntegrateLoop`", {
     ];
 
 
-    AX$LoopConstantVectors[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
-      {$vectors},
+    AX$LoopIndices[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
+      {$indices},
 
-      $vectors = Select[Cases[{b,If[{c}=!={},{n1,c}],If[{d}=!={},{n2,d}]}, _Symbol, Infinity], AX$VectorQ];
+      $indices = Select[{a}, AX$IndexQ];
 
-      $vectors
+      $indices
     ];
 
 
     AX$LoopLorentzBasis[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
       {$basis, $indices, $vectors},
 
-      $indices = Select[{a}, AX$IndexQ];
-      If[Length[$indices] == 0, Return[{}];];
+      $indices = AX$LoopIndices[integral];
+      If[$indices == {}, Return[$indices];];
 
-      $vectors = AX$LoopConstantVectors[integral];
+      $vectors = AX$LoopVectors[integral];
 
       $basis = Tuples[$vectors, {Length[$indices]}];
-      $basis = Inner[AX$S, #, $indices, List]& /@ $basis;
+      $basis = Inner[AX$S, #, $indices, Times]& /@ $basis;
 
       $basis
     ];
@@ -121,9 +121,8 @@ BeginPackage["AX$IntegrateLoop`", {
       $result = 0;
       For[ $i=1, $i<=Length[$basis], $i++,
         $b = $basis[[$i]];
-        $v = Times@@$b;
-        $vs = $b /. AX$S[k_,mu_]:>k;
-        $result += $v AX$FormFactor[Sort[$vs], integral];
+        $vs = Cases[$b, AX$S[k_?AX$VectorQ,mu_]:>k, {0,Infinity}];
+        $result += $b AX$FormFactor[Sort[$vs], integral];
       ];
 
       $result
@@ -138,6 +137,15 @@ BeginPackage["AX$IntegrateLoop`", {
       $result = expr /. $rules;
 
       $result
+    ];
+
+
+    AX$LoopVectors[integral:AX$Loop[l_,n1_,n2_,{a___},{b___},{c___},{d___}]] := Module[
+      {$vectors},
+
+      $vectors = Select[Cases[{b,If[{c}=!={},{n1,c}],If[{d}=!={},{n2,d}]}, _Symbol, Infinity], AX$VectorQ];
+
+      $vectors
     ];
 
   End[];

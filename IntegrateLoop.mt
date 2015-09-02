@@ -70,18 +70,19 @@ UT$BeginTestCase["AX$LoopLorentzBasis"];
   UT$AssertSame[
     AX$LoopLorentzBasis[$loops[[2]]]
     ,
-    {{AX$S[k,mu]}, {AX$S[p,mu]}}
+    {AX$S[k,mu], AX$S[p,mu]}
   ];
 
   UT$AssertSame[
     AX$LoopLorentzBasis[$loops[[3]]]
     ,
-    {{AX$S[k,mu]}, {AX$S[p,mu]}, {AX$S[n,mu]}}
+    {AX$S[k,mu], AX$S[p,mu], AX$S[n,mu]}
   ];
 
   UT$AssertSame[
     AX$LoopLorentzBasis[$loops[[4]]]
     ,
-    {{AX$S[k,mu],AX$S[k,nu]}, {AX$S[k,mu],AX$S[p,nu]}, {AX$S[p,mu],AX$S[k,nu]}, {AX$S[p,mu],AX$S[p,nu]}}
+    {AX$S[k,mu] AX$S[k,nu], AX$S[k,mu] AX$S[p,nu], AX$S[p,mu] AX$S[k,nu], AX$S[p,mu] AX$S[p,nu]}
+  ];
   ];
 UT$EndTestCase[];
