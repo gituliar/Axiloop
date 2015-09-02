@@ -29,6 +29,7 @@ BeginPackage["AX$IntegrateLoop`", {
 
   AX$Loop::usage = "Loop integral";
   AX$LoopCollect;
+  AX$LoopFromExpression;
   AX$LoopLorentzBasis;
   AX$LoopReduceLorentz::usage = "Reduce Lorentz structure in terms of Lorentz vector invariants and scalar form factors.";
   AX$LoopToExpression;
@@ -38,13 +39,20 @@ BeginPackage["AX$IntegrateLoop`", {
     AX$LoopCollect::unevaluated = "`1`";
 
     AX$LoopCollect[expr_, l_, n1_:Null, n2_:Null] := Module[
+    AX$LoopFromExpression::unevaluated = "`1`";
+
+    AX$LoopFromExpression[expr_, l_, n1_:Null, n2_:Null] := Module[
       {$rules, $result},
 
       $rules = {
         (* Numerator *)
-        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[l, aa_] :> AX$Loop[def,{a,aa},{b},{c},{d}]
+        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[l,aa_] :> AX$Loop[def,{a,aa},{b},{c},{d}]
         ,
-        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[l, aa_]^n_ :> AX$Loop[def,Flatten[{a,x&/@Range[n]}],{b},{c},{d}] /; n>0
+        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[aa_,l] :> AX$Loop[def,{a,aa},{b},{c},{d}]
+        ,
+        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[l,aa_]^n_ :> AX$Loop[def,Flatten[{a,x&/@Range[n]}],{b},{c},{d}] /; n>0
+        ,
+        AX$Loop[def__,{a___},{b___},{c___},{d___}] AX$S[aa_,l]^n_ :> AX$Loop[def,Flatten[{a,x&/@Range[n]}],{b},{c},{d}] /; n>0
         ,
 
         (* Feynman denominator *)
@@ -77,7 +85,7 @@ BeginPackage["AX$IntegrateLoop`", {
         !FreeQ[result, AX$S[l,_]]
         ,
         Message[
-            AX$LoopCollect::unevaluated,
+            AX$LoopFromExpression::unevaluated,
             result
         ];
         Return[Null];
